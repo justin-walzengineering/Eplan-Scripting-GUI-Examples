@@ -27,8 +27,34 @@ Body in Markdown.
 - The time zone is `America/New_York` unless you add a repository variable `BLOG_TZ`
   (for example `America/Chicago`). Daylight saving is handled.
 - To release the next post immediately: Actions tab > Publish scheduled blog posts > Run workflow > tick "force".
-- Supported Markdown: `#`/`##`/`###` headings, paragraphs, `-` bullet lists, fenced code blocks.
-  Bold, links and images are not converted yet.
+- Supported Markdown: `#`/`##`/`###` headings, paragraphs, `-` bullet lists, fenced code blocks,
+  and links (`[text](https://...)` or a bare `https://...` URL). Bold and images are not converted yet.
+- A leading `# Title` line in the body is dropped when sending, because Wix shows the title itself.
+
+## Post types and the weekly rhythm
+
+- `type: new` and `type: update` posts are script posts. They can go out in either slot (Tuesday or Friday).
+- `type: highlight` posts are community highlights. They **only go out on Friday slots**
+  (a manual "force" run ignores this). When there is no new script ready, the Friday slot can carry a
+  highlight, so the blog keeps a steady rhythm.
+- Every post ends with a **Community spotlight** section (see the template). In a highlight post it is the main content.
+
+## Community spotlight rules
+
+The lists live in `blog/community/`: `creators.md` (who and what is worth highlighting) and
+`spotlight-queue.md` (what to feature next).
+
+1. **Link and describe in your own words.** One or two original sentences about what the creator or
+   resource offers. Never copy their text, and never copy Eplan's help text, manuals or training material.
+2. **No borrowed images.** Do not reuse other people's thumbnails, video frames or screenshots, or Eplan
+   marketing or documentation images. A screenshot you took yourself in your own Eplan, with your own
+   caption, is fine (add it in Wix by hand).
+3. **Credit by name and link to the source.** Say what language it is in and who it suits.
+4. **Positive and specific.** Say what is useful. No comparisons that put Eplan or anyone else down, and no
+   suggestion that Eplan or the community is lacking something.
+5. **Verify first.** Open the link, check it is current and about Eplan, then mark it `verified` in the list.
+   Do not feature something you have not opened. Nothing is posted automatically from YouTube or any feed.
+6. **Not an endorsement.** A highlight means "worth a look", not that Eplan or the creator endorses this repo.
 
 ## One-time setup
 
@@ -41,4 +67,5 @@ Body in Markdown.
 
 ## Status
 
-The Wix API calls have **not** been tested against a live site yet. Run draft mode first and check the result in Wix.
+The Wix calls were tested against the live blog in draft mode on 2026-11-07 (headings, bullets and code blocks came through correctly).
+Link conversion is new and still to be checked in a draft. Keep draft mode on until you have looked at a draft with links.

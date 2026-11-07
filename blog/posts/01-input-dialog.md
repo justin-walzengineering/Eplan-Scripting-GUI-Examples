@@ -52,6 +52,12 @@ Prompt returns the typed text, or null if the user pressed Cancel. Checking for 
 - Validate the input (letters and numbers only, maximum length)
 - Use Prompt to ask for a project property value
 
+## Community spotlight
+
+- **Who or what:** The EPLAN Scripting book and blog by Johann Weiher (Suplanus): https://eplan-scripting.suplanus.de
+- **Why it is worth a look:** A guide to scripting Eplan in C# that covers the basics and includes examples, with a free sample to try. If this post made you curious about scripting, it is a good next read.
+- **Good to know:** Mostly in German, so a browser translation helps if you read English.
+
 Repository with all examples: https://github.com/justin-walzengineering/Eplan-Scripting-GUI-Examples
 
 Maintained by Justin Walz, Walz Engineering. Questions, ideas or custom work: get in touch.

@@ -12,7 +12,8 @@ Each post in blog/posts/*.md starts with a small front-matter block:
 Posts are released ONE AT A TIME, in file-name order, on a fixed weekly
 schedule (Tuesday and Friday, 09:xx in BLOG_TZ). On each scheduled slot the
 first "ready" post not yet listed in blog/published.json is sent. Name files
-01-..., 02-... to set the order.
+01-..., 02-... to set the order. Posts with "type: highlight" are released on
+Friday slots only (a --force run ignores this).
 
 Environment variables:
     WIX_API_KEY    API key with Blog permissions       (required)
@@ -82,8 +83,35 @@ def _text_node(text):
             "textData": {"text": text, "decorations": []}}
 
 
+_LINK_RE = re.compile(r"\[([^\]]+)\]\((https?://[^)\s]+)\)|(https?://[^\s<>)]+[^\s<>).,;:!?])")
+
+
+def _link_node(label, url):
+    return {"type": "TEXT", "id": _id(), "nodes": [],
+            "textData": {"text": label, "decorations": [
+                {"type": "LINK", "linkData": {"link": {
+                    "url": url, "target": "BLANK",
+                    "rel": {"noreferrer": True}}}}]}}
+
+
+def _inline_nodes(text):
+    """Plain text with [label](url) links and bare http(s) URLs made clickable."""
+    nodes, pos = [], 0
+    for m in _LINK_RE.finditer(text):
+        if m.start() > pos:
+            nodes.append(_text_node(text[pos:m.start()]))
+        if m.group(1):
+            nodes.append(_link_node(m.group(1), m.group(2)))
+        else:
+            nodes.append(_link_node(m.group(3), m.group(3)))
+        pos = m.end()
+    if pos < len(text):
+        nodes.append(_text_node(text[pos:]))
+    return nodes or [_text_node(text)]
+
+
 def _paragraph(text):
-    return {"type": "PARAGRAPH", "id": _id(), "nodes": [_text_node(text)],
+    return {"type": "PARAGRAPH", "id": _id(), "nodes": _inline_nodes(text),
             "paragraphData": {}}
 
 
@@ -125,7 +153,7 @@ def markdown_to_ricos(md):
         if h:
             flush_para(); flush_items()
             nodes.append({"type": "HEADING", "id": _id(),
-                          "nodes": [_text_node(h.group(2))],
+                          "nodes": _inline_nodes(h.group(2)),
                           "headingData": {"level": len(h.group(1))}})
         elif b:
             flush_para(); items.append(b.group(1))
@@ -196,9 +224,15 @@ def main():
         if not name.endswith(".md"):
             continue
         post = parse_post(os.path.join(POSTS_DIR, name))
-        if post.get("status") == "ready" and post["id"] not in state:
-            due.append(post)
-    due = due[:1]  # one post per slot
+        if post.get("status") != "ready" or post["id"] in state:
+            continue
+        # Community highlight posts go out on Friday slots only (script posts
+        # can use either slot). A manual --force run ignores this.
+        if (post.get("type") == "highlight" and not args.force
+                and local.weekday() != 4):
+            continue
+        due.append(post)
+    due = due[:1]  # one post per slot (file-name order)
 
     if not due:
         print("No ready posts in the queue.")

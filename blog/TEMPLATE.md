@@ -1,6 +1,6 @@
 ---
 title: <Plain, specific title>
-type: new            # new | update
+type: new            # new | update | highlight (highlight posts go out on Fridays only; use the Community spotlight section as the main content)
 example: examples/NN-name
 status: draft        # draft | ready
 excerpt: <one sentence>
@@ -31,6 +31,14 @@ excerpt: <one sentence>
 
 ## Ideas to extend
 - <2-3 ideas>
+
+## Community spotlight
+<OPTIONAL but included in every post when there is something good. One item from
+blog/community/spotlight-queue.md. Link to it and describe it in your own words.>
+- **Who or what:** <creator, channel or Eplan resource, with a link>
+- **Why it is worth a look:** <one or two of your own sentences, positive and specific>
+- **Good to know:** <language, level, anything a reader should expect>
+- Screenshot (optional): <only one you took yourself in your own Eplan, with your own caption; add in Wix>
 
 Repository with all examples: https://github.com/justin-walzengineering/Eplan-Scripting-GUI-Examples
 
