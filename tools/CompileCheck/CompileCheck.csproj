@@ -7,7 +7,7 @@
 
     What it mimics (from notes proven in Eplan; items marked "to verify" are still assumptions):
       - C# 5 syntax only (LangVersion 5).
-      - Only the Eplan assemblies below are referenced. DataModel and HEServices are NOT, because
+      - Only the assemblies Eplan documents for scripts are referenced (Base, AF, Gui, MasterData, Newtonsoft.Json, System.*). DataModel and HEServices are NOT, because
         Eplan's script compiler does not reference them. Scripts that need them must use reflection.
       - Eplan adds some namespaces to every script (to verify). Stage.ps1 prepends them so
         ambiguous names such as EventHandler fail here instead of in Eplan.
@@ -42,7 +42,20 @@
       <HintPath>$(EplanBin)\Eplan.EplApi.Guiu.dll</HintPath>
       <Private>false</Private>
     </Reference>
+    <Reference Include="Eplan.EplApi.MasterDatau">
+      <HintPath>$(EplanBin)\Eplan.EplApi.MasterDatau.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(EplanBin)\Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Drawing" />
   </ItemGroup>
 
