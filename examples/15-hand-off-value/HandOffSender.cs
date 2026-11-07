@@ -3,7 +3,7 @@
 // Purpose   : Leave a short-lived value for a second script to pick up, and start that second script.
 // You learn : AppDomain data, timestamps so old values expire, ExecuteScript from code, ActionCallingContext
 // Level     : Advanced
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 //
