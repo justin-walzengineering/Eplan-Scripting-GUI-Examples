@@ -1,6 +1,6 @@
 # 14 - Selection explorer
 
-**Level:** Intermediate  **File:** [SelectionExplorer.cs](SelectionExplorer.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [SelectionExplorer.cs](SelectionExplorer.cs)  **Status:** Run in Eplan 2026 (pages selected in the page navigator)
 
 *Read-only: this example never changes your project.*
 
@@ -37,7 +37,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Partly (three selected pages written to a text file) |
+
+Checked in Eplan 2026: with three pages selected in the page navigator, the script wrote one block per page to a text file and opened it. Not working yet from a drawing selection: after selecting everything on an open page with Ctrl+A, the script reported that nothing was selected, both when started from File > Extras > Interfaces and from the command search box, so for now select pages (or other items) in a navigator before running it. Running it from a Quick Access toolbar button, as suggested above, has not been tried. The file lists project data such as the last editor's name and e-mail, so there is no screenshot here; check a file before you share it.
 
 The member names used were checked against the installed 2026 assemblies. The reflection helper was tested outside Eplan against stand-in objects.
 

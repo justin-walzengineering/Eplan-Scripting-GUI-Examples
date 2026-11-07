@@ -21,7 +21,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 11 | done | Parts viewer with filter box | MasterData parts classes used directly; filtering a large list (read-only) | Intermediate |
 | 12 | done | "Please wait" window on its own thread | Keep a progress indicator moving while Eplan is busy, and close it safely | Advanced |
 | 13 | done | Dark-mode-safe controls | Custom check box, date field, drop-down and progress bar | Intermediate |
-| 14 | draft | Selection explorer | Write the properties of the selected objects to a text file (read-only) | Intermediate |
+| 14 | done | Selection explorer | Write the properties of the selected objects to a text file (read-only) | Intermediate |
 | 15 | done | Hand a value from one script to another | Short-lived value shared between two scripts, with a timestamp | Advanced |
 | 16 | done | Modern folder picker | The Explorer-style "choose a folder" window through COM | Advanced |
 | 17 | draft | Export launcher (PDF) | The export action with a file name pattern; opens the folder | Intermediate |
