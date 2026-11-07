@@ -23,6 +23,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 13 | idea | Dark-mode-safe controls | Custom check box and date picker, because the standard ones are hard to see on a dark background | Intermediate |
 | 14 | idea | Selection explorer | Write the properties of the selected objects to a text file, to learn what an object exposes and find property numbers | Intermediate |
 | 15 | idea | Hand a value from one script to another | Pass a short-lived value between two scripts in the same Eplan session | Advanced |
+| 16 | idea | Modern folder picker | The Explorer-style "choose a folder" window (the old tree-style one is what .NET Framework offers by default), using the Windows folder dialog through COM. Reusable helper for any script that needs a folder | Advanced |
 
 ## Docs to write
 

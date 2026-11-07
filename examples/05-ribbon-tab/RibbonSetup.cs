@@ -13,8 +13,8 @@
 //   ButtonTime.cs                 the script behind the second button.
 //   RibbonRemove.cs               removes the tab again (a clean way to undo this example).
 //   icons\hello.svg, icons\time.svg   the button images.
-// Keep all of these together in one folder. When you run this script it will ask you to choose that folder
-// if it cannot work out where it is saved.
+// Keep all of these together in one folder. If this script cannot work out where it is saved, it asks
+// you to select ButtonHello.cs, and uses that file's folder.
 // ============================================================
 
 using System;
@@ -30,7 +30,7 @@ public class RibbonSetupDemo
     // ===== Options: change these to suit you =====
 
     // The folder that holds the scripts and the "icons" folder.
-    // Leave it empty ("") and the script tries to work it out, and asks you to choose the folder if it cannot.
+    // Leave it empty ("") and the script tries to work it out, and asks you to select ButtonHello.cs if it cannot.
     // To skip the question, type the folder here, for example @"C:\EplanScripts\Ribbon".
     private const string ScriptFolder = "";
 
@@ -50,8 +50,8 @@ public class RibbonSetupDemo
         if (folder == null)
         {
             Say("Folder not found",
-                "I could not find ButtonHello.cs in that folder.\r\n\r\n" +
-                "Put all the files of this example in one folder (RibbonSetup.cs, ButtonHello.cs, ButtonTime.cs, RibbonRemove.cs and the icons folder), then run this script again and choose that folder.");
+                "I could not find ButtonHello.cs.\r\n\r\n" +
+                "Put all the files of this example in one folder (RibbonSetup.cs, ButtonHello.cs, ButtonTime.cs, RibbonRemove.cs and the icons folder), then run this script again and select ButtonHello.cs when asked.");
             return;
         }
 
@@ -165,14 +165,14 @@ public class RibbonSetupDemo
     // Eplan does not hand a running script its own location, so we try several things, easiest first,
     // and finally simply ask the user. Asking always works.
 
-    // Try 1 helper. [CallerFilePath] is a C# feature: the compiler fills in the path of this source
+    // Try 2 helper. [CallerFilePath] is a C# feature: the compiler fills in the path of this source
     // file for us. (Eplan compiles scripts its own way, so this can come back empty or wrong.)
     private static string ThisFile([CallerFilePath] string path = "")
     {
         return path;
     }
 
-    // Try 2 helper. A "stack trace" lists the code that is running, and can include the source file name.
+    // Try 3 helper. A "stack trace" lists the code that is running, and can include the source file name.
     private static string FileFromStackTrace()
     {
         try
@@ -186,14 +186,18 @@ public class RibbonSetupDemo
         }
     }
 
-    // Try 3 helper. Let the user pick the folder.
+    // Try 4 helper. Ask the user, with the normal Windows "Open" window.
+    // We ask for ButtonHello.cs (the Filter hides every other file), then use the folder it is in.
+    // This looks and works like every other Windows "Open" window, with the address bar, Quick access and search.
     private static string AskForFolder()
     {
-        using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+        using (OpenFileDialog dialog = new OpenFileDialog())
         {
-            dialog.Description = "Choose the folder that contains RibbonSetup.cs, ButtonHello.cs, ButtonTime.cs and the icons folder.";
-            dialog.ShowNewFolderButton = false;
-            return dialog.ShowDialog() == DialogResult.OK ? dialog.SelectedPath : "";
+            dialog.Title = "Select ButtonHello.cs in the folder with the example files";
+            dialog.Filter = "ButtonHello.cs|ButtonHello.cs";     // text shown | what is listed
+            dialog.CheckFileExists = true;
+            dialog.Multiselect = false;
+            return dialog.ShowDialog() == DialogResult.OK ? FolderOf(dialog.FileName) : "";
         }
     }
 
@@ -250,7 +254,7 @@ public class RibbonSetupDemo
             return folder;
         }
 
-        // 4. Ask the user.
+        // 4. Ask the user to select ButtonHello.cs.
         folder = AskForFolder();
         if (LooksRight(folder))
         {
