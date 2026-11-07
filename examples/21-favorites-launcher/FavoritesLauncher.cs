@@ -3,7 +3,7 @@
 // Purpose   : A searchable list of your own favorite scripts and Eplan actions. Double-click one to run it.
 // You learn : Filtering a list as you type, saving a list as JSON, running a script or an action from code, dialog result patterns
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
