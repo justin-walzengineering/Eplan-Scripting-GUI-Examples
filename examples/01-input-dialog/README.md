@@ -27,10 +27,10 @@ The script also contains a small `DialogHelper` class with three reusable helper
 
 1. Copy `InputDialog.cs` to a folder on your computer.
 2. In Eplan 2025 or 2026, open a throwaway project.
-3. Go to the scripting commands (Utilities > Scripts), choose **Load**, and select the file. Then choose **Run**.
+3. In Eplan, go to File > Extras > Interfaces, choose **Run** (under Scripts), and select the file.
 4. Type a name, press Enter, and answer the confirmation.
 
-See [Getting started](../../docs/getting-started.md) if this is your first script.
+New to scripts? See [How to run a script](../../docs/running-scripts.md) for the menu path and a Quick Access shortcut, and [Getting started](../../docs/getting-started.md).
 
 ## Compatibility
 

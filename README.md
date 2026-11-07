@@ -41,7 +41,7 @@ More are on the list in [IDEAS.md](IDEAS.md). Request one by opening an issue.
 
 1. Read [docs/getting-started.md](docs/getting-started.md).
 2. Open an example folder under [examples/](examples/).
-3. Load the `.cs` file in Eplan (Utilities > Scripts) and run it.
+3. In Eplan, choose File > Extras > Interfaces > **Run** and select the `.cs` file. See [How to run a script](docs/running-scripts.md).
 
 ## Tested with
 
@@ -56,6 +56,7 @@ Compile-checked against Eplan Electric P8 **2025** (2025.0.3) and **2026** (2026
 ## Documentation
 
 - [Getting started](docs/getting-started.md)
+- [How to run a script](docs/running-scripts.md) (with a Quick Access toolbar tip)
 - [C# basics used in these examples](docs/csharp-basics.md)
 - [How Eplan loads scripts](docs/how-eplan-loads-scripts.md)
 - [Troubleshooting](docs/troubleshooting.md)

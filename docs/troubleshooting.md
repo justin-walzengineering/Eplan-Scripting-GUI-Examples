@@ -9,7 +9,7 @@
 
 ## Nothing happens when I run it
 
-- Confirm the script has a start method and that you ran it, not only loaded it.
+- Confirm the script has a start method and that you chose **Run** (File > Extras > Interfaces > Scripts), not only **Load**.
 - Make sure a project is open if the script needs one.
 
 ## My window appears behind Eplan or won't close
@@ -23,7 +23,7 @@
 
 ## Changes I made aren't showing up
 
-- Save the file, then **load it again** in Eplan so it recompiles.
+- Save the file, then **run it again** in Eplan so it recompiles. If you registered the script with **Load**, unload it and load it again to be safe.
 
 ## Still stuck?
 

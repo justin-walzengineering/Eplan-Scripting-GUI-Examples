@@ -4,7 +4,7 @@
 
 ## The basics
 
-- A script is a `.cs` source file. Eplan compiles it when you load it. There is no separate build or installer step.
+- A script is a `.cs` source file. Eplan compiles it when you run or load it. There is no separate build or installer step. **Run** (File > Extras > Interfaces > Scripts) executes it once; **Load** registers it so it stays available, and Eplan registers loaded scripts again at the next start. See [How to run a script](running-scripts.md).
 - Eplan exposes its features to scripts through the public API assemblies in its `Bin` folder (for example `Eplan.EplApi.Baseu`, `Eplan.EplApi.AFu`, `Eplan.EplApi.Guiu`, `Eplan.EplApi.DataModelu`).
 - The 2025 and 2026 API assemblies both target **.NET Framework 4.8.1** (verified from the installs).
 - A script marks the method Eplan should run with the `[Start]` attribute. Other attributes let scripts register actions, menu items, or event handlers. The examples introduce each one when needed. _Exact attribute usage per example will be confirmed during testing._
@@ -19,7 +19,7 @@ _To verify:_ which C# language version Eplan's script compiler accepts. Until co
 
 ## Where scripts live
 
-You can keep scripts anywhere you like. Many people use a shared folder so a team can load the same files. _To verify:_ whether Eplan 2026 remembers loaded scripts between sessions in your configuration.
+You can keep scripts anywhere you like. Many people use a shared folder so a team can run the same files. Scripts you register with **Load** are registered again each time Eplan starts, so keep those files where they will stay.
 
 ## Using a regular Visual Studio project alongside
 

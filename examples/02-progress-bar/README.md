@@ -35,10 +35,10 @@ The work in the example is only a short pause per item. Replace the `Thread.Slee
 ## How to load it
 
 1. Copy `ProgressBar.cs` to a folder on your computer.
-2. In Eplan 2025 or 2026, go to Utilities > Scripts, choose **Load**, select the file, then **Run**.
+2. In Eplan, go to File > Extras > Interfaces, choose **Run** (under Scripts), and select the file.
 3. Watch the bar fill. Run it again and press Cancel part-way.
 
-See [Getting started](../../docs/getting-started.md) if this is your first script.
+New to scripts? See [How to run a script](../../docs/running-scripts.md) for the menu path and a Quick Access shortcut, and [Getting started](../../docs/getting-started.md).
 
 ## Good to know
 

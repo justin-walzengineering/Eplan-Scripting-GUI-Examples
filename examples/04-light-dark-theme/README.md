@@ -47,10 +47,10 @@ The meaning of the values comes from Eplan's own configuration files, and all th
 ## How to load it
 
 1. Copy `LightDarkTheme.cs` to a folder on your computer.
-2. In Eplan 2025 or 2026, go to Utilities > Scripts, choose **Load**, select the file, then **Run**.
+2. In Eplan, go to File > Extras > Interfaces, choose **Run** (under Scripts), and select the file.
 3. Tick and untick **Dark mode**. Click **Match Eplan**. Compare the window with Eplan itself.
 
-See [Getting started](../../docs/getting-started.md) if this is your first script.
+New to scripts? See [How to run a script](../../docs/running-scripts.md) for the menu path and a Quick Access shortcut, and [Getting started](../../docs/getting-started.md).
 
 ## Good to know
 
