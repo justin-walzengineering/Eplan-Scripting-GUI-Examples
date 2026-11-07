@@ -15,7 +15,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 05 | done | Ribbon tab, group and buttons with icons | Create your own ribbon tab, add a group to it, and add buttons that run scripts. Give each button an icon read from an image file kept next to the script, and re-run safely (replace the tab instead of duplicating it) | Beginner |
 | 06 | done | Remember window size and position | Save to and load from the registry, and open somewhere sensible if a monitor was unplugged | Intermediate |
 | 07 | done | Themed message and confirm window | Why a standard message box ignores dark mode, and a themed replacement with OK or Yes/No | Beginner |
-| 08 | draft | Settings dialog that saves preferences | Per-user options that survive a restart, stored as JSON | Beginner |
+| 08 | done | Settings dialog that saves preferences | Per-user options that survive a restart, stored as JSON | Beginner |
 | 09 | draft | Page list with search, sort, CSV export | Reflection, sortable ListView, filtering, writing CSV (read-only) | Advanced |
 | 10 | draft | Property viewer | Every property of the project or selection, searchable (read-only) | Advanced |
 | 11 | draft | Parts viewer with filter box | MasterData parts classes used directly; filtering a large list (read-only) | Intermediate |
