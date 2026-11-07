@@ -2,7 +2,7 @@
 title: A reusable input dialog for your Eplan scripts
 type: new
 example: examples/01-input-dialog
-status: draft
+status: ready
 excerpt: Ask the user for text, confirm an action and show a message, with three small helpers you can copy into any script.
 ---
 
