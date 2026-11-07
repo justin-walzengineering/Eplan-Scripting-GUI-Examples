@@ -1,0 +1,30 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.vsidx
+*.sqlite
+bin/
+obj/
+*.pdb
+*.cache
+
+# Eplan-owned files must never be committed
+Eplan.EplApi*.dll
+Eplan.EplApi*.xml
+EplanBaseNetu.dll
+*.zip
+*.pdf
+*.ept
+*.elk
+*.zw1
+*.zw9
+
+# Local-only notes and scratch
+_local/
+scratch/
+*.log
+
+# OS
+Thumbs.db
+.DS_Store

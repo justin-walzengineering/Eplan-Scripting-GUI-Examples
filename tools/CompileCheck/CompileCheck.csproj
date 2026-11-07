@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    LOCAL-ONLY compile check for the example scripts.
+    Eplan loads the plain .cs files itself; this project only proves they compile against the
+    Eplan 2026 API. It references the install by path and never copies Eplan DLLs.
+    Check every installed version: tools/check-all.ps1
+    Override the path:  dotnet build tools/CompileCheck -p:EplanBin="D:\EPLAN\Platform\2026.0.3\Bin"
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net481</TargetFramework>
+    <OutputType>Library</OutputType>
+    <LangVersion>5</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EplanBin Condition="'$(EplanBin)' == ''">C:\Program Files\EPLAN\Platform\2026.0.3\Bin</EplanBin>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\examples\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Eplan.EplApi.Baseu">
+      <HintPath>$(EplanBin)\Eplan.EplApi.Baseu.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Eplan.EplApi.AFu">
+      <HintPath>$(EplanBin)\Eplan.EplApi.AFu.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Eplan.EplApi.Guiu">
+      <HintPath>$(EplanBin)\Eplan.EplApi.Guiu.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Eplan.EplApi.DataModelu">
+      <HintPath>$(EplanBin)\Eplan.EplApi.DataModelu.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>
