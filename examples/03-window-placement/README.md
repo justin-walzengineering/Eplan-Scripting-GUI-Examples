@@ -2,6 +2,8 @@
 
 **Level:** Intermediate  **File:** [WindowPlacement.cs](WindowPlacement.cs)
 
+![The demo window reporting where Eplan is](screenshot.png)
+
 ## What it does
 
 Opens a small demo window that is:
@@ -49,9 +51,9 @@ See [Getting started](../../docs/getting-started.md) if this is your first scrip
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2025.0.3 | Yes | Pending |
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes |
 
-The placement maths was also tested outside Eplan with stand-in windows: a normal window, one half off the edge of the screen, a minimized one, and none at all. In every case the new window landed fully on screen.
+Eplan 2025 still needs a run. The placement maths was also tested outside Eplan with stand-in windows: a normal window, one half off the edge of the screen, a minimized one, and none at all. In every case the new window landed fully on screen.
 
 ## Ideas to extend
 

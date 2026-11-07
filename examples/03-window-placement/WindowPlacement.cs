@@ -3,7 +3,7 @@
 // Purpose   : Open your own dialog centered on the Eplan main window, owned by it, without an extra taskbar button, and always on a visible screen.
 // You learn : Window owners, StartPosition, reading another window's position, multiple monitors, a first look at P/Invoke
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2025.0.3 and 2026.0.3 (run test pending)
+// Tested in : Compile-checked against Eplan Electric P8 2025.0.3 and 2026.0.3 (run in 2026; 2025 run pending)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
