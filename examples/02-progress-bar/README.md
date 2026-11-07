@@ -2,6 +2,8 @@
 
 **Level:** Beginner  **File:** [ProgressBar.cs](ProgressBar.cs)
 
+![Eplan progress window with a Cancel button](screenshot-progress.png)
+
 ## What it does
 
 Shows Eplan's own progress window while a script works through a list of items. The job is split into two parts:
@@ -10,6 +12,10 @@ Shows Eplan's own progress window while a script works through a list of items. 
 2. **Processing**: 15 items, the remaining 70%
 
 The user can press **Cancel** at any time. When the progress window closes, a message says whether everything finished, you cancelled, or an error happened.
+
+![Message shown when all items were processed](screenshot-done.png)
+
+Notice that Eplan draws its own progress window in the current theme (dark here), while a standard message box stays light. Making your own windows match is the subject of the theme examples later in this collection.
 
 The work in the example is only a short pause per item. Replace the `Thread.Sleep(150)` line with your real work.
 
@@ -43,9 +49,9 @@ See [Getting started](../../docs/getting-started.md) if this is your first scrip
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2025.0.3 | Yes | Pending |
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (progress window and final message confirmed) |
 
-The `Progress` members used here are identical in both versions. A screenshot will be added after the first run in Eplan.
+The `Progress` members used here are identical in both versions. The Cancel path has not been confirmed in Eplan yet.
 
 ## Ideas to extend
 
