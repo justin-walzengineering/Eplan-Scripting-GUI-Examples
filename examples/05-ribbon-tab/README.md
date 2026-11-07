@@ -50,11 +50,11 @@ The setup script looks for the other files next to itself. If it cannot work out
 ## How to load it
 
 1. Copy the whole example folder to your computer.
-2. In Eplan, go to Utilities > Scripts, choose **Load**, select `RibbonSetup.cs`, and **Run** it.
+2. In Eplan, go to File > Extras > Interfaces, choose **Run** (under Scripts), and select `RibbonSetup.cs`.
 3. Look for the **Demo Tools** tab. If it does not appear, restart Eplan.
-4. Click the buttons. To undo, run `RibbonRemove.cs` the same way.
+4. Click the buttons. To undo, run `RibbonRemove.cs` the same way (File > Extras > Interfaces > Run).
 
-See [Getting started](../../docs/getting-started.md) if this is your first script.
+New to scripts? See [How to run a script](../../docs/running-scripts.md) for the menu path and a Quick Access shortcut, and [Getting started](../../docs/getting-started.md).
 
 ## About the icons
 
