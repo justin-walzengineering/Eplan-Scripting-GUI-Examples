@@ -33,7 +33,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 23 | draft | Bulk edit pages by filter | Preview, tick, confirm and apply; reading back after writing | Advanced |
 | 24 | draft | CSV preview and device list import | A CSV parser, a preview grid, checks, then the devicelist import | Advanced |
 | 25 | done | Settings finder (read-only) | Search Eplan's settings by name or description, with current values | Intermediate |
-| 26 | draft | Back up first, then run | Backup, then a script or action only if the backup worked | Intermediate |
+| 26 | done | Back up first, then run | Backup, then a script or action only if the backup worked | Intermediate |
 
 ## Docs to write
 

@@ -48,7 +48,7 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 23 | [Bulk edit pages](examples/23-bulk-edit/) | Preview, then change many pages at once | Advanced | Draft |
 | 24 | [CSV preview and import](examples/24-csv-device-import/) | Check a CSV file before importing it | Advanced | Draft |
 | 25 | [Settings finder](examples/25-settings-finder/) | Search Eplan's settings (read-only) | Intermediate | Available |
-| 26 | [Back up first, then run](examples/26-backup-then-run/) | A safety net in front of risky work | Intermediate | Draft |
+| 26 | [Back up first, then run](examples/26-backup-then-run/) | A safety net in front of risky work | Intermediate | Available |
 
 **Draft** examples are written and compile-checked, but have not been run in Eplan yet. Try them on a copy of a project and tell us what you find. More ideas are in [IDEAS.md](IDEAS.md). Request one by opening an issue.
 
