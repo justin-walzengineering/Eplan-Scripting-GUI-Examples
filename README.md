@@ -42,7 +42,7 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 17 | [Export launcher](examples/17-export-launcher/) | PDF export with a file name pattern | Intermediate | Available |
 | 18 | [Device list export](examples/18-device-list-export/) | CSV, XML or text, opened in Excel | Intermediate | Available |
 | 19 | [Renumber helper](examples/19-renumber-helper/) | A safe front end for the renumber action | Intermediate | Draft |
-| 20 | [Timestamped backup](examples/20-timestamped-backup/) | A backup with the date and time in its name | Intermediate | Draft |
+| 20 | [Timestamped backup](examples/20-timestamped-backup/) | A backup with the date and time in its name | Intermediate | Available |
 | 21 | [Favorites launcher](examples/21-favorites-launcher/) | A searchable list of your scripts and actions | Intermediate | Available |
 | 22 | [Results window](examples/22-results-window/) | One report window instead of many message boxes | Intermediate | Available |
 | 23 | [Bulk edit pages](examples/23-bulk-edit/) | Preview, then change many pages at once | Advanced | Draft |

@@ -3,7 +3,7 @@
 // Purpose   : Back up the current project with a file name that includes the date and time, to a folder you choose, with a comment.
 // You learn : The backup action, name patterns, safe file names, naming rules for Eplan archives, remembering choices
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
