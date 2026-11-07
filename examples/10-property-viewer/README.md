@@ -1,8 +1,10 @@
 # 10 - Property viewer
 
-**Level:** Advanced  **File:** [PropertyViewer.cs](PropertyViewer.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Advanced  **File:** [PropertyViewer.cs](PropertyViewer.cs)  **Status:** Run in Eplan 2026
 
 *Read-only: this example never changes your project.*
+
+![Project properties, filtered to the structure settings](screenshot.png)
 
 ## What it does
 
@@ -37,7 +39,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (project and page properties, search, copy) |
+
+Checked in Eplan 2026: the project's 711 properties were listed with their ID, name and value, searching narrowed them, and after a page was selected in the page tree the Show list offered that page too, listing its 381 properties. Copy shown rows put the rows on the clipboard. Tip: the project list includes things like the last editor's name and e-mail, so check a window before you share a screenshot of it.
 
 The member names used were checked against the installed 2026 assemblies. The reflection helper was tested outside Eplan against stand-in objects.
 
