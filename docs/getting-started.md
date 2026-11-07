@@ -4,7 +4,7 @@ This guide takes you from "I have Eplan" to "I ran my first script". No programm
 
 ## What you need
 
-- Eplan Electric P8 2025 or 2026 installed.
+- Eplan Electric P8 2026 installed.
 - A text editor. Any will do, but **Visual Studio Community** (free) or **Visual Studio Code** gives you color, hints, and error underlines, which helps a lot while learning.
 - A throwaway demo project in Eplan. Practice on a copy, never on live customer data.
 

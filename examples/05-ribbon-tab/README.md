@@ -85,10 +85,9 @@ Ribbon icons are **SVG** pictures. An SVG file is a small text file that describ
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2025.0.3 | Yes | Not tested |
 | 2026.0.3 | Yes | Yes (setup, both buttons and remove) |
 
-The ribbon members used here are the same in 2025 and 2026. In Eplan 2026 the setup could not find its own folder automatically, so it asked for `ButtonHello.cs` (the finished message said "found by: you chose it"). After that the tab was created, both buttons started their scripts, and `RibbonRemove.cs` removed the tab. Eplan 2025 has not been tried.
+In Eplan 2026 the setup could not find its own folder automatically, so it asked for `ButtonHello.cs` (the finished message said "found by: you chose it"). After that the tab was created, both buttons started their scripts, and `RibbonRemove.cs` removed the tab.
 
 ## Ideas to extend
 
