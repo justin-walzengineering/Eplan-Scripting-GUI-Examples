@@ -64,7 +64,9 @@ def parse_post(path):
             meta[k.strip()] = v.strip()
     if "title" not in meta:
         raise ValueError("%s: front matter needs 'title'" % path)
-    meta["body"] = m.group(2)
+    # Wix shows the title above the post, so drop a leading "# Title" line
+    # from the body to avoid showing the title twice.
+    meta["body"] = re.sub(r"^\s*#\s+[^\n]*\n", "", m.group(2), count=1)
     meta["id"] = os.path.splitext(os.path.basename(path))[0]
     return meta
 
