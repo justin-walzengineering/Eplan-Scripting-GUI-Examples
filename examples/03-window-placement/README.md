@@ -57,6 +57,6 @@ Eplan 2025 still needs a run. The placement maths was also tested outside Eplan 
 
 ## Ideas to extend
 
-- Add a method that also remembers where the user dragged the window (example 05 does this).
+- Add a method that also remembers where the user dragged the window (example 06 does this).
 - Make the helper return a window sized as a fraction of Eplan's window.
 - Center a window on another dialog instead of the Eplan main window.

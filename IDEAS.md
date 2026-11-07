@@ -12,13 +12,13 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 02 | done | Progress bar around a long action | Progress API, `try/finally` | Beginner |
 | 03 | done | Place a window well | Open a dialog centered on the Eplan main window, owned by it, hidden from the taskbar, kept on a visible monitor | Intermediate |
 | 04 | done | Light and dark theme | A "Dark mode" check box that restyles a window live (colors, controls, title bar), plus matching Eplan's own color scheme by reading its setting. Check inside Eplan 2025 and 2026 | Intermediate |
-| 05 | idea | Remember window size and position | Save to and load from user settings, and open somewhere sensible if a monitor was unplugged | Intermediate |
-| 06 | idea | Themed message and confirm window | Why a standard message box ignores dark mode, and a themed replacement with OK or Yes/No | Beginner |
-| 07 | idea | Settings dialog that saves preferences | Per-user options that survive a restart | Beginner |
-| 08 | idea | Page list with search, sort, CSV export | Grids, filtering, sorting, file dialogs, tick boxes in a list | Intermediate |
-| 09 | idea | Project property viewer/editor | DataGridView, reading and writing properties, handling empty values | Intermediate |
-| 10 | idea | Parts and devices viewer with filter box | Live filtering of larger data sets | Intermediate |
-| 11 | idea | Ribbon tab and button creator | Add a tab, group and button that runs a script, with an icon and a safe "replace" when run again | Intermediate |
+| 05 | idea | Ribbon tab, group and buttons with icons | Create your own ribbon tab, add a group to it, and add buttons that run scripts. Give each button an icon read from an image file kept next to the script, and re-run safely (replace the tab instead of duplicating it) | Beginner |
+| 06 | idea | Remember window size and position | Save to and load from user settings, and open somewhere sensible if a monitor was unplugged | Intermediate |
+| 07 | idea | Themed message and confirm window | Why a standard message box ignores dark mode, and a themed replacement with OK or Yes/No | Beginner |
+| 08 | idea | Settings dialog that saves preferences | Per-user options that survive a restart | Beginner |
+| 09 | idea | Page list with search, sort, CSV export | Grids, filtering, sorting, file dialogs, tick boxes in a list | Intermediate |
+| 10 | idea | Project property viewer/editor | DataGridView, reading and writing properties, handling empty values | Intermediate |
+| 11 | idea | Parts and devices viewer with filter box | Live filtering of larger data sets | Intermediate |
 | 12 | idea | "Please wait" window on its own thread | Keep a progress indicator moving while Eplan is busy, and close it safely | Advanced |
 | 13 | idea | Dark-mode-safe controls | Custom check box and date picker, because the standard ones are hard to see on a dark background | Intermediate |
 | 14 | idea | Selection explorer | Write the properties of the selected objects to a text file, to learn what an object exposes and find property numbers | Intermediate |
@@ -39,6 +39,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 - Does the script compiler reference the data model and services assemblies? (The compile-check assumes **not**.)
 - Is the application framework namespace usable directly from a script? Reports conflict, so test it.
 - Which C# language version does the script compiler accept? (The compile-check enforces C# 5.)
+- Ribbon example (05): the ribbon API takes icons as **SVG text** (or an index of an existing icon), not as PNG files, in both 2025 and 2026. Confirm what image formats work, and decide how the example presents "image files" (reading an `.svg` file and passing its text is the likely route). Also confirm: how a button starts a script, whether new tabs show immediately or after a restart, and what happens when the setup script is run twice.
 
 ## Suggested while working on other projects
 
