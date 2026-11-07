@@ -27,13 +27,13 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 02 | [Progress bar](examples/02-progress-bar/) | Show progress during a long task, with Cancel | Beginner | Available |
 | 03 | [Window placement](examples/03-window-placement/) | Open dialogs centered on Eplan, on a visible monitor | Intermediate | Available |
 | 04 | [Light and dark theme](examples/04-light-dark-theme/) | A "Dark mode" check box that restyles your window, plus matching Eplan's own color scheme | Intermediate | Available |
-| 05 | Remember size and position | Reopen windows where the user left them | Intermediate | Planned |
-| 06 | Themed message window | Messages and questions that fit dark mode | Beginner | Planned |
-| 07 | Settings dialog | Save and restore user preferences | Beginner | Planned |
-| 08 | Page list with search and export | Sort, filter, and export pages to CSV | Intermediate | Planned |
-| 09 | Project property viewer and editor | Browse and edit project data in a grid | Intermediate | Planned |
-| 10 | Parts viewer with filter | Search larger lists as you type | Intermediate | Planned |
-| 11 | Ribbon button creator | Add your own tab and buttons to Eplan | Intermediate | Planned |
+| 05 | Ribbon tab, group and buttons | Add your own tab, group and buttons (with icons) that run your scripts | Beginner | Planned |
+| 06 | Remember size and position | Reopen windows where the user left them | Intermediate | Planned |
+| 07 | Themed message window | Messages and questions that fit dark mode | Beginner | Planned |
+| 08 | Settings dialog | Save and restore user preferences | Beginner | Planned |
+| 09 | Page list with search and export | Sort, filter, and export pages to CSV | Intermediate | Planned |
+| 10 | Project property viewer and editor | Browse and edit project data in a grid | Intermediate | Planned |
+| 11 | Parts viewer with filter | Search larger lists as you type | Intermediate | Planned |
 
 More are on the list in [IDEAS.md](IDEAS.md). Request one by opening an issue.
 
