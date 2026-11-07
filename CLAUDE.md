@@ -38,6 +38,14 @@ tools/CompileCheck/       local-only compile check (references the Eplan install
 IDEAS.md                  ideas for future examples
 ```
 
+## Draft status and safety
+
+- A new example is a **Draft** until the maintainer has run it in Eplan. README tables say "Draft", the example README says "DRAFT, not yet run in Eplan", and the compatibility table says "Pending".
+- Never push a Draft to GitHub without the maintainer's explicit OK. Drafts are developed on a local branch (`drafts`).
+- Any example that **changes project data or files** must offer a preview, ask for confirmation, tell the user to try a copy first, and say what it changed (or failed to change) afterwards.
+- Examples that read the data model use reflection (see `docs/reaching-the-data-model.md`) and wrap every read in `try`/`catch`. Check member names against the installed assemblies before using them.
+- Screenshots must show only the dialog or window being demonstrated, never a customer drawing or project.
+
 ## Example conventions
 
 Every `.cs` file begins with this header:

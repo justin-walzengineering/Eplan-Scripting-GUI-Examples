@@ -1,0 +1,48 @@
+# 14 - Selection explorer
+
+**Level:** Intermediate  **File:** [SelectionExplorer.cs](SelectionExplorer.cs)  **Status:** DRAFT, not yet run in Eplan
+
+*Read-only: this example never changes your project.*
+
+## What it does
+
+Writes the properties of **everything you have selected** in Eplan to a text file, then opens it. Each selected object gets a heading and one line per property that has a value: the property **ID**, its **name** and its **value**.
+
+Use it to learn what an object holds, to find the number of a property you want to read or write in a script, or to attach to a question when you ask for help.
+
+## What you will learn
+
+- Reading the **current selection**, and why it comes back empty unless you unlock it
+- Reaching the data model by reflection (see example 09)
+- Building a text report with a `StringBuilder`, with aligned columns
+- Saving with a `SaveFileDialog` and opening the result with its default program
+
+## How to run it
+
+1. Open a project in Eplan. **Select** something first: a page in the page navigator, or a device in the drawing.
+2. Copy `SelectionExplorer.cs` to a folder on your computer.
+3. Go to File > Extras > Interfaces, choose **Run** (under Scripts), and select the file. It works best from a ribbon button or the Quick Access toolbar, so the selection is kept.
+4. Choose where to save the text file.
+
+New to scripts? See [How to run a script](../../docs/running-scripts.md).
+
+## Good to know
+
+- Properties without a value are left out, to keep the report short.
+- A report is limited to 100 objects.
+- If you see "Nothing is selected" even though something is, try running from a ribbon button or the Quick Access toolbar instead of the File menu, so the drawing page keeps focus.
+- This example uses reflection and is **likely to need a small adjustment** after the first run. Please report any error message exactly.
+
+## Compatibility
+
+| Eplan version | Compiles | Run in Eplan |
+|---------------|----------|--------------|
+| 2026.0.3 | Yes | Pending |
+
+The member names used were checked against the installed 2026 assemblies. The reflection helper was tested outside Eplan against stand-in objects.
+
+## Ideas to extend
+
+- Offer a choice of "only properties with a value" and "all properties".
+- Save as CSV instead of text.
+- Add the cross-references of each selected object.
