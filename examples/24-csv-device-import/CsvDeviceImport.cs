@@ -3,7 +3,7 @@
 // Purpose   : Look at a CSV file in a grid, check it for common problems, and only then import it into the device list.
 // You learn : Parsing CSV (quotes and delimiters), DataGridView, detecting a delimiter, validating before a risky step, the devicelist import action
 // Level     : Advanced
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026 (preview checked; import not confirmed with real data))
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 //

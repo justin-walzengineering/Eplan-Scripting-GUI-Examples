@@ -31,7 +31,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 21 | done | Favorites launcher | Searchable personal list of scripts and actions, saved as JSON | Intermediate |
 | 22 | done | Results window | A reusable report window with Copy and Save | Intermediate |
 | 23 | draft | Bulk edit pages by filter | Preview, tick, confirm and apply; reading back after writing | Advanced |
-| 24 | draft | CSV preview and device list import | A CSV parser, a preview grid, checks, then the devicelist import | Advanced |
+| 24 | done | CSV preview and device list import | A CSV parser, a preview grid, checks, then the devicelist import | Advanced |
 | 25 | done | Settings finder (read-only) | Search Eplan's settings by name or description, with current values | Intermediate |
 | 26 | done | Back up first, then run | Backup, then a script or action only if the backup worked | Intermediate |
 
