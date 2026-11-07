@@ -3,7 +3,7 @@
 // Purpose   : A small window to export the current project to PDF with a file name you choose from a pattern, then open the folder.
 // You learn : Running an Eplan action with parameters, file name patterns, sanitizing names, remembering the last choices, confirm before overwriting
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
@@ -51,9 +51,12 @@ public class ExportLauncherDemo
             }
         }
 
+        DateTime started = DateTime.Now.AddSeconds(-2);   // used below to recognise the file this run creates
+
         try
         {
             Directory.CreateDirectory(options.Folder);
+            if (File.Exists(target + ".pdf")) { File.Delete(target + ".pdf"); }   // the user chose Replace above
 
             // Build the action's parameters, as you would type them on Eplan's command line.
             // "export" is the action. TYPE=PDFPROJECTSCHEME exports the whole project to one PDF file.
@@ -75,6 +78,13 @@ public class ExportLauncherDemo
         {
             MessageBox.Show("The export did not finish:\r\n\r\n" + ex.Message, "Export launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return;
+        }
+
+        // In Eplan 2026 the action chooses its own file name (the project name plus the date and time) and ignores the
+        // name we asked for, so we find the file it just made and give it the name from the pattern.
+        if (!File.Exists(target + ".pdf"))
+        {
+            ExportNaming.RenameNewestPdf(options.Folder, started, target + ".pdf");
         }
 
         if (!File.Exists(target + ".pdf"))
@@ -100,6 +110,33 @@ public class ExportLauncherDemo
 // ---------------------------------------------------------------
 public static class ExportNaming
 {
+    // Finds the newest PDF in the folder that was written after "since" and renames it to "newPath".
+    // Does nothing (and does not throw) if there is no such file.
+    public static void RenameNewestPdf(string folder, DateTime since, string newPath)
+    {
+        try
+        {
+            string newest = null;
+            DateTime newestTime = since;
+            foreach (string file in Directory.GetFiles(folder, "*.pdf"))
+            {
+                DateTime written = File.GetLastWriteTime(file);
+                if (written >= newestTime)
+                {
+                    newest = file;
+                    newestTime = written;
+                }
+            }
+            if (newest != null)
+            {
+                File.Move(newest, newPath);
+            }
+        }
+        catch (Exception)
+        {
+        }
+    }
+
     // Replaces {project}, {date} and {time} in the pattern, then removes characters Windows does not allow in a file name.
     public static string Apply(string pattern, string project)
     {

@@ -1,6 +1,8 @@
 # 17 - Export launcher (PDF)
 
-**Level:** Intermediate  **File:** [ExportLauncher.cs](ExportLauncher.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [ExportLauncher.cs](ExportLauncher.cs)  **Status:** Run in Eplan 2026
+
+![The export launcher window](screenshot.png)
 
 ## What it does
 
@@ -41,7 +43,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (whole-project PDF on a copy, renamed to the pattern) |
+
+Checked in Eplan 2026 on a copy of a demo project: the preview showed the project name correctly, the export action wrote one PDF of all 129 pages (about 8 MB, roughly 30 seconds), and the 'file already exists' question appeared with No as the default. Eplan 2026 ignored the file name that was passed to the export action and named the PDF itself (project name, date and time), so the script finds the file the action just made and renames it to the name from your pattern.
 
 The file name pattern and the saved options were tested outside Eplan. The export itself needs a run in Eplan.
 
