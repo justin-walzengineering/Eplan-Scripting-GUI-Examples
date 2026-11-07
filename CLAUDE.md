@@ -76,6 +76,21 @@ Every `.cs` file begins with this header:
 3. Run the script inside Eplan 2026 on a throwaway demo project and confirm it works before marking the example "Tested". Update the compatibility table in the example README.
 4. Do not claim an example is tested if it has only been compile-checked.
 
+### Running examples in Eplan from Claude (how the 2026-11-07 run was done)
+
+Eplan's remote server was not enabled, so Claude drove the running Eplan with PowerShell 5.1 (screenshots, mouse, keys, UI Automation). Lessons:
+
+- **Use a copy of a project** (File > Project > Copy), never the original. Confirm the title bar shows the copy before anything that writes.
+- **Find controls with UI Automation** (`AutomationElement`, by name, then use its bounding rectangle). Coordinates guessed from a scaled screenshot were wrong several times. Wait for the window by name (for example "Script file selection") instead of sleeping. Make the process DPI-aware, or every rectangle is off.
+- **A modal message box blocks all clicks.** After every step list the process's windows, and take a screenshot before clicking.
+- **Type script paths as long paths.** The 8.3 short form of the temp folder did not open in the file dialog.
+- **A script that fails to compile just does not run**, with no window. Test with a marker file the script writes, plus an identical control script that does run.
+- **Selection:** pages selected in a navigator reach a script; objects selected on an open drawing page did not.
+- **Do not type into the drawing editor** (a stray keystroke can open a coordinate dialog). Use the ribbon or File menu.
+- **Screenshots:** crop to the dialog, then look at the image before saving it. Hide navigation panes that show employer names, and anything that shows a project's last editor, e-mail or customer data. Check that no sliver of Eplan's start-up artwork is in the crop.
+- **Keep the PC awake** (a locked or sleeping PC stops the run) and keep each command under about 90 seconds.
+- A local copy of the helper script lives in the ignored `_local` folder (`eplan-ui-test.ps1`).
+
 ## Capturing ideas while working on other scripts
 
 When Justin is working on other Eplan scripting projects and a pattern comes up that would make a good general example, propose adding it to `IDEAS.md` as a short **description only** (what it does, what it teaches, difficulty). Ask first, never add silently, and never copy the source code or any customer data. See rule 3.
