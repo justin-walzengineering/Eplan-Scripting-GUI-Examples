@@ -3,7 +3,7 @@
 // Purpose   : Reopen a window where the user left it, with the same size, and fall back safely if that spot is no longer on a screen.
 // You learn : Saving small settings in the Windows registry, window events, multiple monitors, defensive code
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
@@ -66,6 +66,9 @@ public class RememberWindowDemo
 
             // One line does the remembering. The key names this window so several windows do not mix up.
             WindowMemory.Attach(form, "RememberWindowDemo");
+
+            // Start with the Close button focused, so the text box does not open with all its text highlighted.
+            form.ActiveControl = closeButton;
 
             form.ShowDialog();
         }

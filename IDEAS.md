@@ -13,7 +13,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 03 | done | Place a window well | Open a dialog centered on the Eplan main window, owned by it, hidden from the taskbar, kept on a visible monitor | Intermediate |
 | 04 | done | Light and dark theme | A "Dark mode" check box that restyles a window live (colors, controls, title bar), plus matching Eplan's own color scheme by reading its setting. Checked in Eplan 2026 | Intermediate |
 | 05 | done | Ribbon tab, group and buttons with icons | Create your own ribbon tab, add a group to it, and add buttons that run scripts. Give each button an icon read from an image file kept next to the script, and re-run safely (replace the tab instead of duplicating it) | Beginner |
-| 06 | draft | Remember window size and position | Save to and load from the registry, and open somewhere sensible if a monitor was unplugged | Intermediate |
+| 06 | done | Remember window size and position | Save to and load from the registry, and open somewhere sensible if a monitor was unplugged | Intermediate |
 | 07 | done | Themed message and confirm window | Why a standard message box ignores dark mode, and a themed replacement with OK or Yes/No | Beginner |
 | 08 | draft | Settings dialog that saves preferences | Per-user options that survive a restart, stored as JSON | Beginner |
 | 09 | draft | Page list with search, sort, CSV export | Reflection, sortable ListView, filtering, writing CSV (read-only) | Advanced |
