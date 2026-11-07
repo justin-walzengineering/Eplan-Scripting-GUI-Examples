@@ -2,7 +2,7 @@
 
 A running list of examples that would help the community. Ideas are **descriptions only**: never copied code, customer data, or Eplan-owned material. Every example is written from scratch with generic data.
 
-Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "Example idea" form.
+Status: `idea` > `in progress` > `partly` (run in Eplan, some parts still unchecked) > `done`. Have an idea? Open an Issue using the "Example idea" form.
 
 ## Build order
 
@@ -21,17 +21,17 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 11 | done | Parts viewer with filter box | MasterData parts classes used directly; filtering a large list (read-only) | Intermediate |
 | 12 | done | "Please wait" window on its own thread | Keep a progress indicator moving while Eplan is busy, and close it safely | Advanced |
 | 13 | done | Dark-mode-safe controls | Custom check box, date field, drop-down and progress bar | Intermediate |
-| 14 | done | Selection explorer | Write the properties of the selected objects to a text file (read-only) | Intermediate |
+| 14 | partly | Selection explorer | Write the properties of the selected objects to a text file (read-only) | Intermediate |
 | 15 | done | Hand a value from one script to another | Short-lived value shared between two scripts, with a timestamp | Advanced |
 | 16 | done | Modern folder picker | The Explorer-style "choose a folder" window through COM | Advanced |
 | 17 | done | Export launcher (PDF) | The export action with a file name pattern; opens the folder | Intermediate |
-| 18 | done | Device list export | The devicelist action: CSV, XML or text, opened in Excel | Intermediate |
+| 18 | partly | Device list export | The devicelist action: CSV, XML or text, opened in Excel | Intermediate |
 | 19 | done | Renumber helper | A safe front end for the renumber action | Intermediate |
 | 20 | done | Timestamped backup | The backup action with a date-and-time name and a comment | Intermediate |
 | 21 | done | Favorites launcher | Searchable personal list of scripts and actions, saved as JSON | Intermediate |
 | 22 | done | Results window | A reusable report window with Copy and Save | Intermediate |
 | 23 | done | Bulk edit pages by filter | Preview, tick, confirm and apply; reading back after writing | Advanced |
-| 24 | done | CSV preview and device list import | A CSV parser, a preview grid, checks, then the devicelist import | Advanced |
+| 24 | partly | CSV preview and device list import | A CSV parser, a preview grid, checks, then the devicelist import | Advanced |
 | 25 | done | Settings finder (read-only) | Search Eplan's settings by name or description, with current values | Intermediate |
 | 26 | done | Back up first, then run | Backup, then a script or action only if the backup worked | Intermediate |
 
@@ -39,20 +39,20 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 
 | Status | Page | Notes |
 |--------|------|-------|
-| idea | Pitfalls and fixes | Short table in our own words: selections come back empty unless unlocked, reading an empty property throws, `EventHandler` is ambiguous inside Eplan, clicks below the last item of a list box can throw, don't swap grid cell types at run time. **Verify each item in Eplan 2026 before publishing.** |
-| draft | Reaching the data model (docs/reaching-the-data-model.md) | Written from Eplan's 2026 documentation and the draft examples. Update once the data-model examples have been run in Eplan |
-| idea | What Eplan adds to every script | Which namespaces Eplan adds and which names become ambiguous. Confirm by test, then document |
+| partly | Pitfalls and fixes (docs/troubleshooting.md) | Now covers the data model errors, silent compile failures, export file names and the selection limit. Still to test: empty property reads, list box clicks below the last item, swapping grid cell types |
+| done | Reaching the data model (docs/reaching-the-data-model.md) | Updated with what running examples 09, 10, 14 and 23 in Eplan 2026 showed |
+| done | What Eplan adds to every script (docs/how-eplan-loads-scripts.md) | Tested for `System.Windows.Forms`, `System.IO`, `EventHandler` and the C# version; the rest is listed as still to confirm |
 
 ## Verification to do in Eplan
 
 - Does `Settings.GetNumericSetting("USER.MF.GuiColorScheme", 0)` return 2 for light and 0 for automatic when run as a script? Confirmed in Eplan 2026: **1 = dark, 2 = light, 0 = automatic** (automatic resolved through Windows light mode). Still to confirm: automatic with Windows in dark mode. (Eplan's configuration files describe 0 = automatic, 1 = dark, 2 = light.)
-- Which namespaces does the script compiler add? (The compile-check assumes the application framework, base, GUI and scripting namespaces.)
-- Does the script compiler reference the data model and services assemblies? Eplan's 2026 documentation lists the default assemblies and does **not** include them, so the compile-check assumes **not**. Confirm with a one-line test script.
-- Is the application framework namespace usable directly from a script? Reports conflict, so test it.
-- Which C# language version does the script compiler accept? (The compile-check enforces C# 5.)
+- **Confirmed in Eplan 2026:** `System.Windows.Forms` is added to every script (a `MessageBox` compiled with no `using`); `System.IO` is not; a bare `EventHandler` does not compile when `using System;` is present (use `System.EventHandler`). Still to confirm: whether `System`, Base, Gui and the application framework namespaces are also added (the compile-check assumes they are).
+- **Confirmed in Eplan 2026:** the data model is **not** referenced; a script naming `Eplan.EplApi.DataModel.Project` directly does not compile, and reflection reaches it (examples 09, 10, 14, 23).
+- **Confirmed in Eplan 2026:** the application framework namespace is usable directly (`CommandLineInterpreter`, `ActionCallingContext`), as are `Newtonsoft.Json` and the MasterData parts classes.
+- **Confirmed in Eplan 2026:** C# 5 only. String interpolation, `?.` and `nameof` each stop a script from running; `var`, `out` on a separate declaration and LINQ work.
 - Ribbon example (05): the ribbon API takes icons as **SVG** (text, or a file path in some overloads) or an index of an existing icon, not as PNG files. The example reads an `.svg` file and passes its text. Confirmed in Eplan 2026: the buttons start their scripts (`ExecuteScript` with `ScriptFile`), and the remove script works. `[CallerFilePath]` did **not** give the script folder in Eplan 2026, so the example asks the user to select a file. Still to confirm: how the icons look on a dark and a light ribbon, whether the tab appears immediately or after a restart, what happens when the setup script is run twice.
 
-- **Draft examples 06 to 26** are not yet run in Eplan. Per example, confirm: it runs, the window looks right (light and dark), the main action works, and Cancel/close behave. Special attention: the reflection examples (09, 10, 14, 23: member names, selection, locking, writing and reading back), `$(PROJECTNAME)` in the action examples (17, 18, 20, 26), the action parameter spellings (`export`, `devicelist`, `renumber`, `backup`), parts database loading (11), and whether scripts share one AppDomain (15).
+- **Examples 06 to 26** were run in Eplan 2026 (Update 5) on 2026-11-07, on a copy of a demo project. Still open: 14 (drawing-page selection did not reach the script), 18 and 24 (the demo project had no device list data, so real contents and the import effect are unchecked), column sorting in 09, light-mode and second-monitor checks for 06 and 07, devices/terminals/cables in 19, and the other change types in 23. Findings from the run: the data-model helpers needed `LockSelectionByDefault` set to false and a property lookup that tolerates repeated names; the PDF export action in 2026 chooses its own file name, so example 17 renames the result.
 
 ## Where the newer ideas came from
 
