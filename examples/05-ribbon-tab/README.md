@@ -22,6 +22,12 @@ Tab            "Demo Tools"
     Button         "Show time"
 ```
 
+| Setup finished | "Say hello" button | "Show time" button | Remove script |
+|----------------|--------------------|--------------------|---------------|
+| ![Ribbon created](screenshot-setup.png) | ![Say hello](screenshot-hello.png) | ![Show time](screenshot-time.png) | ![Tab removed](screenshot-remove.png) |
+
+_Screenshots are the message windows from a run in Eplan 2026._
+
 ## What you will learn
 
 - Creating a **tab**, a **group** and **buttons** with `RibbonBar`, `RibbonTab` and `RibbonCommandGroup`
@@ -78,9 +84,9 @@ Ribbon icons are **SVG** pictures. An SVG file is a small text file that describ
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2025.0.3 | Yes | Not tested |
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (setup, both buttons and remove) |
 
-The ribbon members used here are the same in 2025 and 2026. The setup was first run in Eplan 2026, where it could not find its own folder automatically; it now asks you to select `ButtonHello.cs`. Still to confirm in Eplan: that the buttons start their scripts, how the icons look on a dark ribbon, and whether the tab appears immediately or after a restart.
+The ribbon members used here are the same in 2025 and 2026. In Eplan 2026 the setup could not find its own folder automatically, so it asked for `ButtonHello.cs` (the finished message said "found by: you chose it"). After that the tab was created, both buttons started their scripts, and `RibbonRemove.cs` removed the tab. Eplan 2025 has not been tried.
 
 ## Ideas to extend
 

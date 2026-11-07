@@ -3,7 +3,7 @@
 // Purpose   : The script that runs when the "Show time" ribbon button is clicked.
 // You learn : Two different buttons can run two different scripts
 // Level     : Beginner
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (run test pending)
+// Tested in : Compile-checked against Eplan Electric P8 2025.0.3 and 2026.0.3; run in 2026.0.3
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================

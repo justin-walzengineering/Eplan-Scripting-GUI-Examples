@@ -3,7 +3,7 @@
 // Purpose   : Remove the "Demo Tools" tab that RibbonSetup.cs created, so you can undo the example cleanly.
 // You learn : Finding a ribbon tab by name and removing it
 // Level     : Beginner
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (run test pending)
+// Tested in : Compile-checked against Eplan Electric P8 2025.0.3 and 2026.0.3; run in 2026.0.3
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
