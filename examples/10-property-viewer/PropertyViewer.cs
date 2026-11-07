@@ -3,7 +3,7 @@
 // Purpose   : Look at every property of the project or of whatever you have selected, in a table you can search, to learn which properties exist and what they hold.
 // You learn : Reflection on the data model, reading the current selection, the "unlock the selection" step, searching a table, copying results
 // Level     : Advanced
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 //
