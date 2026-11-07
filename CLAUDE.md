@@ -21,7 +21,9 @@ A free, public list of **original** C# script examples for Eplan Electric P8 202
 
 - Eplan 2025 and 2026. Installed at `C:\Program Files\EPLAN\Platform\2025.0.3\Bin` and `...\2026.0.3\Bin`. Every example must compile and work on both, and future versions should keep working.
 - .NET Framework 4.8.1 (both the 2025 and 2026 APIs target it). Scripts are loaded by Eplan as `.cs` files and compiled at load time; there is no compiled DLL to distribute.
-- Eplan compiles scripts with its own compiler. Until verified, write **C# 5 compatible syntax**: no string interpolation (`$""`), no `?.`, no `out var`, no expression-bodied members, no `nameof`, no auto-property initializers. The compile-check enforces this with `LangVersion` 5. Record what was verified in `docs/how-eplan-loads-scripts.md`.
+- Eplan compiles scripts with its own compiler. Until verified, write **C# 5 compatible syntax**: no string interpolation (`$""`), no `?.`, no `out var`, no expression-bodied members, no `nameof`, no auto-property initializers. The compile-check enforces this with `LangVersion` 5.
+- The compile-check also mimics Eplan: it references only the Base, AF and Gui assemblies (**not** DataModel or HEServices, which reports say Eplan's script compiler does not reference), and it prepends the namespaces Eplan is believed to add, so ambiguous names such as `EventHandler` fail locally. These two assumptions are listed under "Verification to do in Eplan" in `IDEAS.md`. If an example needs the data model, reach it with reflection until that is verified, and say so in the example README.
+- Write `System.EventHandler` in full when you need it. Record what was verified in `docs/how-eplan-loads-scripts.md`.
 
 ## Layout
 
