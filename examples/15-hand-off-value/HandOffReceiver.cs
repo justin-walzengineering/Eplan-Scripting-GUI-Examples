@@ -3,7 +3,7 @@
 // Purpose   : Pick up a short-lived value that another script left behind, and ignore it if it is old.
 // You learn : Reading AppDomain data, checking a timestamp, clearing the value after use
 // Level     : Advanced
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
