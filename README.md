@@ -26,7 +26,7 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 01 | [Reusable input dialog](examples/01-input-dialog/) | Ask the user for text, confirm an action, show a message | Beginner | Available |
 | 02 | [Progress bar](examples/02-progress-bar/) | Show progress during a long task, with Cancel | Beginner | Available |
 | 03 | [Window placement](examples/03-window-placement/) | Open dialogs centered on Eplan, on a visible monitor | Intermediate | Available |
-| 04 | Light and dark theme | A "Dark mode" check box that restyles your window, plus matching Eplan's theme automatically | Intermediate | Planned |
+| 04 | [Light and dark theme](examples/04-light-dark-theme/) | A "Dark mode" check box that restyles your window, plus matching Eplan's own color scheme | Intermediate | Available |
 | 05 | Remember size and position | Reopen windows where the user left them | Intermediate | Planned |
 | 06 | Themed message window | Messages and questions that fit dark mode | Beginner | Planned |
 | 07 | Settings dialog | Save and restore user preferences | Beginner | Planned |

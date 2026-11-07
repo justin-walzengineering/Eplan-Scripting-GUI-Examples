@@ -11,7 +11,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 01 | done | Reusable input dialog | Forms, controls, returning values, handling Cancel | Beginner |
 | 02 | done | Progress bar around a long action | Progress API, `try/finally` | Beginner |
 | 03 | done | Place a window well | Open a dialog centered on the Eplan main window, owned by it, hidden from the taskbar, kept on a visible monitor | Intermediate |
-| 04 | idea | Light and dark theme | A "Dark mode" check box that restyles a window live (colors, controls, title bar), then an "Auto" option that detects Eplan's theme. Automatic detection is a heuristic, so test it on 2025 and 2026 | Intermediate |
+| 04 | done | Light and dark theme | A "Dark mode" check box that restyles a window live (colors, controls, title bar), plus matching Eplan's own color scheme by reading its setting. Check inside Eplan 2025 and 2026 | Intermediate |
 | 05 | idea | Remember window size and position | Save to and load from user settings, and open somewhere sensible if a monitor was unplugged | Intermediate |
 | 06 | idea | Themed message and confirm window | Why a standard message box ignores dark mode, and a themed replacement with OK or Yes/No | Beginner |
 | 07 | idea | Settings dialog that saves preferences | Per-user options that survive a restart | Beginner |
@@ -34,6 +34,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 
 ## Verification to do in Eplan
 
+- Does `Settings.GetNumericSetting("USER.MF.GuiColorScheme", 0)` return 1 for dark and 2 for light when run as a script in Eplan 2025 and 2026? (Eplan's configuration files describe 0 = automatic, 1 = dark, 2 = light, and the stored value matches a running dark Eplan 2026.)
 - Which namespaces does the script compiler add? (The compile-check assumes the application framework, base, GUI and scripting namespaces.)
 - Does the script compiler reference the data model and services assemblies? (The compile-check assumes **not**.)
 - Is the application framework namespace usable directly from a script? Reports conflict, so test it.
