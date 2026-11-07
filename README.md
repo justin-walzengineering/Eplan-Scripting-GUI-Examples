@@ -45,7 +45,7 @@ More are on the list in [IDEAS.md](IDEAS.md). Request one by opening an issue.
 
 ## Tested with
 
-Compile-checked against Eplan Electric P8 **2025** (2025.0.3) and **2026** (2026.0.3). Each example's README states whether it has also been run inside Eplan, and on which versions.
+Compile-checked against Eplan Electric P8 **2026** (2026.0.3). Each example's README states whether it has also been run inside Eplan.
 
 ## Using these examples
 

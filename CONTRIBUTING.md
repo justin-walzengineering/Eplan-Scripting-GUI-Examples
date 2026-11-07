@@ -29,7 +29,7 @@ By contributing you agree your work is released under the [MIT license](LICENSE)
 - Use the header format and folder layout described in [CLAUDE.md](CLAUDE.md).
 - Explain the basic C# for beginner examples.
 - Use made-up sample data.
-- Test in Eplan 2025 and 2026 if you can, and say which versions you tested.
+- Test in Eplan 2026 if you can, and say which version you tested.
 - Be kind. Everyone here started somewhere.
 
 The maintainer reviews every pull request and may ask for changes.

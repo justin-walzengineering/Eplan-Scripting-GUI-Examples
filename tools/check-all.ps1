@@ -1,18 +1,15 @@
 <#
   Compile-checks every example against each installed Eplan version.
-  Usage:  pwsh tools/check-all.ps1            (auto-detects installed versions)
-          pwsh tools/check-all.ps1 -Versions 2025.0.3,2026.0.3
+  Usage:  pwsh tools/check-all.ps1            (checks Eplan 2026.0.3)
+          pwsh tools/check-all.ps1 -Versions 2026.0.3
   Local only. Reads the Eplan install by path; copies nothing.
 #>
 param(
-    [string[]]$Versions,
+    [string[]]$Versions = @('2026.0.3'),
     [string]$PlatformRoot = 'C:\Program Files\EPLAN\Platform'
 )
 
 $project = Join-Path $PSScriptRoot 'CompileCheck'
-if (-not $Versions) {
-    $Versions = Get-ChildItem $PlatformRoot -Directory | Where-Object { $_.Name -match '^\d{4}\.' } | Select-Object -ExpandProperty Name
-}
 
 $failed = $false
 foreach ($v in $Versions) {

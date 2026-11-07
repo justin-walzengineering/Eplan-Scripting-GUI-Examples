@@ -44,7 +44,7 @@ Prompt returns the typed text, or null if the user pressed Cancel. Checking for 
 
 - Download the example: https://github.com/justin-walzengineering/Eplan-Scripting-GUI-Examples/tree/main/examples/01-input-dialog
 - In Eplan: File > Extras > Interfaces > Run, then select InputDialog.cs.
-- Tested in: run in Eplan 2026.0.3; compiles for 2025.0.3 and 2026.0.3 (run in 2025 still to be confirmed).
+- Tested in: run in Eplan 2026.0.3.
 
 ## Ideas to extend
 

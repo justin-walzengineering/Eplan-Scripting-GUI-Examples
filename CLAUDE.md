@@ -4,7 +4,7 @@ Guidance for Claude Code (and human contributors) working in this repository.
 
 ## What this repo is
 
-A free, public list of **original** C# script examples for Eplan Electric P8 2025 and 2026, focused on GUI (Windows Forms) tools. Audience: beginners first, growing toward experienced script writers. Maintained by Justin Walz, Walz Engineering. It is a community resource, not self-promotion.
+A free, public list of **original** C# script examples for Eplan Electric P8 2026, focused on GUI (Windows Forms) tools. Audience: beginners first, growing toward experienced script writers. Maintained by Justin Walz, Walz Engineering. It is a community resource, not self-promotion.
 
 ## Hard rules
 
@@ -20,8 +20,8 @@ A free, public list of **original** C# script examples for Eplan Electric P8 202
 
 ## Target
 
-- Eplan 2025 and 2026. Installed at `C:\Program Files\EPLAN\Platform\2025.0.3\Bin` and `...\2026.0.3\Bin`. Every example must compile and work on both, and future versions should keep working.
-- .NET Framework 4.8.1 (both the 2025 and 2026 APIs target it). Scripts are loaded by Eplan as `.cs` files and compiled at load time; there is no compiled DLL to distribute.
+- Eplan 2026. Installed at `C:\Program Files\EPLAN\Platform\2026.0.3\Bin`. Every example must compile and work there, and future versions should keep working. Other versions are not tested and not mentioned.
+- .NET Framework 4.8.1 (the 2026 API targets it). Scripts are loaded by Eplan as `.cs` files and compiled at load time; there is no compiled DLL to distribute.
 - Eplan compiles scripts with its own compiler. Until verified, write **C# 5 compatible syntax**: no string interpolation (`$""`), no `?.`, no `out var`, no expression-bodied members, no `nameof`, no auto-property initializers. The compile-check enforces this with `LangVersion` 5.
 - The compile-check also mimics Eplan: it references only the Base, AF and Gui assemblies (**not** DataModel or HEServices, which reports say Eplan's script compiler does not reference), and it prepends the namespaces Eplan is believed to add, so ambiguous names such as `EventHandler` fail locally. These two assumptions are listed under "Verification to do in Eplan" in `IDEAS.md`. If an example needs the data model, reach it with reflection until that is verified, and say so in the example README.
 - Write `System.EventHandler` in full when you need it.
@@ -48,7 +48,7 @@ Every `.cs` file begins with this header:
 // Purpose   : <one sentence>
 // You learn : <concepts, comma separated>
 // Level     : Beginner | Intermediate | Advanced
-// Tested in : Eplan Electric P8 2025.0.3 and 2026.0.3
+// Tested in : Eplan Electric P8 2026.0.3
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
@@ -63,9 +63,9 @@ Every `.cs` file begins with this header:
 
 ## Testing
 
-1. Compile-check against every installed version: `pwsh tools/check-all.ps1` (or `powershell -File tools/check-all.ps1`). One version only: `dotnet build tools/CompileCheck -p:EplanBin="<path>\Bin"`. Run `dotnet build` from PowerShell, not bash, because of path quoting.
+1. Compile-check against the installed version: `pwsh tools/check-all.ps1` (or `powershell -File tools/check-all.ps1`). One version only: `dotnet build tools/CompileCheck -p:EplanBin="<path>\Bin"`. Run `dotnet build` from PowerShell, not bash, because of path quoting.
 2. Where possible, exercise the logic outside Eplan against the compiled DLL (see how example 01 was checked).
-3. Run the script inside Eplan 2025 and 2026 on a throwaway demo project and confirm it works before marking the example "Tested". Update the compatibility table in the example README.
+3. Run the script inside Eplan 2026 on a throwaway demo project and confirm it works before marking the example "Tested". Update the compatibility table in the example README.
 4. Do not claim an example is tested if it has only been compile-checked.
 
 ## Capturing ideas while working on other scripts

@@ -52,7 +52,6 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2025.0.3 | Yes | Pending |
 | 2026.0.3 | Yes | Yes (progress window, final message and Cancel confirmed) |
 
 The `Progress` members used here are identical in both versions. Pressing Cancel stops the work and shows "Cancelled. Nothing more was processed."
