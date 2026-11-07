@@ -33,7 +33,7 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 08 | [Settings dialog](examples/08-settings-dialog/) | Save and restore user preferences | Beginner | Available |
 | 09 | [Page list](examples/09-page-list/) | Search, sort and export pages to CSV | Advanced | Draft |
 | 10 | [Property viewer](examples/10-property-viewer/) | See every property of the project or your selection | Advanced | Draft |
-| 11 | [Parts viewer](examples/11-parts-viewer/) | Search the parts database as you type | Intermediate | Draft |
+| 11 | [Parts viewer](examples/11-parts-viewer/) | Search the parts database as you type | Intermediate | Available |
 | 12 | [Please-wait window](examples/12-please-wait-window/) | Keep a moving window up while Eplan is busy | Advanced | Available |
 | 13 | [Dark-mode-safe controls](examples/13-dark-safe-controls/) | Date field, drop-down, check box and progress bar for dark mode | Intermediate | Available |
 | 14 | [Selection explorer](examples/14-selection-explorer/) | Write the properties of your selection to a text file | Intermediate | Draft |
