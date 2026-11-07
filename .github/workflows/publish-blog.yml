@@ -14,11 +14,29 @@ on:
         description: "Release the next ready post now (ignore the schedule)"
         type: boolean
         default: false
+      test_email:
+        description: "Only send a test review email (does not publish anything)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write            # needed to record blog/published.json
 
 jobs:
+  test-email:
+    if: github.event_name == 'workflow_dispatch' && inputs.test_email
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Send test email
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          REVIEW_EMAIL: ${{ secrets.REVIEW_EMAIL }}
+        run: python3 blog/tools/send_preview.py --test
+
   review-email:
     # Runs only for the 8 AM schedule. Needs no Wix access.
     if: github.event_name == 'schedule' && github.event.schedule == '5 12,13 * * 2,5'
@@ -40,7 +58,7 @@ jobs:
 
   publish:
     # Runs for the 9 AM schedule and for manual runs.
-    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '5 13,14 * * 2,5'
+    if: (github.event_name == 'workflow_dispatch' && !inputs.test_email) || github.event.schedule == '5 13,14 * * 2,5'
     runs-on: ubuntu-latest
     concurrency: publish-blog
     steps:

@@ -2,6 +2,7 @@
 """Email the review copy of the next blog post.
 
 Usage:  python3 blog/tools/send_preview.py DIR
+        python3 blog/tools/send_preview.py --test    (sends a short test message)
 
 DIR holds subject.txt and body.txt, written by `publish_wix.py --preview DIR`.
 If DIR has no files, nothing is sent.
@@ -24,10 +25,11 @@ from email.message import EmailMessage
 
 def main():
     if len(sys.argv) != 2:
-        sys.exit("usage: send_preview.py DIR")
+        sys.exit("usage: send_preview.py DIR | --test")
+    test = sys.argv[1] == "--test"
     subject_path = os.path.join(sys.argv[1], "subject.txt")
     body_path = os.path.join(sys.argv[1], "body.txt")
-    if not (os.path.exists(subject_path) and os.path.exists(body_path)):
+    if not test and not (os.path.exists(subject_path) and os.path.exists(body_path)):
         print("No preview to send.")
         return 0
 
@@ -39,10 +41,15 @@ def main():
         print("Email settings are not set; skipping the review email.")
         return 0
 
-    with open(subject_path, encoding="utf-8") as f:
-        subject = f.read().strip()
-    with open(body_path, encoding="utf-8") as f:
-        body = f.read()
+    if test:
+        subject = "Blog review email: test"
+        body = ("This is a test of the blog review email. If you can read it, "
+                "the mail settings work. Nothing was published.\n")
+    else:
+        with open(subject_path, encoding="utf-8") as f:
+            subject = f.read().strip()
+        with open(body_path, encoding="utf-8") as f:
+            body = f.read()
 
     msg = EmailMessage()
     msg["Subject"] = subject
