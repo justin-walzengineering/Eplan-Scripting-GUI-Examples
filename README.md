@@ -35,7 +35,7 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 10 | [Property viewer](examples/10-property-viewer/) | See every property of the project or your selection | Advanced | Draft |
 | 11 | [Parts viewer](examples/11-parts-viewer/) | Search the parts database as you type | Intermediate | Draft |
 | 12 | [Please-wait window](examples/12-please-wait-window/) | Keep a moving window up while Eplan is busy | Advanced | Available |
-| 13 | [Dark-mode-safe controls](examples/13-dark-safe-controls/) | Date field, drop-down, check box and progress bar for dark mode | Intermediate | Draft |
+| 13 | [Dark-mode-safe controls](examples/13-dark-safe-controls/) | Date field, drop-down, check box and progress bar for dark mode | Intermediate | Available |
 | 14 | [Selection explorer](examples/14-selection-explorer/) | Write the properties of your selection to a text file | Intermediate | Draft |
 | 15 | [Hand a value between scripts](examples/15-hand-off-value/) | Pass a short-lived value from one script to another | Advanced | Draft |
 | 16 | [Modern folder picker](examples/16-modern-folder-picker/) | The Explorer-style "choose a folder" window | Advanced | Draft |

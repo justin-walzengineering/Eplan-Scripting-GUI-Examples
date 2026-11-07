@@ -1,6 +1,9 @@
 # 13 - Dark-mode-safe controls
 
-**Level:** Intermediate  **File:** [DarkSafeControls.cs](DarkSafeControls.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [DarkSafeControls.cs](DarkSafeControls.cs)  **Status:** Run in Eplan 2026
+
+![The controls in dark mode](screenshot-dark.png)
+![The same controls in light mode](screenshot-light.png)
 
 ## What it does
 
@@ -43,7 +46,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (dark and light) |
+
+Checked in Eplan 2026 with Eplan in dark mode: the date field, calendar button, drop-down list (its open list is dark too), check box and progress bar all follow the colors, and the Dark mode check box switches them live. Two small things to know: the calendar that pops open from the date field is drawn by Windows and stays light, and in light mode the little arrow box of the drop-down stays dark.
 
 ## Ideas to extend
 
