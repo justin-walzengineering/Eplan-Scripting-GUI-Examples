@@ -1,8 +1,10 @@
 # 09 - Page list with search, sort and CSV export
 
-**Level:** Advanced  **File:** [PageList.cs](PageList.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Advanced  **File:** [PageList.cs](PageList.cs)  **Status:** Run in Eplan 2026
 
 *Read-only: this example never changes your project.*
+
+![The page list, filtered to cable overview pages](screenshot.png)
 
 ## What it does
 
@@ -38,7 +40,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (129 pages listed, search, CSV saved) |
+
+Checked in Eplan 2026 on a copy of a demo project: all 129 pages were listed with name, description and page type, searching narrowed the list, and Save as CSV wrote the shown rows to a file. Not yet exercised in Eplan: clicking column headings to sort. The first run failed twice and was fixed: Eplan failed to lock the project until the selection service's LockSelectionByDefault was set to false, and reading the page description by name hit an 'ambiguous match' because Eplan declares that property more than once, so the helper now scans the property list itself. The CSV uses semicolons between columns.
 
 The member names used (`Project.Pages`, `Page.Name`, `Page.PageTypeName`, `PAGE_NOMINATIOMN`) were checked against the installed 2026 assemblies. The reflection helper was tested outside Eplan against stand-in objects.
 

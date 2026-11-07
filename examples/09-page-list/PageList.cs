@@ -3,7 +3,7 @@
 // Purpose   : Show every page of the open project in a table you can search, sort and save as a CSV file.
 // You learn : Reaching Eplan's data model by reflection, ListView with sortable columns, filtering as you type, writing a CSV file
 // Level     : Advanced
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 //
@@ -40,7 +40,9 @@ public class PageListDemo
         }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message, "Page list", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Exception real = ex;
+            while (real is TargetInvocationException && real.InnerException != null) { real = real.InnerException; }   // show the real reason, not the reflection wrapper
+            MessageBox.Show(real.Message, "Page list", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
         finally
@@ -286,6 +288,12 @@ public static class PgDm
             throw new InvalidOperationException("Eplan's selection service was not found.");
         }
         object selection = Activator.CreateInstance(selectionType);
+        // Without this, Eplan tries to lock the project and fails with "Failed to generate an object of the LockingStep class".
+        PropertyInfo unlock = selectionType.GetProperty("LockSelectionByDefault");
+        if (unlock != null && unlock.CanWrite)
+        {
+            unlock.SetValue(selection, false, null);
+        }
         object project = selectionType.GetMethod("GetCurrentProject").Invoke(selection, new object[] { false });
         if (project == null)
         {
@@ -294,16 +302,17 @@ public static class PgDm
         return project;
     }
 
-    // Reads a public property by name. We walk up through the base classes one level at a time, because a plain
-    // GetProperty can fail with "ambiguous match" when a class re-declares a property of its parent class.
+    // Reads a public property by name. We walk up through the base classes one level at a time, and we go through the list of properties ourselves, because asking for one by name can fail with "ambiguous match" when a class declares the same name more than once (Eplan does this for its page properties).
     public static object Get(object obj, string name)
     {
         for (Type t = obj.GetType(); t != null; t = t.BaseType)
         {
-            PropertyInfo property = t.GetProperty(name, BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-            if (property != null && property.CanRead && property.GetIndexParameters().Length == 0)
+            foreach (PropertyInfo property in t.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
             {
-                return property.GetValue(obj, null);
+                if (property.Name == name && property.CanRead && property.GetIndexParameters().Length == 0)
+                {
+                    return property.GetValue(obj, null);
+                }
             }
         }
         throw new MissingMemberException(obj.GetType().Name, name);

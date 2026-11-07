@@ -16,7 +16,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 06 | done | Remember window size and position | Save to and load from the registry, and open somewhere sensible if a monitor was unplugged | Intermediate |
 | 07 | done | Themed message and confirm window | Why a standard message box ignores dark mode, and a themed replacement with OK or Yes/No | Beginner |
 | 08 | done | Settings dialog that saves preferences | Per-user options that survive a restart, stored as JSON | Beginner |
-| 09 | draft | Page list with search, sort, CSV export | Reflection, sortable ListView, filtering, writing CSV (read-only) | Advanced |
+| 09 | done | Page list with search, sort, CSV export | Reflection, sortable ListView, filtering, writing CSV (read-only) | Advanced |
 | 10 | draft | Property viewer | Every property of the project or selection, searchable (read-only) | Advanced |
 | 11 | done | Parts viewer with filter box | MasterData parts classes used directly; filtering a large list (read-only) | Intermediate |
 | 12 | done | "Please wait" window on its own thread | Keep a progress indicator moving while Eplan is busy, and close it safely | Advanced |
