@@ -10,20 +10,21 @@ This guide takes you from "I have Eplan" to "I ran my first script". No programm
 
 ## What is an Eplan script?
 
-A script is a plain text file ending in `.cs` (C# source code). You don't build or install anything. You tell Eplan to **load** the file, and Eplan compiles it on the spot and makes it available to run. See [How Eplan loads scripts](how-eplan-loads-scripts.md) for the details.
+A script is a plain text file ending in `.cs` (C# source code). You don't build or install anything. You tell Eplan to **run** the file, and Eplan compiles it on the spot and executes it. See [How Eplan loads scripts](how-eplan-loads-scripts.md) for the details.
 
 ## Run your first script
 
 1. Download or copy an example `.cs` file from the [examples](../examples/) folder to a folder on your computer, for example `C:\EplanScripts\`.
 2. Open Eplan and open your demo project.
-3. Find the scripting commands in the Eplan menus (look for **Utilities > Scripts**; names can differ slightly between versions and layouts).
-4. Choose **Load**, and pick the `.cs` file.
-5. If it has a start method, choose **Run** (or use the button the script adds).
-6. If Eplan reports an error, read the message. It usually names the line that has the problem. See [Troubleshooting](troubleshooting.md).
+3. Choose **File > Extras > Interfaces**. Under **Scripts**, choose **Run**, then pick the `.cs` file. (Step-by-step, with screenshots: [How to run a script](running-scripts.md).)
+4. If the script adds a button or window, use it.
+5. If Eplan reports an error, read the message. It usually names the line that has the problem. See [Troubleshooting](troubleshooting.md).
+
+Tip: add **Run script** to your Quick Access toolbar so it is one click away. [How to run a script](running-scripts.md) shows how.
 
 ## Edit and re-run
 
-Change the file in your editor, save it, and load it again in Eplan. There is no build step.
+Change the file in your editor, save it, and run it again in Eplan. There is no build step.
 
 ## Set up Visual Studio for IntelliSense (optional)
 
@@ -34,7 +35,7 @@ Eplan doesn't need Visual Studio, but a project that points at the Eplan assembl
 3. Add `System.Windows.Forms` and `System.Drawing` references.
 4. Add the example `.cs` file to the project.
 
-This project is only for your editor. You still load the plain `.cs` file in Eplan. Never share or commit the Eplan DLLs.
+This project is only for your editor. You still run the plain `.cs` file in Eplan. Never share or commit the Eplan DLLs.
 
 ## Next steps
 
