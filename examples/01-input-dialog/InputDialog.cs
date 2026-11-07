@@ -3,7 +3,7 @@
 // Purpose   : Ask the user for text, confirm an action, and show a message, using small helpers you can reuse.
 // You learn : Windows Forms basics, returning a value from a window, handling Cancel and empty input
 // Level     : Beginner
-// Tested in : Compile-checked against Eplan Electric P8 2025.0.3 and 2026.0.3 (run test pending)
+// Tested in : Compile-checked against Eplan Electric P8 2025.0.3 and 2026.0.3 (run in 2026; 2025 run pending)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================

@@ -37,9 +37,9 @@ See [Getting started](../../docs/getting-started.md) if this is your first scrip
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2025.0.3 | Yes | Pending |
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes |
 
-The dialog logic (OK, Cancel, default text) was also exercised outside Eplan against the compiled script. The table is updated once it has been run inside Eplan.
+The dialog logic (OK, Cancel, default text) was also exercised outside Eplan against the compiled script. It has been run in Eplan 2026; 2025 is still to be confirmed.
 
 ## Ideas to extend
 
