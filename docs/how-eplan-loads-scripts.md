@@ -9,9 +9,11 @@
 - The 2026 API assemblies target **.NET Framework 4.8.1** (verified from the installs).
 - A script marks the method Eplan should run with the `[Start]` attribute. Other attributes let scripts register actions, menu items, or event handlers. The examples introduce each one when needed. _Exact attribute usage per example will be confirmed during testing._
 
-## What the script compiler references (to verify)
+## What a script can reference
 
-Community reports say Eplan's script compiler does **not** reference the data model and services assemblies, so a script that names those types directly fails to compile (error CS0234). Scripts that need them reach the types by reflection. It is also reported that Eplan adds some of its own namespaces to every script, which can make a short name such as `EventHandler` ambiguous (error CS0104). Write `System.EventHandler` in full to avoid it. These are not yet confirmed for 2026 in this repo; the local compile-check is set up to follow them so the examples stay safe either way.
+Eplan's 2026 documentation lists what scripts can use without extra references: `System`, `System.Drawing`, `System.Windows.Forms`, `System.Net.Http`, `System.IO.Compression.FileSystem`, `System.Xml.Linq`, `System.Xml`, `System.Core` and **Newtonsoft.Json**, plus the Eplan **Base**, **ApplicationFramework**, **Gui** and **MasterData** assemblies. The data model and services assemblies are not on the list, and extra references cannot be added from a script. Scripts that need the data model reach it by reflection: see [Reaching Eplan's data model](reaching-the-data-model.md).
+
+It is also reported that Eplan adds some of its own namespaces to every script, which can make a short name such as `EventHandler` ambiguous (error CS0104). Write `System.EventHandler` in full to avoid it. The local compile-check follows both rules, so the examples stay safe either way. The extra namespaces are still _to verify_ in Eplan.
 
 ## Compiler and language version
 
