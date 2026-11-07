@@ -6,6 +6,9 @@ This is an unofficial community resource; keep posts educational and original
 
 ## Writing a post
 
+Copy [TEMPLATE.md](TEMPLATE.md). Use `type: update` plus a "What's new" section when a script you already covered has changed.
+
+
 Add `blog/posts/NN-short-name.md` (the number sets the order):
 
 ```
