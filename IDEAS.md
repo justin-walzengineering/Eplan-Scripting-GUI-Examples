@@ -12,7 +12,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 02 | done | Progress bar around a long action | Progress API, `try/finally` | Beginner |
 | 03 | done | Place a window well | Open a dialog centered on the Eplan main window, owned by it, hidden from the taskbar, kept on a visible monitor | Intermediate |
 | 04 | done | Light and dark theme | A "Dark mode" check box that restyles a window live (colors, controls, title bar), plus matching Eplan's own color scheme by reading its setting. Check inside Eplan 2025 and 2026 | Intermediate |
-| 05 | idea | Ribbon tab, group and buttons with icons | Create your own ribbon tab, add a group to it, and add buttons that run scripts. Give each button an icon read from an image file kept next to the script, and re-run safely (replace the tab instead of duplicating it) | Beginner |
+| 05 | done | Ribbon tab, group and buttons with icons | Create your own ribbon tab, add a group to it, and add buttons that run scripts. Give each button an icon read from an image file kept next to the script, and re-run safely (replace the tab instead of duplicating it) | Beginner |
 | 06 | idea | Remember window size and position | Save to and load from user settings, and open somewhere sensible if a monitor was unplugged | Intermediate |
 | 07 | idea | Themed message and confirm window | Why a standard message box ignores dark mode, and a themed replacement with OK or Yes/No | Beginner |
 | 08 | idea | Settings dialog that saves preferences | Per-user options that survive a restart | Beginner |
@@ -39,7 +39,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 - Does the script compiler reference the data model and services assemblies? (The compile-check assumes **not**.)
 - Is the application framework namespace usable directly from a script? Reports conflict, so test it.
 - Which C# language version does the script compiler accept? (The compile-check enforces C# 5.)
-- Ribbon example (05): the ribbon API takes icons as **SVG text** (or an index of an existing icon), not as PNG files, in both 2025 and 2026. Confirm what image formats work, and decide how the example presents "image files" (reading an `.svg` file and passing its text is the likely route). Also confirm: how a button starts a script, whether new tabs show immediately or after a restart, and what happens when the setup script is run twice.
+- Ribbon example (05): the ribbon API takes icons as **SVG** (text, or a file path in some overloads) or an index of an existing icon, not as PNG files. The example reads an `.svg` file and passes its text. Confirm in Eplan: the buttons start their scripts (`ExecuteScript` with `ScriptFile`), the icons look right on a dark and a light ribbon, whether the tab appears immediately or after a restart, that `[CallerFilePath]` returns the real script folder, and what happens when the setup script is run twice.
 
 ## Suggested while working on other projects
 
