@@ -26,7 +26,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 16 | done | Modern folder picker | The Explorer-style "choose a folder" window through COM | Advanced |
 | 17 | done | Export launcher (PDF) | The export action with a file name pattern; opens the folder | Intermediate |
 | 18 | done | Device list export | The devicelist action: CSV, XML or text, opened in Excel | Intermediate |
-| 19 | draft | Renumber helper | A safe front end for the renumber action | Intermediate |
+| 19 | done | Renumber helper | A safe front end for the renumber action | Intermediate |
 | 20 | done | Timestamped backup | The backup action with a date-and-time name and a comment | Intermediate |
 | 21 | done | Favorites launcher | Searchable personal list of scripts and actions, saved as JSON | Intermediate |
 | 22 | done | Results window | A reusable report window with Copy and Save | Intermediate |
