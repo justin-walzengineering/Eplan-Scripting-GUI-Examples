@@ -2,8 +2,11 @@ name: Publish scheduled blog posts
 
 on:
   schedule:
-    # Cron is UTC only. Run at 13:05 and 14:05 UTC on Tue and Fri; the script
-    # releases a post only when it is 9 AM in BLOG_TZ, so daylight saving is handled.
+    # Cron is UTC only. Each time is listed for two UTC hours so daylight saving
+    # is handled: the script acts only when the local hour in BLOG_TZ matches.
+    # Review email: 8 AM local on Tuesday and Friday (one hour before release).
+    - cron: "5 12,13 * * 2,5"
+    # Release: 9 AM local on Tuesday and Friday.
     - cron: "5 13,14 * * 2,5"
   workflow_dispatch:
     inputs:
@@ -15,11 +18,31 @@ on:
 permissions:
   contents: write            # needed to record blog/published.json
 
-concurrency: publish-blog
-
 jobs:
-  publish:
+  review-email:
+    # Runs only for the 8 AM schedule. Needs no Wix access.
+    if: github.event_name == 'schedule' && github.event.schedule == '5 12,13 * * 2,5'
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare review email
+        env:
+          BLOG_TZ: ${{ vars.BLOG_TZ || 'America/New_York' }}
+        run: python3 blog/tools/publish_wix.py --preview "$RUNNER_TEMP/preview"
+      - name: Send review email
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          REVIEW_EMAIL: ${{ secrets.REVIEW_EMAIL }}
+        run: python3 blog/tools/send_preview.py "$RUNNER_TEMP/preview"
+
+  publish:
+    # Runs for the 9 AM schedule and for manual runs.
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '5 13,14 * * 2,5'
+    runs-on: ubuntu-latest
+    concurrency: publish-blog
     steps:
       - uses: actions/checkout@v4
       - name: Publish due posts to Wix

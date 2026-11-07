@@ -34,9 +34,20 @@ Body in Markdown.
 ## Post types and the weekly rhythm
 
 - `type: new` and `type: update` posts are script posts. They can go out in either slot (Tuesday or Friday).
-- `type: highlight` posts are community highlights. They **only go out on Friday slots**
-  (a manual "force" run ignores this). When there is no new script ready, the Friday slot can carry a
-  highlight, so the blog keeps a steady rhythm.
+- `type: highlight` posts are community highlights. A highlight goes out **only on a Friday, and only when
+  no script post is ready**. If a new or update post is waiting, it goes first (in either slot) and the
+  highlight waits. A manual "force" run ignores the Friday check.
+
+## Review email (one hour before release)
+
+At 8 AM (blog time zone) on Tuesday and Friday, the workflow emails the next post to the reviewer so it can
+be checked and edited before the 9 AM release. The email has the full text, a link to edit the file on GitHub,
+and how to hold it back (change `status: ready` to `status: draft`). Edits must be committed to `main` before 9 AM.
+If no post is due, no email is sent.
+
+Add these repository **secrets** (Settings > Secrets and variables > Actions): `SMTP_HOST`, `SMTP_PORT`
+(optional, default 587), `SMTP_USER`, `SMTP_PASSWORD`, `REVIEW_EMAIL`. Without them the email is skipped and
+publishing is unaffected. The reviewer's address is kept in a secret, not in the public repo.
 - Every post ends with a **Community spotlight** section (see the template). In a highlight post it is the main content.
 
 ## Community spotlight rules

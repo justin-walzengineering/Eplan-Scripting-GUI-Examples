@@ -1,6 +1,6 @@
 ---
 title: <Plain, specific title>
-type: new            # new | update | highlight (highlight posts go out on Fridays only; use the Community spotlight section as the main content)
+type: new            # new | update | highlight (only on a Friday, and only when no script post is ready; use the Community spotlight section as the main content)
 example: examples/NN-name
 status: draft        # draft | ready
 excerpt: <one sentence>

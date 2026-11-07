@@ -12,8 +12,10 @@ Each post in blog/posts/*.md starts with a small front-matter block:
 Posts are released ONE AT A TIME, in file-name order, on a fixed weekly
 schedule (Tuesday and Friday, 09:xx in BLOG_TZ). On each scheduled slot the
 first "ready" post not yet listed in blog/published.json is sent. Name files
-01-..., 02-... to set the order. Posts with "type: highlight" are released on
-Friday slots only (a --force run ignores this).
+01-..., 02-... to set the order. Posts with "type: highlight" are released only
+on a Friday, and only when no script post is ready (a --force run ignores the
+Friday check). With --preview DIR the script writes the review email text for
+the next post instead of sending it to Wix.
 
 Environment variables:
     WIX_API_KEY    API key with Blog permissions       (required)
@@ -199,11 +201,57 @@ def send_to_wix(post, mode, env):
 
 # ---------- main ----------
 
+def pick_due(state, local, force):
+    """The one post for this slot, or [].
+
+    Script posts (new / update) come first and can use either slot. A community
+    highlight is used only when NO script post is ready, and only on a Friday
+    slot (a manual --force run ignores the Friday check).
+    """
+    scripts, highlights = [], []
+    for name in sorted(os.listdir(POSTS_DIR)):
+        if not name.endswith(".md"):
+            continue
+        post = parse_post(os.path.join(POSTS_DIR, name))
+        post["file"] = name
+        if post.get("status") != "ready" or post["id"] in state:
+            continue
+        (highlights if post.get("type") == "highlight" else scripts).append(post)
+    if scripts:
+        return scripts[:1]
+    if highlights and (force or local.weekday() == 4):
+        return highlights[:1]
+    return []
+
+
+def write_preview(post, out_dir, when_text):
+    """Write subject.txt and body.txt for the review email."""
+    repo = os.environ.get("GITHUB_REPOSITORY", "justin-walzengineering/Eplan-Scripting-GUI-Examples")
+    server = os.environ.get("GITHUB_SERVER_URL", "https://github.com")
+    edit_url = "%s/%s/edit/main/blog/posts/%s" % (server, repo, post["file"])
+    os.makedirs(out_dir, exist_ok=True)
+    with open(os.path.join(out_dir, "subject.txt"), "w", encoding="utf-8") as f:
+        f.write("Review: \"%s\" goes live %s" % (post["title"], when_text))
+    body = (
+        "This post is scheduled to go live %s.\n\n"
+        "To change it: edit the file on GitHub before then (commit to main):\n%s\n\n"
+        "To hold it back: change 'status: ready' to 'status: draft' in the same file.\n"
+        "Images and the final look are added/checked in Wix after it is sent.\n\n"
+        "------------------------------------------------------------\n"
+        "Title: %s\nType: %s\n\n%s\n"
+    ) % (when_text, edit_url, post["title"], post.get("type", "new"), post["body"])
+    with open(os.path.join(out_dir, "body.txt"), "w", encoding="utf-8") as f:
+        f.write(body)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--force", action="store_true",
-                    help="ignore the Tuesday/Friday 9 AM check (manual runs)")
+                    help="ignore the Tuesday/Friday time check (manual runs)")
+    ap.add_argument("--preview", metavar="DIR",
+                    help="at 8 AM on a slot day, write the review email for the "
+                         "next post into DIR instead of sending it to Wix")
     args = ap.parse_args()
 
     state = {}
@@ -215,27 +263,21 @@ def main():
     tz = zoneinfo.ZoneInfo(os.environ.get("BLOG_TZ", "America/New_York"))
     local = now.astimezone(tz)
     # weekday(): Monday=0, Tuesday=1, Friday=4
-    if not args.force and not (local.weekday() in (1, 4) and local.hour == 9):
-        print("Not a release slot (%s). Nothing to do." % local.strftime("%a %H:%M"))
+    slot_hour = 8 if args.preview else 9
+    if not args.force and not (local.weekday() in (1, 4) and local.hour == slot_hour):
+        print("Not a %s slot (%s). Nothing to do."
+              % ("preview" if args.preview else "release", local.strftime("%a %H:%M")))
         return 0
 
-    due = []
-    for name in sorted(os.listdir(POSTS_DIR)):
-        if not name.endswith(".md"):
-            continue
-        post = parse_post(os.path.join(POSTS_DIR, name))
-        if post.get("status") != "ready" or post["id"] in state:
-            continue
-        # Community highlight posts go out on Friday slots only (script posts
-        # can use either slot). A manual --force run ignores this.
-        if (post.get("type") == "highlight" and not args.force
-                and local.weekday() != 4):
-            continue
-        due.append(post)
-    due = due[:1]  # one post per slot (file-name order)
+    due = pick_due(state, local, args.force)
 
     if not due:
         print("No ready posts in the queue.")
+        return 0
+
+    if args.preview:
+        write_preview(due[0], args.preview, "today at 9:00 AM (%s)" % tz.key)
+        print("Preview written for: %s" % due[0]["title"])
         return 0
 
     mode = os.environ.get("WIX_MODE", "draft")
