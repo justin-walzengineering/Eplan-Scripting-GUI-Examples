@@ -1,8 +1,10 @@
 # 19 - Renumber helper
 
-**Level:** Intermediate  **File:** [RenumberHelper.cs](RenumberHelper.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [RenumberHelper.cs](RenumberHelper.cs)  **Status:** Run in Eplan 2026
 
 > **This changes your project.** Try it on a copy first.
+
+![The renumber helper filled in](screenshot.png)
 
 ## What it does
 
@@ -39,7 +41,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (renumbered three selected pages on a copy) |
+
+Checked in Eplan 2026 on a copy of a demo project: the button stayed disabled until the 'working on a copy' box was ticked, the confirmation described exactly what would happen (pages, only the selected ones, start 100, step 10), and after Yes the three selected pages were renumbered /100, /110 and /120 while the other pages kept their numbers. Only the Pages type with 'only the objects I have selected' was tried; devices, terminals, cables and connections have not been run.
 
 ## Ideas to extend
 

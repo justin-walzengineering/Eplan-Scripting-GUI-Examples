@@ -3,7 +3,7 @@
 // Purpose   : A friendly window in front of Eplan's renumber action: choose what to renumber, set the start and step, and confirm before it runs.
 // You learn : Running the renumber action, enabling a button only when a safety box is ticked, enabling options by choice, confirming a change
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 //
