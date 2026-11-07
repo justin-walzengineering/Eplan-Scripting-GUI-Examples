@@ -29,7 +29,7 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 04 | [Light and dark theme](examples/04-light-dark-theme/) | A "Dark mode" check box that restyles your window, plus matching Eplan's own color scheme | Intermediate | Available |
 | 05 | [Ribbon tab, group and buttons](examples/05-ribbon-tab/) | Add your own tab, group and buttons (with icons) that run your scripts | Beginner | Available |
 | 06 | [Remember size and position](examples/06-remember-window/) | Reopen windows where the user left them | Intermediate | Draft |
-| 07 | [Themed message window](examples/07-themed-message/) | Messages and questions that fit dark mode | Beginner | Draft |
+| 07 | [Themed message window](examples/07-themed-message/) | Messages and questions that fit dark mode | Beginner | Available |
 | 08 | [Settings dialog](examples/08-settings-dialog/) | Save and restore user preferences | Beginner | Draft |
 | 09 | [Page list](examples/09-page-list/) | Search, sort and export pages to CSV | Advanced | Draft |
 | 10 | [Property viewer](examples/10-property-viewer/) | See every property of the project or your selection | Advanced | Draft |

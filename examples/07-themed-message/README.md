@@ -1,6 +1,9 @@
 # 07 - Themed message and confirm window
 
-**Level:** Beginner  **File:** [ThemedMessage.cs](ThemedMessage.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Beginner  **File:** [ThemedMessage.cs](ThemedMessage.cs)  **Status:** Run in Eplan 2026 (dark scheme)
+
+![A themed message in a dark Eplan](screenshot-message.png)
+![A themed Yes/No question](screenshot-question.png)
 
 ## What it does
 
@@ -39,7 +42,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (dark scheme: message, Yes/No question, Esc as No, answer window) |
+
+Not yet tried: Eplan set to light or automatic. The color technique is the same as in example 04, which was confirmed in all three schemes.
 
 ## Ideas to extend
 
