@@ -1,6 +1,8 @@
 # 26 - Back up first, then run
 
-**Level:** Intermediate  **File:** [BackupThenRun.cs](BackupThenRun.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [BackupThenRun.cs](BackupThenRun.cs)  **Status:** Run in Eplan 2026
+
+![Back up first, then run](screenshot.png)
 
 ## What it does
 
@@ -35,7 +37,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (backup then run, and nothing runs if the backup fails) |
+
+Checked in Eplan 2026 on a copy of a demo project: with a valid folder the script made a backup first (named with 'before_run' and the date and time) and then started the chosen script; with a folder that does not exist the backup failed, the window said so, and the chosen script was not started. Leaving the target empty was refused with a short message.
 
 ## Ideas to extend
 

@@ -3,7 +3,7 @@
 // Purpose   : Make a timestamped backup of the project, and only if that worked, run a script or Eplan action you choose.
 // You learn : Chaining two actions safely, stopping when the first fails, choosing a script or an action, doing risky work only after a safety step
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
