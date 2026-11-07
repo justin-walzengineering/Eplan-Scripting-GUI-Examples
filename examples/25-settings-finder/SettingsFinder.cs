@@ -3,7 +3,7 @@
 // Purpose   : Search Eplan's settings by name or description, and see each one's default and current value, to answer "which setting controls this?".
 // You learn : Reading XML with XmlReader, building a searchable list, ListView, the Settings class, why read-only tools are safe to try
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================

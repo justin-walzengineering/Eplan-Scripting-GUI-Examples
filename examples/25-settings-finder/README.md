@@ -1,6 +1,8 @@
 # 25 - Settings finder (read-only)
 
-**Level:** Intermediate  **File:** [SettingsFinder.cs](SettingsFinder.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [SettingsFinder.cs](SettingsFinder.cs)  **Status:** Run in Eplan 2026
+
+![Finding one setting and its current value](screenshot.png)
 
 ## What it does
 
@@ -37,7 +39,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (search, current value, Copy path) |
+
+Checked in Eplan 2026 with Eplan in dark mode: the window loaded Eplan's settings, searching for GuiColorScheme found USER.MF.GuiColorScheme, its current value (1, which is dark) matched Eplan's scheme, and Copy path put the setting path on the clipboard.
 
 The file reading and search logic was tested outside Eplan against the installed `Cfg` folder.
 
