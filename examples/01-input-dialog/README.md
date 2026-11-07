@@ -26,7 +26,7 @@ The script also contains a small `DialogHelper` class with three reusable helper
 ## How to load it
 
 1. Copy `InputDialog.cs` to a folder on your computer.
-2. In Eplan 2025 or 2026, open a throwaway project.
+2. In Eplan 2026, open a throwaway project.
 3. In Eplan, go to File > Extras > Interfaces, choose **Run** (under Scripts), and select the file.
 4. Type a name, press Enter, and answer the confirmation.
 
@@ -36,10 +36,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2025.0.3 | Yes | Pending |
 | 2026.0.3 | Yes | Yes |
 
-The dialog logic (OK, Cancel, default text) was also exercised outside Eplan against the compiled script. It has been run in Eplan 2026; 2025 is still to be confirmed.
+The dialog logic (OK, Cancel, default text) was also exercised outside Eplan against the compiled script. It has also been run in Eplan 2026.
 
 ## Ideas to extend
 

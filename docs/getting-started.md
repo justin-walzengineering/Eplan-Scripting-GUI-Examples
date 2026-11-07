@@ -4,7 +4,7 @@ This guide takes you from "I have Eplan" to "I ran my first script". No programm
 
 ## What you need
 
-- Eplan Electric P8 2025 or 2026 installed.
+- Eplan Electric P8 2026 installed.
 - A text editor. Any will do, but **Visual Studio Community** (free) or **Visual Studio Code** gives you color, hints, and error underlines, which helps a lot while learning.
 - A throwaway demo project in Eplan. Practice on a copy, never on live customer data.
 
@@ -35,7 +35,7 @@ Eplan doesn't need Visual Studio, but a project that points at the Eplan assembl
 3. Add `System.Windows.Forms` and `System.Drawing` references.
 4. Add the example `.cs` file to the project.
 
-This project is only for your editor. You still run the plain `.cs` file in Eplan. Never share or commit the Eplan DLLs.
+This project is only for your editor. You still run the plain `.cs` file in Eplan. (Eplan's script compiler itself does not reference the data model assembly. See [Reaching Eplan's data model](reaching-the-data-model.md).) Never share or commit the Eplan DLLs.
 
 ## Next steps
 
