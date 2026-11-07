@@ -15,6 +15,10 @@ The user can press **Cancel** at any time. When the progress window closes, a me
 
 ![Message shown when all items were processed](screenshot-done.png)
 
+If the user presses Cancel, the work stops and this message appears instead:
+
+![Message shown after pressing Cancel](screenshot-cancelled.png)
+
 Notice that Eplan draws its own progress window in the current theme (dark here), while a standard message box stays light. Making your own windows match is the subject of the theme examples later in this collection.
 
 The work in the example is only a short pause per item. Replace the `Thread.Sleep(150)` line with your real work.
