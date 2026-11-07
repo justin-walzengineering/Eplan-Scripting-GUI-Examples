@@ -1,6 +1,8 @@
 # 22 - Results window
 
-**Level:** Intermediate  **File:** [ResultsWindow.cs](ResultsWindow.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [ResultsWindow.cs](ResultsWindow.cs)  **Status:** Run in Eplan 2026
+
+![The results window](screenshot.png)
 
 ## What it does
 
@@ -42,7 +44,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (summary, list, Copy, Save, Close) |
+
+Checked in Eplan 2026: the summary line and the twelve result lines appeared, Copy put the whole report on the clipboard, and Save... wrote it to a text file.
 
 ## Ideas to extend
 

@@ -29,7 +29,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 19 | draft | Renumber helper | A safe front end for the renumber action | Intermediate |
 | 20 | draft | Timestamped backup | The backup action with a date-and-time name and a comment | Intermediate |
 | 21 | draft | Favorites launcher | Searchable personal list of scripts and actions, saved as JSON | Intermediate |
-| 22 | draft | Results window | A reusable report window with Copy and Save | Intermediate |
+| 22 | done | Results window | A reusable report window with Copy and Save | Intermediate |
 | 23 | draft | Bulk edit pages by filter | Preview, tick, confirm and apply; reading back after writing | Advanced |
 | 24 | draft | CSV preview and device list import | A CSV parser, a preview grid, checks, then the devicelist import | Advanced |
 | 25 | draft | Settings finder (read-only) | Search Eplan's settings by name or description, with current values | Intermediate |
