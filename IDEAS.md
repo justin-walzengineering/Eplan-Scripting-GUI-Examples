@@ -25,7 +25,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 15 | done | Hand a value from one script to another | Short-lived value shared between two scripts, with a timestamp | Advanced |
 | 16 | done | Modern folder picker | The Explorer-style "choose a folder" window through COM | Advanced |
 | 17 | done | Export launcher (PDF) | The export action with a file name pattern; opens the folder | Intermediate |
-| 18 | draft | Device list export | The devicelist action: CSV, XML or text, opened in Excel | Intermediate |
+| 18 | done | Device list export | The devicelist action: CSV, XML or text, opened in Excel | Intermediate |
 | 19 | draft | Renumber helper | A safe front end for the renumber action | Intermediate |
 | 20 | draft | Timestamped backup | The backup action with a date-and-time name and a comment | Intermediate |
 | 21 | done | Favorites launcher | Searchable personal list of scripts and actions, saved as JSON | Intermediate |

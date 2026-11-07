@@ -1,6 +1,8 @@
 # 18 - Device list export (CSV, XML or text)
 
-**Level:** Intermediate  **File:** [DeviceListExport.cs](DeviceListExport.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [DeviceListExport.cs](DeviceListExport.cs)  **Status:** Run in Eplan 2026 (no device list data to check)
+
+![The device list export window](screenshot.png)
 
 ## What it does
 
@@ -35,7 +37,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Partly (action runs, files written; the demo project had no device list entries) |
+
+Checked in Eplan 2026 on a copy of a demo project: the action ran without an error and wrote files for CSV and XML. That project's device list was empty, so the CSV file was empty (0 bytes) and the XML said 'deviceList count=0'. The columns and contents of a real device list have therefore not been checked yet; please try it on a project that has device list data and tell us what you see.
 
 ## Ideas to extend
 
