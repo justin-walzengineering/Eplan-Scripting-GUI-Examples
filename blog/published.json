@@ -3,5 +3,10 @@
     "mode": "draft",
     "sent_at": "2026-11-07T15:32:04.742007+00:00",
     "wix_draft_id": "d4a6c27b-c3d7-4ef0-9969-e14381ccf2fc"
+  },
+  "99-publish-test": {
+    "mode": "publish",
+    "sent_at": "2026-11-07T16:13:07.859158+00:00",
+    "wix_draft_id": "898e3d7b-d5dd-4655-bb6b-084a1c0f7201"
   }
 }
