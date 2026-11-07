@@ -3,7 +3,7 @@
 // Purpose   : Browse the parts database in a table and narrow it down as you type, to find a part number, type or manufacturer quickly.
 // You learn : Using Eplan's MasterData parts classes directly (no reflection), filtering a large list, protecting against huge results
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 //
