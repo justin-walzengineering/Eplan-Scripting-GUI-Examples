@@ -28,7 +28,7 @@ Body in Markdown.
   (for example `America/Chicago`). Daylight saving is handled.
 - To release the next post immediately: Actions tab > Publish scheduled blog posts > Run workflow > tick "force".
 - Supported Markdown: `#`/`##`/`###` headings, paragraphs, `-` bullet lists, fenced code blocks,
-  and links (`[text](https://...)` or a bare `https://...` URL). Bold and images are not converted yet.
+  and links (`[text](https://...)` or a bare `https://...` URL). Bold (`**text**`) and images are not converted yet, so do not use `**` in posts.
 - A leading `# Title` line in the body is dropped when sending, because Wix shows the title itself.
 
 ## Post types and the weekly rhythm

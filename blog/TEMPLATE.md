@@ -35,9 +35,9 @@ excerpt: <one sentence>
 ## Community spotlight
 <OPTIONAL but included in every post when there is something good. One item from
 blog/community/spotlight-queue.md. Link to it and describe it in your own words.>
-- **Who or what:** <creator, channel or Eplan resource, with a link>
-- **Why it is worth a look:** <one or two of your own sentences, positive and specific>
-- **Good to know:** <language, level, anything a reader should expect>
+- Who or what: <creator, channel or Eplan resource, with a link>
+- Why it is worth a look: <one or two of your own sentences, positive and specific>
+- Good to know: <language, level, anything a reader should expect>
 - Screenshot (optional): <only one you took yourself in your own Eplan, with your own caption; add in Wix>
 
 Repository with all examples: https://github.com/justin-walzengineering/Eplan-Scripting-GUI-Examples
