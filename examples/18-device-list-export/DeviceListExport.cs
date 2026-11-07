@@ -3,7 +3,7 @@
 // Purpose   : Export the current project's device list in the format you pick, with a file name from a pattern, and open it (for example in Excel).
 // You learn : The devicelist action, a format drop-down, opening a file with its default program, reusing the naming pattern idea
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026 (no device list data to check))
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
