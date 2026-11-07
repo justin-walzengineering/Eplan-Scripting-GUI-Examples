@@ -49,9 +49,9 @@ See [Getting started](../../docs/getting-started.md) if this is your first scrip
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2025.0.3 | Yes | Pending |
-| 2026.0.3 | Yes | Yes (progress window and final message confirmed) |
+| 2026.0.3 | Yes | Yes (progress window, final message and Cancel confirmed) |
 
-The `Progress` members used here are identical in both versions. The Cancel path has not been confirmed in Eplan yet.
+The `Progress` members used here are identical in both versions. Pressing Cancel stops the work and shows "Cancelled. Nothing more was processed."
 
 ## Ideas to extend
 
