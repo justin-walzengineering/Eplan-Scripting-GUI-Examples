@@ -5,23 +5,22 @@ Each post in blog/posts/*.md starts with a small front-matter block:
 
     ---
     title: My post title
-    publish_at: 2026-11-10T09:00:00-05:00   (ISO 8601 with offset)
     status: ready                           (draft = never published)
     excerpt: One-sentence summary (optional)
     ---
 
 Posts are released ONE AT A TIME, in file-name order, on a fixed weekly
 schedule (Tuesday and Friday, 09:xx in BLOG_TZ). On each scheduled slot the
-first "ready" post not yet listed in blog/published.json is sent. publish_at
-is optional and ignored; name files 01-..., 02-... (or by date) to set order.
+first "ready" post not yet listed in blog/published.json is sent. Name files
+01-..., 02-... to set the order.
 
 Environment variables:
     WIX_API_KEY    API key with Blog permissions       (required)
     WIX_SITE_ID    Wix site id                         (required)
     WIX_MEMBER_ID  Member id of the post author        (required)
     BLOG_TZ        IANA time zone for the schedule (default America/New_York)
-    WIX_MODE       "publish" (default) or "draft"; draft only creates
-                   a draft in Wix for you to publish by hand.
+    WIX_MODE       "draft" (default) creates a draft in Wix for you to
+                   publish by hand; "publish" publishes immediately.
 
 Usage:
     python3 blog/tools/publish_wix.py --dry-run   # show what would happen
@@ -199,7 +198,7 @@ def main():
         print("No ready posts in the queue.")
         return 0
 
-    mode = os.environ.get("WIX_MODE", "publish")
+    mode = os.environ.get("WIX_MODE", "draft")
     env = {k: os.environ.get(k, "") for k in
            ("WIX_API_KEY", "WIX_SITE_ID", "WIX_MEMBER_ID")}
     if not args.dry_run and not all(env.values()):
