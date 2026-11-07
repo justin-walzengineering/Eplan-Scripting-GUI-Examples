@@ -10,7 +10,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 |---|--------|---------|-----------------|-------|
 | 01 | done | Reusable input dialog | Forms, controls, returning values, handling Cancel | Beginner |
 | 02 | done | Progress bar around a long action | Progress API, `try/finally` | Beginner |
-| 03 | idea | Place a window well | Open a dialog centered on the Eplan main window, owned by it, hidden from the taskbar, kept on a visible monitor | Beginner |
+| 03 | done | Place a window well | Open a dialog centered on the Eplan main window, owned by it, hidden from the taskbar, kept on a visible monitor | Intermediate |
 | 04 | idea | Light and dark theme | A "Dark mode" check box that restyles a window live (colors, controls, title bar), then an "Auto" option that detects Eplan's theme. Automatic detection is a heuristic, so test it on 2025 and 2026 | Intermediate |
 | 05 | idea | Remember window size and position | Save to and load from user settings, and open somewhere sensible if a monitor was unplugged | Intermediate |
 | 06 | idea | Themed message and confirm window | Why a standard message box ignores dark mode, and a themed replacement with OK or Yes/No | Beginner |
