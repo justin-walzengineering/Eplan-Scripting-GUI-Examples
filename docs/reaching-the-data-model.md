@@ -52,4 +52,9 @@ The examples that need the data model (09, 10, 14 and 23) each carry a short hel
 
 ## What has and has not been confirmed
 
-The member names used by the examples (`Project.Pages`, `Project.ProjectName`, `Page.Name`, `Page.PageTypeName`, `Page.Properties`, `PagePropertyList.PAGE_NOMINATIOMN`, `UniversalPropertyList.ExistingIds` and `ExistingValues`, `SelectionSet.GetCurrentProject`) were checked against the installed 2026 assemblies. The helper classes were tested outside Eplan against stand-in objects of the same shape. **Running them inside Eplan is still to be done**, which is why those examples are marked Draft.
+The helpers were run inside Eplan 2026 (Update 5) by examples 09, 10, 14 and 23, on a copy of a demo project. Reading the project, its pages and their properties works, and so does changing a page description (example 23, confirmed by reading it back afterwards). Two things went wrong in the first drafts and are now fixed in all four examples:
+
+1. **The project could not be opened for reading.** `SelectionSet.GetCurrentProject` failed with "Failed to generate an object of the LockingStep class" until `LockSelectionByDefault` was set to `false` on the selection object first.
+2. **Reading the page description by name hit an "ambiguous match" error.** Eplan declares the same property name more than once on its property list classes, so asking .NET for one property by name fails. The helper now walks the list of properties itself and picks the one whose name matches.
+
+Also worth knowing: the member names were checked first against the installed 2026 assemblies (`Project.Pages`, `Project.ProjectName`, `Page.Name`, `Page.PageTypeName`, `Page.Properties`, `PagePropertyList.PAGE_NOMINATIOMN`, `UniversalPropertyList.ExistingIds` and `ExistingValues`, `SelectionSet.GetCurrentProject`) and all of them worked as listed. Not yet working: the **selection of objects on an open drawing page** did not reach the script (example 14 reported nothing selected after Select All on a page), while pages selected in the page navigator did. Other object types, such as devices, have not been tried.
