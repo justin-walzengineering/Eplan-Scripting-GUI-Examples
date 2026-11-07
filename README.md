@@ -70,4 +70,4 @@ Questions and ideas go in [Discussions](../../discussions) and Issues. Pull requ
 
 ---
 
-Maintained by Justin Walz, [Walz Engineering](https://www.walzengineering.com).
+Maintained by Justin Walz, [Walz Engineering](https://www.walzengineering.com). Need a custom Eplan interface built for your team? [Get in touch](https://www.walzengineering.com).

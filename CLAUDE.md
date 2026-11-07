@@ -14,7 +14,7 @@ A free, public list of **original** C# script examples for Eplan Electric P8 202
 4. **Unofficial.** Keep the disclaimer in the README. Do not imply Eplan endorsement.
 5. **English only.**
 5a. **Positive tone toward Eplan.** Present scripting as one more way to build on an already excellent product. Never suggest Eplan is lacking, and never frame examples as fixing or replacing Eplan features. Do not describe the repo as filling a gap or as the only good English resource; it is simply a list of examples people can use.
-6. **Low-key branding.** Credit appears as a short "Maintained by Justin Walz, Walz Engineering" footer and in file headers. No sales pitches.
+6. **Low-key branding.** Credit appears as a short "Maintained by Justin Walz, Walz Engineering" footer, with one short line inviting people to get in touch about custom work, and in file headers. No other sales pitches.
 7. **Never `git push`, create remotes, or publish** without Justin's explicit OK in that conversation.
 
 ## Target
