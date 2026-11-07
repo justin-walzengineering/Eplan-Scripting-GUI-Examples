@@ -44,7 +44,7 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 19 | [Renumber helper](examples/19-renumber-helper/) | A safe front end for the renumber action | Intermediate | Draft |
 | 20 | [Timestamped backup](examples/20-timestamped-backup/) | A backup with the date and time in its name | Intermediate | Draft |
 | 21 | [Favorites launcher](examples/21-favorites-launcher/) | A searchable list of your scripts and actions | Intermediate | Draft |
-| 22 | [Results window](examples/22-results-window/) | One report window instead of many message boxes | Intermediate | Draft |
+| 22 | [Results window](examples/22-results-window/) | One report window instead of many message boxes | Intermediate | Available |
 | 23 | [Bulk edit pages](examples/23-bulk-edit/) | Preview, then change many pages at once | Advanced | Draft |
 | 24 | [CSV preview and import](examples/24-csv-device-import/) | Check a CSV file before importing it | Advanced | Draft |
 | 25 | [Settings finder](examples/25-settings-finder/) | Search Eplan's settings (read-only) | Intermediate | Draft |

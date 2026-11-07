@@ -3,7 +3,7 @@
 // Purpose   : Collect the results of a long job and show them once, in a window the user can scroll, copy and save, instead of many message boxes.
 // You learn : A small result log class, a reusable report window, clipboard, SaveFileDialog, following Eplan's color scheme
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
