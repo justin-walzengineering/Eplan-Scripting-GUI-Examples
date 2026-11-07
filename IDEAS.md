@@ -34,7 +34,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 
 ## Verification to do in Eplan
 
-- Does `Settings.GetNumericSetting("USER.MF.GuiColorScheme", 0)` return 1 for dark and 2 for light when run as a script in Eplan 2025 and 2026? (Eplan's configuration files describe 0 = automatic, 1 = dark, 2 = light, and the stored value matches a running dark Eplan 2026.)
+- Does `Settings.GetNumericSetting("USER.MF.GuiColorScheme", 0)` return 2 for light and 0 for automatic when run as a script? Confirmed so far: **1 = dark** in Eplan 2026. Still to confirm: light and automatic in 2026, and all three in 2025. (Eplan's configuration files describe 0 = automatic, 1 = dark, 2 = light.)
 - Which namespaces does the script compiler add? (The compile-check assumes the application framework, base, GUI and scripting namespaces.)
 - Does the script compiler reference the data model and services assemblies? (The compile-check assumes **not**.)
 - Is the application framework namespace usable directly from a script? Reports conflict, so test it.
