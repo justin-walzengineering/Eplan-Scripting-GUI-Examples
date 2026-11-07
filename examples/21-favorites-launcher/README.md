@@ -1,6 +1,8 @@
 # 21 - Favorites launcher
 
-**Level:** Intermediate  **File:** [FavoritesLauncher.cs](FavoritesLauncher.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [FavoritesLauncher.cs](FavoritesLauncher.cs)  **Status:** Run in Eplan 2026
+
+![The favorites window](screenshot.png)
 
 ## What it does
 
@@ -41,7 +43,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (add, search, run script, run action, remove) |
+
+Checked in Eplan 2026: a script and the built-in 'Redraw the screen' action were both started from the list (the window closes first, then the item runs), searching filtered the list as typed, Add checked that a name and a target were entered, the list was still there after reopening, and Remove asked before deleting.
 
 ## Ideas to extend
 
