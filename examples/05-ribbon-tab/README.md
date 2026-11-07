@@ -2,6 +2,8 @@
 
 **Level:** Beginner  **Files:** [RibbonSetup.cs](RibbonSetup.cs), [ButtonHello.cs](ButtonHello.cs), [ButtonTime.cs](ButtonTime.cs), [RibbonRemove.cs](RibbonRemove.cs), [icons/](icons/)
 
+![The Demo Tools tab on Eplan's ribbon, with its Examples group and two buttons](screenshot-ribbon.png)
+
 ## What it does
 
 Adds your own **tab** to Eplan's ribbon. The tab has one **group**, and the group has two **buttons**, each with its own icon:
