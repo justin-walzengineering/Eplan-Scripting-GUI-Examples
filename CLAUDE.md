@@ -4,7 +4,7 @@ Guidance for Claude Code (and human contributors) working in this repository.
 
 ## What this repo is
 
-A free, public set of **original** C# script examples for Eplan Electric P8 2025 and 2026, focused on GUI (Windows Forms) tools. Audience: beginners first, growing toward experienced script writers. Maintained by Justin Walz, Walz Engineering. It is a community resource, not self-promotion.
+A free, public list of **original** C# script examples for Eplan Electric P8 2025 and 2026, focused on GUI (Windows Forms) tools. Audience: beginners first, growing toward experienced script writers. Maintained by Justin Walz, Walz Engineering. It is a community resource, not self-promotion.
 
 ## Hard rules
 
@@ -13,6 +13,7 @@ A free, public set of **original** C# script examples for Eplan Electric P8 2025
 3. **No customer or employer material.** Scripts from client projects may inspire an idea, but only the concept travels. Rewrite from scratch with made-up data. No client names, project names, part numbers, or company data.
 4. **Unofficial.** Keep the disclaimer in the README. Do not imply Eplan endorsement.
 5. **English only.**
+5a. **Positive tone toward Eplan.** Present scripting as one more way to build on an already excellent product. Never suggest Eplan is lacking, and never frame examples as fixing or replacing Eplan features. Do not describe the repo as filling a gap or as the only good English resource; it is simply a list of examples people can use.
 6. **Low-key branding.** Credit appears as a short "Maintained by Justin Walz, Walz Engineering" footer and in file headers. No sales pitches.
 7. **Never `git push`, create remotes, or publish** without Justin's explicit OK in that conversation.
 
