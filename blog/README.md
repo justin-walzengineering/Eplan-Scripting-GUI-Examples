@@ -68,4 +68,17 @@ The lists live in `blog/community/`: `creators.md` (who and what is worth highli
 ## Status
 
 The Wix calls were tested against the live blog in draft mode on 2026-11-07 (headings, bullets and code blocks came through correctly).
-Link conversion is new and still to be checked in a draft. Keep draft mode on until you have looked at a draft with links.
+Link conversion was checked in a Wix draft on 2026-11-07 and looks right.
+
+## Future improvements
+
+- **Grow and review the creators list (Justin).** `blog/community/creators.md` starts small on purpose.
+  Come back to it to:
+  - open each entry marked `check` (Eplan's YouTube channel link, the events and webcasts page, EPLAN in a Nutshell,
+    the Eplan blog index) and change it to `verified`;
+  - add independent creators and community projects you have watched and liked, such as the "How To Eplan"
+    YouTube channel and the EasyEPLANner project on GitHub;
+  - keep `spotlight-queue.md` stocked, with a few verified items ready ahead of each Friday highlight.
+  Follow the Community spotlight rules above (own words, no borrowed images, verify first).
+- **Check command (not built yet).** List examples whose files changed in git since their blog post was sent,
+  to trigger `update` posts.
