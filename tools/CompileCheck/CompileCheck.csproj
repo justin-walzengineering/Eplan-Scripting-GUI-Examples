@@ -2,8 +2,16 @@
 
   <!--
     LOCAL-ONLY compile check for the example scripts.
-    Eplan loads the plain .cs files itself; this project only proves they compile against the
-    Eplan 2026 API. It references the install by path and never copies Eplan DLLs.
+    Eplan loads the plain .cs files itself; this project only proves they compile in a setup that
+    mimics Eplan's script compiler. It references the install by path and never copies Eplan DLLs.
+
+    What it mimics (from notes proven in Eplan; items marked "to verify" are still assumptions):
+      - C# 5 syntax only (LangVersion 5).
+      - Only the Eplan assemblies below are referenced. DataModel and HEServices are NOT, because
+        Eplan's script compiler does not reference them. Scripts that need them must use reflection.
+      - Eplan adds some namespaces to every script (to verify). Stage.ps1 prepends them so
+        ambiguous names such as EventHandler fail here instead of in Eplan.
+
     Check every installed version: tools/check-all.ps1
     Override the path:  dotnet build tools/CompileCheck -p:EplanBin="D:\EPLAN\Platform\2026.0.3\Bin"
   -->
@@ -16,12 +24,10 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <NoWarn>$(NoWarn);CS0105</NoWarn>
     <EplanBin Condition="'$(EplanBin)' == ''">C:\Program Files\EPLAN\Platform\2026.0.3\Bin</EplanBin>
+    <StagedDir>$(MSBuildProjectDirectory)\obj\staged</StagedDir>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="..\..\examples\**\*.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Eplan.EplApi.Baseu">
@@ -36,10 +42,6 @@
       <HintPath>$(EplanBin)\Eplan.EplApi.Guiu.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <Reference Include="Eplan.EplApi.DataModelu">
-      <HintPath>$(EplanBin)\Eplan.EplApi.DataModelu.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Drawing" />
   </ItemGroup>
@@ -47,5 +49,13 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
   </ItemGroup>
+
+  <!-- Copy the examples to obj\staged with Eplan's implicit usings prepended, then compile those copies. -->
+  <Target Name="StageExamples" BeforeTargets="CoreCompile">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\Stage.ps1&quot; -Source &quot;$(MSBuildProjectDirectory)\..\..\examples&quot; -Destination &quot;$(StagedDir)&quot;" />
+    <ItemGroup>
+      <Compile Include="$(StagedDir)\**\*.cs" />
+    </ItemGroup>
+  </Target>
 
 </Project>

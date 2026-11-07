@@ -9,6 +9,10 @@
 - The 2025 and 2026 API assemblies both target **.NET Framework 4.8.1** (verified from the installs).
 - A script marks the method Eplan should run with the `[Start]` attribute. Other attributes let scripts register actions, menu items, or event handlers. The examples introduce each one when needed. _Exact attribute usage per example will be confirmed during testing._
 
+## What the script compiler references (to verify)
+
+Community reports say Eplan's script compiler does **not** reference the data model and services assemblies, so a script that names those types directly fails to compile (error CS0234). Scripts that need them reach the types by reflection. It is also reported that Eplan adds some of its own namespaces to every script, which can make a short name such as `EventHandler` ambiguous (error CS0104). Write `System.EventHandler` in full to avoid it. These are not yet confirmed for 2025 and 2026 in this repo; the local compile-check is set up to follow them so the examples stay safe either way.
+
 ## Compiler and language version
 
 _To verify:_ which C# language version Eplan's script compiler accepts. Until confirmed, the examples use only C# 5 syntax (no string interpolation, no `?.`, no `out var`), which is accepted by any compiler Eplan could reasonably use. This page will be updated with the result.
