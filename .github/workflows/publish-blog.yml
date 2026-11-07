@@ -2,8 +2,15 @@ name: Publish scheduled blog posts
 
 on:
   schedule:
-    - cron: "17 * * * *"   # hourly; posts go out within an hour of publish_at
-  workflow_dispatch: {}      # run by hand from the Actions tab
+    # Cron is UTC only. Run at 13:05 and 14:05 UTC on Tue and Fri; the script
+    # releases a post only when it is 9 AM in BLOG_TZ, so daylight saving is handled.
+    - cron: "5 13,14 * * 2,5"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Release the next ready post now (ignore the schedule)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write            # needed to record blog/published.json
@@ -21,7 +28,8 @@ jobs:
           WIX_SITE_ID: ${{ secrets.WIX_SITE_ID }}
           WIX_MEMBER_ID: ${{ secrets.WIX_MEMBER_ID }}
           WIX_MODE: ${{ vars.WIX_MODE || 'draft' }}
-        run: python3 blog/tools/publish_wix.py
+          BLOG_TZ: ${{ vars.BLOG_TZ || 'America/New_York' }}
+        run: python3 blog/tools/publish_wix.py ${{ inputs.force && '--force' || '' }}
       - name: Record what was sent
         run: |
           if [ -n "$(git status --porcelain blog/published.json)" ]; then

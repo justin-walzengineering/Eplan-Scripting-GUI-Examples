@@ -1,6 +1,5 @@
 ---
 title: A friendly input dialog for your Eplan scripts
-publish_at: 2026-11-20T09:00:00-05:00
 status: draft
 excerpt: A first look at asking the user for input from an Eplan script.
 ---

@@ -6,12 +6,11 @@ This is an unofficial community resource; keep posts educational and original
 
 ## Writing a post
 
-Add `blog/posts/YYYY-MM-DD-short-name.md`:
+Add `blog/posts/NN-short-name.md` (the number sets the order):
 
 ```
 ---
 title: Post title
-publish_at: 2026-11-20T09:00:00-05:00
 status: draft
 excerpt: Optional one-sentence summary
 ---
@@ -20,8 +19,11 @@ Body in Markdown.
 ```
 
 - `status: draft` is never sent. Change it to `ready` when the post is final.
-- `publish_at` needs a UTC offset. The workflow runs hourly, so a post goes out
-  within about an hour after that time.
+- Posts are released **one at a time, every Tuesday and Friday at 9 AM**. Each slot sends the
+  first `ready` post (lowest file name) that has not been sent. No ready posts means nothing happens.
+- The time zone is `America/New_York` unless you add a repository variable `BLOG_TZ`
+  (for example `America/Chicago`). Daylight saving is handled.
+- To release the next post immediately: Actions tab > Publish scheduled blog posts > Run workflow > tick "force".
 - Supported Markdown: `#`/`##`/`###` headings, paragraphs, `-` bullet lists, fenced code blocks.
   Bold, links and images are not converted yet.
 

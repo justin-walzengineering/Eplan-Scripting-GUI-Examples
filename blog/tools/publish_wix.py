@@ -10,13 +10,16 @@ Each post in blog/posts/*.md starts with a small front-matter block:
     excerpt: One-sentence summary (optional)
     ---
 
-A post is sent to Wix when status is "ready" and publish_at is in the past
-and it is not already listed in blog/published.json.
+Posts are released ONE AT A TIME, in file-name order, on a fixed weekly
+schedule (Tuesday and Friday, 09:xx in BLOG_TZ). On each scheduled slot the
+first "ready" post not yet listed in blog/published.json is sent. publish_at
+is optional and ignored; name files 01-..., 02-... (or by date) to set order.
 
 Environment variables:
     WIX_API_KEY    API key with Blog permissions       (required)
     WIX_SITE_ID    Wix site id                         (required)
     WIX_MEMBER_ID  Member id of the post author        (required)
+    BLOG_TZ        IANA time zone for the schedule (default America/New_York)
     WIX_MODE       "publish" (default) or "draft"; draft only creates
                    a draft in Wix for you to publish by hand.
 
@@ -39,6 +42,7 @@ import sys
 import urllib.error
 import urllib.request
 import uuid
+import zoneinfo
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 POSTS_DIR = os.path.join(ROOT, "posts")
@@ -59,13 +63,8 @@ def parse_post(path):
         if ":" in line:
             k, v = line.split(":", 1)
             meta[k.strip()] = v.strip()
-    for key in ("title", "publish_at"):
-        if key not in meta:
-            raise ValueError("%s: front matter needs '%s'" % (path, key))
-    when = datetime.datetime.fromisoformat(meta["publish_at"])
-    if when.tzinfo is None:
-        raise ValueError("%s: publish_at needs a UTC offset, e.g. -05:00" % path)
-    meta["when"] = when
+    if "title" not in meta:
+        raise ValueError("%s: front matter needs 'title'" % path)
     meta["body"] = m.group(2)
     meta["id"] = os.path.splitext(os.path.basename(path))[0]
     return meta
@@ -170,6 +169,8 @@ def send_to_wix(post, mode, env):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--force", action="store_true",
+                    help="ignore the Tuesday/Friday 9 AM check (manual runs)")
     args = ap.parse_args()
 
     state = {}
@@ -178,18 +179,24 @@ def main():
             state = json.load(f)
 
     now = datetime.datetime.now(datetime.timezone.utc)
+    tz = zoneinfo.ZoneInfo(os.environ.get("BLOG_TZ", "America/New_York"))
+    local = now.astimezone(tz)
+    # weekday(): Monday=0, Tuesday=1, Friday=4
+    if not args.force and not (local.weekday() in (1, 4) and local.hour == 9):
+        print("Not a release slot (%s). Nothing to do." % local.strftime("%a %H:%M"))
+        return 0
+
     due = []
     for name in sorted(os.listdir(POSTS_DIR)):
         if not name.endswith(".md"):
             continue
         post = parse_post(os.path.join(POSTS_DIR, name))
-        if post.get("status") != "ready" or post["id"] in state:
-            continue
-        if post["when"] <= now:
+        if post.get("status") == "ready" and post["id"] not in state:
             due.append(post)
+    due = due[:1]  # one post per slot
 
     if not due:
-        print("Nothing due.")
+        print("No ready posts in the queue.")
         return 0
 
     mode = os.environ.get("WIX_MODE", "publish")
