@@ -1,6 +1,8 @@
 # 20 - Timestamped backup
 
-**Level:** Intermediate  **File:** [TimestampedBackup.cs](TimestampedBackup.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [TimestampedBackup.cs](TimestampedBackup.cs)  **Status:** Run in Eplan 2026
+
+![The timestamped backup window](screenshot.png)
 
 ## What it does
 
@@ -35,7 +37,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (backup of a copy, named from the pattern) |
+
+Checked in Eplan 2026 on a copy of a demo project: the backup action wrote a single archive named from the pattern with the date and time (about 23 MB for this project, with external documents and images included, in roughly 15 seconds) Explorer opened on the folder afterwards, as described, and no error was shown.
 
 The name pattern and saved options were tested outside Eplan. The backup itself needs a run in Eplan.
 
