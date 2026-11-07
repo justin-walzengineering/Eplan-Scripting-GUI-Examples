@@ -19,7 +19,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 | 09 | draft | Page list with search, sort, CSV export | Reflection, sortable ListView, filtering, writing CSV (read-only) | Advanced |
 | 10 | draft | Property viewer | Every property of the project or selection, searchable (read-only) | Advanced |
 | 11 | draft | Parts viewer with filter box | MasterData parts classes used directly; filtering a large list (read-only) | Intermediate |
-| 12 | draft | "Please wait" window on its own thread | Keep a progress indicator moving while Eplan is busy, and close it safely | Advanced |
+| 12 | done | "Please wait" window on its own thread | Keep a progress indicator moving while Eplan is busy, and close it safely | Advanced |
 | 13 | draft | Dark-mode-safe controls | Custom check box, date field, drop-down and progress bar | Intermediate |
 | 14 | draft | Selection explorer | Write the properties of the selected objects to a text file (read-only) | Intermediate |
 | 15 | draft | Hand a value from one script to another | Short-lived value shared between two scripts, with a timestamp | Advanced |

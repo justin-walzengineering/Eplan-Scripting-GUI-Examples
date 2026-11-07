@@ -1,6 +1,9 @@
 # 12 - "Please wait" window on its own thread
 
-**Level:** Advanced  **File:** [PleaseWait.cs](PleaseWait.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Advanced  **File:** [PleaseWait.cs](PleaseWait.cs)  **Status:** Run in Eplan 2026
+
+![The please-wait window](screenshot-working.png)
+![The message shown when the work is done](screenshot-finished.png)
 
 ## What it does
 
@@ -46,7 +49,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (bar keeps moving, window closes by itself) |
+
+The bar kept moving the whole time. The window shows in light colors even with a dark Eplan, because it is a plain window; example 13 shows how to color controls for dark mode.
 
 The open, close and double-close behavior was also tested outside Eplan.
 
