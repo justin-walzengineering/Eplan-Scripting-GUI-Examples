@@ -28,7 +28,7 @@ Tab            "Demo Tools"
 - How a button starts a script: the command line `ExecuteScript /ScriptFile:"<path>"`
 - Giving a button an **icon** from an `.svg` file
 - Adding a **tooltip** and a longer description
-- Finding where a script is saved: a few tries (`[CallerFilePath]`, a stack trace) and, when those fail, asking the user with a `FolderBrowserDialog`
+- Finding where a script is saved: a few tries (`[CallerFilePath]`, a stack trace) and, when those fail, asking the user to select a file with an `OpenFileDialog`
 - Making setup **safe to run twice**, and a matching **remove** script
 
 ## Keep the files together
@@ -45,7 +45,7 @@ icons\
     time.svg
 ```
 
-The buttons need the full path of the scripts, so the setup has to know where you saved them. Eplan does not tell a running script where it is saved, so the setup tries a few ways to work it out. If none works, **it opens a folder chooser and asks you to pick the folder** that contains the files. (That is what happened in Eplan 2026 when this example was first tested.) The finished message tells you which method worked.
+The buttons need the full path of the scripts, so the setup has to know where you saved them. Eplan does not tell a running script where it is saved, so the setup tries a few ways to work it out. If none works, **it opens the normal Windows "Open" window and asks you to select `ButtonHello.cs`**; the folder that file is in is then used. (That is what happened in Eplan 2026 when this example was first tested.) The finished message tells you which method worked.
 
 To skip the question, type your folder into the `ScriptFolder` option at the top of `RibbonSetup.cs`, for example `@"C:\EplanScripts\Ribbon"`.
 
@@ -53,7 +53,7 @@ To skip the question, type your folder into the `ScriptFolder` option at the top
 
 1. Copy the whole example folder to your computer.
 2. In Eplan, go to File > Extras > Interfaces, choose **Run** (under Scripts), and select `RibbonSetup.cs`.
-3. If a folder chooser opens, pick the folder that contains the example files. Then look for the **Demo Tools** tab. If it does not appear, restart Eplan.
+3. If an "Open" window appears, select `ButtonHello.cs` in the folder with the example files. Then look for the **Demo Tools** tab. If it does not appear, restart Eplan.
 4. Click the buttons. To undo, run `RibbonRemove.cs` the same way (File > Extras > Interfaces > Run).
 
 New to scripts? See [How to run a script](../../docs/running-scripts.md) for the menu path and a Quick Access shortcut, and [Getting started](../../docs/getting-started.md).
@@ -80,7 +80,7 @@ Ribbon icons are **SVG** pictures. An SVG file is a small text file that describ
 | 2025.0.3 | Yes | Not tested |
 | 2026.0.3 | Yes | Pending |
 
-The ribbon members used here are the same in 2025 and 2026. The setup was first run in Eplan 2026, where it could not find its own folder automatically; it now asks you to choose the folder. Still to confirm in Eplan: that the buttons start their scripts, how the icons look on a dark ribbon, and whether the tab appears immediately or after a restart.
+The ribbon members used here are the same in 2025 and 2026. The setup was first run in Eplan 2026, where it could not find its own folder automatically; it now asks you to select `ButtonHello.cs`. Still to confirm in Eplan: that the buttons start their scripts, how the icons look on a dark ribbon, and whether the tab appears immediately or after a restart.
 
 ## Ideas to extend
 
