@@ -13,10 +13,12 @@
 //   ButtonTime.cs                 the script behind the second button.
 //   RibbonRemove.cs               removes the tab again (a clean way to undo this example).
 //   icons\hello.svg, icons\time.svg   the button images.
-// Keep all of these together in one folder.
+// Keep all of these together in one folder. When you run this script it will ask you to choose that folder
+// if it cannot work out where it is saved.
 // ============================================================
 
 using System;
+using System.Diagnostics;                          // StackTrace: which code is running, and from which file
 using System.IO;                                   // Path, File, Directory
 using System.Runtime.CompilerServices;             // CallerFilePath: lets a script ask "which file am I?"
 using System.Windows.Forms;                        // MessageBox
@@ -28,8 +30,8 @@ public class RibbonSetupDemo
     // ===== Options: change these to suit you =====
 
     // The folder that holds the scripts and the "icons" folder.
-    // Leave it empty ("") to use the folder this file is in. If the script cannot work that out
-    // (it tells you if so), type the folder here, for example @"C:\EplanScripts\Ribbon".
+    // Leave it empty ("") and the script tries to work it out, and asks you to choose the folder if it cannot.
+    // To skip the question, type the folder here, for example @"C:\EplanScripts\Ribbon".
     private const string ScriptFolder = "";
 
     // The names shown on the ribbon. Keep TabName the same in RibbonRemove.cs, so it can find the tab.
@@ -42,12 +44,14 @@ public class RibbonSetupDemo
     public void Run()
     {
         // 1. Find the folder with our scripts and icons.
-        string folder = FindScriptFolder();
+        //    "how" is filled in with a few words about how the folder was found. We show it at the end.
+        string how;
+        string folder = FindScriptFolder(out how);
         if (folder == null)
         {
             Say("Folder not found",
-                "I could not find ButtonHello.cs next to this script.\r\n\r\n" +
-                "Put all the files of this example in one folder. If the problem remains, type the folder into the ScriptFolder option at the top of RibbonSetup.cs.");
+                "I could not find ButtonHello.cs in that folder.\r\n\r\n" +
+                "Put all the files of this example in one folder (RibbonSetup.cs, ButtonHello.cs, ButtonTime.cs, RibbonRemove.cs and the icons folder), then run this script again and choose that folder.");
             return;
         }
 
@@ -83,6 +87,7 @@ public class RibbonSetupDemo
 
             Say("Ribbon created",
                 "The tab \"" + TabName + "\" was added.\r\n\r\nScripts folder:\r\n" + folder +
+                "\r\n(found by: " + how + ")" +
                 "\r\n\r\nIf you do not see the tab, restart Eplan.");
         }
         catch (Exception ex)
@@ -156,27 +161,104 @@ public class RibbonSetupDemo
     }
 
     // --- Finding our folder ------------------------------------------------------------
-    // [CallerFilePath] is a C# feature: the compiler fills in the path of this source file for us.
-    // So this tiny method answers the question "where is this script saved?".
+    // The buttons need the full path of the scripts, so the setup has to know where they are saved.
+    // Eplan does not hand a running script its own location, so we try several things, easiest first,
+    // and finally simply ask the user. Asking always works.
+
+    // Try 1 helper. [CallerFilePath] is a C# feature: the compiler fills in the path of this source
+    // file for us. (Eplan compiles scripts its own way, so this can come back empty or wrong.)
     private static string ThisFile([CallerFilePath] string path = "")
     {
         return path;
     }
 
-    // Returns the folder that contains our scripts, or null if we cannot find it.
-    private static string FindScriptFolder()
+    // Try 2 helper. A "stack trace" lists the code that is running, and can include the source file name.
+    private static string FileFromStackTrace()
     {
-        string folder = ScriptFolder;
-        if (string.IsNullOrEmpty(folder))
+        try
         {
-            string file = ThisFile();
-            folder = string.IsNullOrEmpty(file) ? "" : Path.GetDirectoryName(file);
+            StackFrame frame = new StackTrace(true).GetFrame(0);
+            return frame == null ? "" : (frame.GetFileName() ?? "");
+        }
+        catch (Exception)
+        {
+            return "";
+        }
+    }
+
+    // Try 3 helper. Let the user pick the folder.
+    private static string AskForFolder()
+    {
+        using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+        {
+            dialog.Description = "Choose the folder that contains RibbonSetup.cs, ButtonHello.cs, ButtonTime.cs and the icons folder.";
+            dialog.ShowNewFolderButton = false;
+            return dialog.ShowDialog() == DialogResult.OK ? dialog.SelectedPath : "";
+        }
+    }
+
+    // The right folder is the one that contains ButtonHello.cs.
+    private static bool LooksRight(string folder)
+    {
+        try
+        {
+            return !string.IsNullOrEmpty(folder) && File.Exists(Path.Combine(folder, "ButtonHello.cs"));
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+
+    // A file path becomes a folder path. Returns "" if the path is empty or odd.
+    private static string FolderOf(string file)
+    {
+        try
+        {
+            return string.IsNullOrEmpty(file) ? "" : Path.GetDirectoryName(file);
+        }
+        catch (Exception)
+        {
+            return "";
+        }
+    }
+
+    // Returns the folder that contains our scripts, or null if we cannot find it.
+    // "how" is set to a few words describing which method worked.
+    private static string FindScriptFolder(out string how)
+    {
+        // 1. The ScriptFolder option at the top of this file.
+        if (LooksRight(ScriptFolder))
+        {
+            how = "the ScriptFolder option";
+            return ScriptFolder;
         }
 
-        if (!string.IsNullOrEmpty(folder) && File.Exists(Path.Combine(folder, "ButtonHello.cs")))
+        // 2. The compiler tells us where the source file is.
+        string folder = FolderOf(ThisFile());
+        if (LooksRight(folder))
         {
+            how = "the compiler (CallerFilePath)";
             return folder;
         }
+
+        // 3. The stack trace tells us.
+        folder = FolderOf(FileFromStackTrace());
+        if (LooksRight(folder))
+        {
+            how = "the stack trace";
+            return folder;
+        }
+
+        // 4. Ask the user.
+        folder = AskForFolder();
+        if (LooksRight(folder))
+        {
+            how = "you chose it";
+            return folder;
+        }
+
+        how = "";
         return null;
     }
 
