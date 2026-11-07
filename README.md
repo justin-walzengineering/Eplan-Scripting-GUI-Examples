@@ -6,7 +6,7 @@ Free, original C# script examples that add **custom windows and tools** to Eplan
 
 ## Why this exists
 
-Eplan's own screens are great, but sometimes you want to see and edit your data in a way they don't offer: a filterable grid of project properties, a quick input dialog, a progress bar for a long task. Eplan scripting lets you build those screens yourself. Good English-language examples are hard to find, so this repo collects small, well-explained ones you can read, run, and adapt.
+Eplan is a powerful platform, and scripting is one more way to shape it around how you work. With a little C#, you can add your own windows to Eplan: a quick input dialog, a progress bar for a long task, a grid for browsing and filtering project data. This repo is a growing list of small, commented examples you can read, run, and adapt.
 
 ## Who it's for
 

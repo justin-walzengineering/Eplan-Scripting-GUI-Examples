@@ -1,0 +1,20 @@
+name: Example idea
+description: Suggest a new example or an improvement to an existing one
+labels: ["idea"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would the example do?
+      description: Describe it in your own words. Please don't paste Eplan training material or customer code.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it be useful?
+  - type: dropdown
+    id: level
+    attributes:
+      label: Suggested level
+      options: [Beginner, Intermediate, Advanced]

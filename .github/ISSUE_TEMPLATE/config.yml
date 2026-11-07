@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question or share what you built
+    url: https://github.com/justin-walzengineering/Eplan-Scripting-GUI-Examples/discussions
+    about: Questions and general conversation belong in Discussions.
