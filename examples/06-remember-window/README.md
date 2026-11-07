@@ -1,6 +1,8 @@
 # 06 - Remember window size and position
 
-**Level:** Intermediate  **File:** [RememberWindow.cs](RememberWindow.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [RememberWindow.cs](RememberWindow.cs)  **Status:** Run in Eplan 2026
+
+![The remembering demo window](screenshot-window.png)
 
 ## What it does
 
@@ -40,7 +42,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (saved, restored, off-screen fallback, forget) |
+
+Checked in Eplan 2026: the window reopened at the saved position and size after being moved and resized, opened centered when the saved position was far off every screen (a stand-in for an unplugged monitor), and stayed forgotten after 'Forget saved position' and Close. Not yet tried: maximized, and Eplan on a second monitor.
 
 The save and restore logic, including an off-screen saved position, was also tested outside Eplan.
 
