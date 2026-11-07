@@ -99,7 +99,8 @@ def markdown_to_ricos(md):
             nodes.append({
                 "type": "BULLETED_LIST", "id": _id(),
                 "nodes": [{"type": "LIST_ITEM", "id": _id(),
-                           "nodes": [_paragraph(i)]} for i in items],
+                           "nodes": [_paragraph(i)],
+                           "listItemData": {}} for i in items],
                 "bulletedListData": {}})
             del items[:]
 
@@ -157,7 +158,10 @@ def send_to_wix(post, mode, env):
     if post.get("excerpt"):
         draft["excerpt"] = post["excerpt"]
     created = wix_post("/draft-posts", {"draftPost": draft}, env)
-    draft_id = created["draftPost"]["id"]
+    # Response is documented as the created DraftPost; accept it wrapped or bare.
+    draft_id = (created.get("draftPost") or created).get("id")
+    if not draft_id:
+        raise RuntimeError("Unexpected create-draft response: %r" % created)
     if mode == "publish":
         wix_post("/draft-posts/%s/publish" % draft_id, {}, env)
     return draft_id
