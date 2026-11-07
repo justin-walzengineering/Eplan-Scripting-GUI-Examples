@@ -1,8 +1,10 @@
 # 23 - Bulk edit pages by filter
 
-**Level:** Advanced  **File:** [BulkEdit.cs](BulkEdit.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Advanced  **File:** [BulkEdit.cs](BulkEdit.cs)  **Status:** Run in Eplan 2026
 
 > **The Apply step changes your project.** Showing the preview changes nothing. Try it on a copy, and on one page before many.
+
+![Previewing a one-page change](screenshot.png)
 
 ## What it does
 
@@ -46,7 +48,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (changed one page description on a copy, confirmed by reading it back) |
+
+Checked in Eplan 2026 on a copy of a demo project, with one page: the preview showed the old and new description side by side, the 'working on a copy' box had to be ticked, the confirmation said 1 page would change, and afterwards the page list (example 09) showed that page, and only that page, with the new description. Only 'Replace text in the description' on a single page was tried. The first draft's data-model helpers needed two fixes found while testing examples 09 and 10 (see the data model guide).
 
 ## Ideas to extend
 

@@ -45,7 +45,7 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 20 | [Timestamped backup](examples/20-timestamped-backup/) | A backup with the date and time in its name | Intermediate | Available |
 | 21 | [Favorites launcher](examples/21-favorites-launcher/) | A searchable list of your scripts and actions | Intermediate | Available |
 | 22 | [Results window](examples/22-results-window/) | One report window instead of many message boxes | Intermediate | Available |
-| 23 | [Bulk edit pages](examples/23-bulk-edit/) | Preview, then change many pages at once | Advanced | Draft |
+| 23 | [Bulk edit pages](examples/23-bulk-edit/) | Preview, then change many pages at once | Advanced | Available |
 | 24 | [CSV preview and import](examples/24-csv-device-import/) | Check a CSV file before importing it | Advanced | Available |
 | 25 | [Settings finder](examples/25-settings-finder/) | Search Eplan's settings (read-only) | Intermediate | Available |
 | 26 | [Back up first, then run](examples/26-backup-then-run/) | A safety net in front of risky work | Intermediate | Available |

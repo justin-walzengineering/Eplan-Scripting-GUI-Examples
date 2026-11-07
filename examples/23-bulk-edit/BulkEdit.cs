@@ -3,7 +3,7 @@
 // Purpose   : Change one property on many pages at once: choose the pages by name, see exactly what would change, tick the ones you want, then apply.
 // You learn : Reflection on the data model, filtering, a preview grid with tick boxes, find-and-replace, locking, checking a change by reading it back
 // Level     : Advanced
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 //
