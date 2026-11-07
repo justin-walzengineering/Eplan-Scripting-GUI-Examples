@@ -1,6 +1,8 @@
 # 08 - Settings dialog that saves preferences
 
-**Level:** Beginner  **File:** [SettingsDialog.cs](SettingsDialog.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Beginner  **File:** [SettingsDialog.cs](SettingsDialog.cs)  **Status:** Run in Eplan 2026
+
+![The settings window reopened with the saved values](screenshot-restored.png)
 
 ## What it does
 
@@ -38,7 +40,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (save, restore, reset to defaults, cancel) |
+
+Checked in Eplan 2026: values typed into the window were written to the JSON file, the same values came back the next time the window opened, 'Reset to defaults' changed the fields, and Cancel left the saved file untouched. This also confirms that Newtonsoft.Json can be used directly in a script.
 
 The load, save, damaged-file and reset behavior was also tested outside Eplan.
 

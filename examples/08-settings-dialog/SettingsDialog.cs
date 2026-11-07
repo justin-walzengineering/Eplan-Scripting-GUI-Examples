@@ -3,7 +3,7 @@
 // Purpose   : Let the user change a few options in a window and keep them between runs, in a small JSON file.
 // You learn : A settings class, JSON with Newtonsoft.Json, defaults, handling a missing or damaged file, OK / Cancel / Reset
 // Level     : Beginner
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================

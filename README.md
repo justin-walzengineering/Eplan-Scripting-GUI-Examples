@@ -30,7 +30,7 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 05 | [Ribbon tab, group and buttons](examples/05-ribbon-tab/) | Add your own tab, group and buttons (with icons) that run your scripts | Beginner | Available |
 | 06 | [Remember size and position](examples/06-remember-window/) | Reopen windows where the user left them | Intermediate | Available |
 | 07 | [Themed message window](examples/07-themed-message/) | Messages and questions that fit dark mode | Beginner | Available |
-| 08 | [Settings dialog](examples/08-settings-dialog/) | Save and restore user preferences | Beginner | Draft |
+| 08 | [Settings dialog](examples/08-settings-dialog/) | Save and restore user preferences | Beginner | Available |
 | 09 | [Page list](examples/09-page-list/) | Search, sort and export pages to CSV | Advanced | Draft |
 | 10 | [Property viewer](examples/10-property-viewer/) | See every property of the project or your selection | Advanced | Draft |
 | 11 | [Parts viewer](examples/11-parts-viewer/) | Search the parts database as you type | Intermediate | Draft |
