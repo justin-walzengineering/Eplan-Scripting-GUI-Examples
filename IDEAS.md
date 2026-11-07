@@ -40,7 +40,7 @@ Status: `idea` > `in progress` > `done`. Have an idea? Open an Issue using the "
 - Does the script compiler reference the data model and services assemblies? (The compile-check assumes **not**.)
 - Is the application framework namespace usable directly from a script? Reports conflict, so test it.
 - Which C# language version does the script compiler accept? (The compile-check enforces C# 5.)
-- Ribbon example (05): the ribbon API takes icons as **SVG** (text, or a file path in some overloads) or an index of an existing icon, not as PNG files. The example reads an `.svg` file and passes its text. Confirm in Eplan: the buttons start their scripts (`ExecuteScript` with `ScriptFile`), the icons look right on a dark and a light ribbon, whether the tab appears immediately or after a restart, that `[CallerFilePath]` returns the real script folder, and what happens when the setup script is run twice.
+- Ribbon example (05): the ribbon API takes icons as **SVG** (text, or a file path in some overloads) or an index of an existing icon, not as PNG files. The example reads an `.svg` file and passes its text. Confirmed in Eplan 2026: the buttons start their scripts (`ExecuteScript` with `ScriptFile`), and the remove script works. `[CallerFilePath]` did **not** give the script folder in Eplan 2026, so the example asks the user to select a file. Still to confirm: how the icons look on a dark and a light ribbon, whether the tab appears immediately or after a restart, what happens when the setup script is run twice, and all of it in Eplan 2025.
 
 ## Suggested while working on other projects
 

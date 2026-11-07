@@ -3,7 +3,7 @@
 // Purpose   : Create your own tab on Eplan's ribbon, with a group and two buttons that run scripts, each with an icon from an .svg file.
 // You learn : RibbonBar, RibbonTab, RibbonCommandGroup, RibbonCommandInfo, RibbonIcon, ExecuteScript, safe re-running
 // Level     : Beginner
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (run test pending)
+// Tested in : Compile-checked against Eplan Electric P8 2025.0.3 and 2026.0.3; run in 2026.0.3
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 //
