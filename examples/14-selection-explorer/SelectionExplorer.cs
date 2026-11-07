@@ -3,7 +3,7 @@
 // Purpose   : Write the properties of everything you have selected in Eplan to a text file, to learn what an object holds and to find property numbers.
 // You learn : Reading the selection, reflection on the data model, building a text report, SaveFileDialog, opening the result
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026 (pages selected in the page navigator))
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 //
