@@ -6,7 +6,7 @@
 |------|-------|
 | ![Dark theme](screenshot-dark.png) | ![Light theme](screenshot-light.png) |
 
-_Screenshots were taken outside Eplan on a plain background. Real Eplan screenshots will replace them._
+_Both screenshots were taken from the script running in Eplan 2026. The window is a normal Windows window; it just follows the color scheme you choose._
 
 ## What it does
 
@@ -42,7 +42,7 @@ Eplan keeps the choice from its options in the setting `USER.MF.GuiColorScheme`:
 
 The script reads that setting. For 0 it asks Windows (the `AppsUseLightTheme` registry value). If anything fails, it uses dark, which is Eplan's default. This is more reliable than guessing from pixels on the screen.
 
-The meaning of the values comes from Eplan's own configuration files and was checked against a running Eplan 2026 that was set to dark with a stored value of 1. If you change the scheme in Eplan, Eplan may need a restart before it shows it, and the setting is what the script reads.
+The meaning of the values comes from Eplan's own configuration files. With Eplan 2026 set to dark (value 1), the script reports "Eplan setting: dark". The values 0 (automatic) and 2 (light) have not been tried inside Eplan yet. If you change the scheme in Eplan, Eplan may need a restart before it shows it, and the setting is what the script reads.
 
 ## How to load it
 
@@ -64,9 +64,11 @@ See [Getting started](../../docs/getting-started.md) if this is your first scrip
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2025.0.3 | Yes | Pending |
-| 2026.0.3 | Yes | Pending |
+| 2026.0.3 | Yes | Yes (Eplan set to dark) |
 
-The restyling was tested outside Eplan: tick and untick change every color as expected. Reading Eplan's setting is the part that needs a run inside Eplan. The setting and the `Settings` methods exist in both 2025 and 2026.
+Tick and untick change every color as expected, and the script correctly read Eplan 2026's dark setting. Still to confirm: Eplan set to light or automatic, and Eplan 2025. The setting and the `Settings` methods exist in both versions.
+
+On screen, text can show faint orange and blue edges in a screenshot. That is normal Windows text smoothing (ClearType), not a wrong color.
 
 ## Ideas to extend
 
