@@ -1,17 +1,41 @@
 # Eplan Scripting GUI Examples
 
-Free, original C# script examples that add **custom windows and tools** to Eplan Electric P8 (2025 and 2026), written for people who are new to C# and Eplan, with room to grow into more advanced data-driven interfaces.
+Learn how to build custom windows and tools inside Eplan Electric P8 with practical, commented C# scripting examples. Whether you want a quick input form, a progress window, a data grid, or a ribbon button for your own project utilities, each example is small enough to read in one sitting and ready to copy and adapt.
 
-> **Unofficial community resource.** This project is not affiliated with, endorsed by, or supported by EPLAN. "EPLAN" is a trademark of its owner. All code here is original work and uses only the publicly available Eplan scripting API. No Eplan-owned code, documentation, or training material is included.
+> **Contributions, ideas, and example requests are welcome.** If there is a GUI pattern you would like to see, [open an issue](../../issues/new/choose) and describe what you need.
+
+> ⚠️ **Unofficial community project.** This repository is not affiliated with, endorsed by, or supported by EPLAN. "EPLAN" is a trademark of its owner. All code here is original and uses only the scripting API that ships with Eplan. No Eplan source code, proprietary documentation, training content, or other copyrighted material is included.
 
 ## Why this exists
 
-Eplan is a powerful platform, and scripting is one more way to shape it around how you work. With a little C#, you can add your own windows to Eplan: a quick input dialog, a progress bar for a long task, a grid for browsing and filtering project data. This repo is a growing list of small, commented examples you can read, run, and adapt.
+Eplan is a powerful platform, and scripting is one more way to shape it around how you work. Many people can automate a repetitive task with a script, and then wonder how to give it a window of its own. These examples show common GUI patterns in small, focused pieces. Each one is designed to be copied, modified, and used as a starting point for your own tools.
 
-## Who it's for
+## Who this is for
 
-- **Beginners** to C# and Eplan scripting. Each beginner example explains the basic C# it uses.
-- **Experienced script writers** who want ready-made GUI patterns (dialogs, grids, progress, settings, ribbon and context-menu launchers).
+- Eplan engineers and designers learning scripting
+- Electrical designers automating repetitive tasks
+- Application engineers building internal productivity tools
+- Teams moving from simple scripts to scripts with their own windows
+
+Beginner examples explain the basic C# they use. Later examples cover data grids, saved settings, and ribbon buttons.
+
+## Examples
+
+| # | Example | What you can do with it | Level | Status |
+|---|---------|-------------------------|-------|--------|
+| 01 | [Reusable input dialog](examples/01-input-dialog/) | Ask the user for text, confirm an action, show a message | Beginner | Available |
+| 02 | Progress bar | Show progress during a long task | Beginner | Planned |
+| 03 | Window placement | Open dialogs centered on Eplan, on a visible monitor | Beginner | Planned |
+| 04 | Light and dark theme | Make your windows match Eplan's theme | Intermediate | Planned |
+| 05 | Remember size and position | Reopen windows where the user left them | Intermediate | Planned |
+| 06 | Themed message window | Messages and questions that fit dark mode | Beginner | Planned |
+| 07 | Settings dialog | Save and restore user preferences | Beginner | Planned |
+| 08 | Page list with search and export | Sort, filter, and export pages to CSV | Intermediate | Planned |
+| 09 | Project property viewer and editor | Browse and edit project data in a grid | Intermediate | Planned |
+| 10 | Parts viewer with filter | Search larger lists as you type | Intermediate | Planned |
+| 11 | Ribbon button creator | Add your own tab and buttons to Eplan | Intermediate | Planned |
+
+More are on the list in [IDEAS.md](IDEAS.md). Request one by opening an issue.
 
 ## Quick start
 
@@ -19,23 +43,15 @@ Eplan is a powerful platform, and scripting is one more way to shape it around h
 2. Open an example folder under [examples/](examples/).
 3. Load the `.cs` file in Eplan (Utilities > Scripts) and run it.
 
-## Examples
-
-| # | Example | What you learn | Level |
-|---|---------|----------------|-------|
-| 01 | [Reusable input dialog](examples/01-input-dialog/) | Windows Forms basics, returning user input | Beginner |
-| 02 | _Progress bar_ (planned) | Showing progress for long actions | Beginner |
-| 03 | _Project property viewer/editor_ (planned) | Data grid, reading and writing properties | Intermediate |
-| 04 | _Page list with search and CSV export_ (planned) | Sorting, filtering, exporting | Intermediate |
-| 05 | _Parts viewer with filter_ (planned) | Working with part data in a grid | Intermediate |
-| 06 | _Ribbon and context-menu launcher_ (planned) | Adding your own buttons to Eplan | Intermediate |
-| 07 | _Settings dialog_ (planned) | Saving and restoring user preferences | Intermediate |
-
-See [IDEAS.md](IDEAS.md) for what's planned next.
-
 ## Tested with
 
-Compile-checked against Eplan Electric P8 **2025** (2025.0.3) and **2026** (2026.0.3). Both use the .NET Framework 4.8.1 API. Each example's README lists whether it has also been run inside Eplan.
+Compile-checked against Eplan Electric P8 **2025** (2025.0.3) and **2026** (2026.0.3). Each example's README states whether it has also been run inside Eplan, and on which versions.
+
+## Using these examples
+
+- The code is [MIT licensed](LICENSE): use it, change it, and share it, including in your own work.
+- Try each script on a copy of a project first. Scripts run inside Eplan and can change project data.
+- The code is provided as is, without warranty. Read a script before you run it.
 
 ## Documentation
 
@@ -46,11 +62,11 @@ Compile-checked against Eplan Electric P8 **2025** (2025.0.3) and **2026** (2026
 
 ## Contributing
 
-Questions, bug reports, and ideas are welcome through Issues and Discussions. Pull requests are welcome too, with one rule: only submit your own original work. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Questions and ideas go in [Discussions](../../discussions) and Issues. Pull requests are welcome too, with one rule: only submit your own original work. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-[MIT](LICENSE). Use it, change it, share it.
+[MIT](LICENSE).
 
 ---
 
