@@ -40,9 +40,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Yes (129 pages listed, search, CSV saved) |
+| 2026.0.3 | Yes | Yes (129 pages listed, search, CSV saved, column sorting) |
 
-Checked in Eplan 2026 on a copy of a demo project: all 129 pages were listed with name, description and page type, searching narrowed the list, and Save as CSV wrote the shown rows to a file. Not yet exercised in Eplan: clicking column headings to sort. The first run failed twice and was fixed: Eplan failed to lock the project until the selection service's LockSelectionByDefault was set to false, and reading the page description by name hit an 'ambiguous match' because Eplan declares that property more than once, so the helper now scans the property list itself. The CSV uses semicolons between columns.
+Checked in Eplan 2026 on a copy of a demo project: all 129 pages were listed with name, description and page type, searching narrowed the list, and Save as CSV wrote the shown rows to a file. Sorting was also run in Eplan 2026 on the same copy: clicking the Page, Description and Type headings reordered the 129 rows each time, and clicking a heading a second time reversed the order. The count stayed at 129. Only the order of the rows was looked at; the CSV was not saved again after sorting. The first run failed twice and was fixed: Eplan failed to lock the project until the selection service's LockSelectionByDefault was set to false, and reading the page description by name hit an 'ambiguous match' because Eplan declares that property more than once, so the helper now scans the property list itself. The CSV uses semicolons between columns.
 
 The member names used (`Project.Pages`, `Page.Name`, `Page.PageTypeName`, `PAGE_NOMINATIOMN`) were checked against the installed 2026 assemblies. The reflection helper was tested outside Eplan against stand-in objects.
 

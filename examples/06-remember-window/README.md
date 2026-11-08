@@ -42,9 +42,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Yes (saved, restored, off-screen fallback, forget) |
+| 2026.0.3 | Yes | Yes (saved, restored, off-screen fallback, maximized, monitors on both sides, Forget then Close) |
 
-Checked in Eplan 2026: the window reopened at the saved position and size after being moved and resized, opened centered when the saved position was far off every screen (a stand-in for an unplugged monitor), and stayed forgotten after 'Forget saved position' and Close. Not yet tried: maximized, and Eplan on a second monitor.
+Checked in Eplan 2026: the window reopened at the saved position and size after being moved and resized, opened centered when the saved position was far off every screen (a stand-in for an unplugged monitor), and the saved entry was removed when 'Forget saved position' was clicked. A later run (2026-11-07) added three cases. Maximized: the window was moved, maximized and closed, and the next run opened at the saved normal size and position, not maximized. Second monitor: after the window was moved to a monitor on the right and closed, it reopened at the same spot; the same happened on a monitor to the left, where the position has a negative X value. Found in that run: closing the window after clicking 'Forget saved position' saved the position again, so the next run opened at the last position instead of the center. The script was changed so that a window that was forgotten is not saved when it closes, and it was run again in Eplan: after Forget and Close nothing was saved, the next run opened centered, and closing that window saved its position again as before. The test used a PC with three monitors; the window was dragged between them, and no monitor was unplugged.
 
 The save and restore logic, including an off-screen saved position, was also tested outside Eplan.
 

@@ -84,10 +84,16 @@ public static class WindowMemory
     // inside the current user's area, so no administrator rights are needed.
     private const string Root = @"Software\EplanScriptExamples\Windows";
 
+    // Names of windows whose memory was cleared with Forget while the window was open.
+    // Without this, closing the window would save its position again straight away.
+    private static string forgotten = "";
+
     // Call this once, after you have set the form up. It restores the saved bounds now
     // and saves the bounds again when the window closes.
     public static void Attach(Form form, string key)
     {
+        forgotten = forgotten.Replace(";" + key + ";", "");   // a new window starts remembering again
+
         try
         {
             Rectangle saved;
@@ -118,6 +124,10 @@ public static class WindowMemory
     // Deletes the saved values for one window.
     public static void Forget(string key)
     {
+        if (!forgotten.Contains(";" + key + ";"))
+        {
+            forgotten += ";" + key + ";";                    // do not save again when the window closes
+        }
         try
         {
             Registry.CurrentUser.DeleteSubKey(Root + "\\" + key, false);
@@ -129,6 +139,11 @@ public static class WindowMemory
 
     private static void Save(Form form, string key)
     {
+        if (forgotten.Contains(";" + key + ";"))
+        {
+            return;                                          // the user asked us to forget this window
+        }
+
         // A maximized or minimized window reports the whole screen as its size.
         // RestoreBounds is the size it will go back to, which is what we want to remember.
         Rectangle bounds = form.WindowState == FormWindowState.Normal ? form.Bounds : form.RestoreBounds;
