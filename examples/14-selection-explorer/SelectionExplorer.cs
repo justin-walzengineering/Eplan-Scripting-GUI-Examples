@@ -41,10 +41,25 @@ public class SelectionExplorerDemo
             List<object> selection = GetSelection();
             if (selection.Count == 0)
             {
+                // Nothing came back as a selection. If a page is open in the editor, offer to use that page.
                 Cursor.Current = Cursors.Default;
-                MessageBox.Show("Nothing is selected.\r\n\r\nSelect one or more objects (for example a page in the page navigator, or a device in the drawing) and run the script again. It works best from a ribbon button or the Quick Access toolbar, so the selection is kept.",
-                    "Selection explorer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                List<object> openPage = GetOpenPage();
+                if (openPage.Count > 0 &&
+                    MessageBox.Show("Nothing is selected.\r\n\r\nWrite the properties of the page that is open in the editor instead?",
+                        "Selection explorer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    selection = openPage;
+                }
+                else
+                {
+                    if (openPage.Count == 0)
+                    {
+                        MessageBox.Show("Nothing is selected.\r\n\r\nSelect one or more pages in a navigator and run the script again.",
+                            "Selection explorer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    return;
+                }
+                Cursor.Current = Cursors.WaitCursor;
             }
 
             foreach (object obj in selection)
@@ -97,6 +112,32 @@ public class SelectionExplorerDemo
             unlock.SetValue(selection, false, null);
         }
         return SxDm.GetList(selection, "Selection");
+    }
+
+    // The page that is open in the editor (the first entry is the page currently shown), or an empty list.
+    private static List<object> GetOpenPage()
+    {
+        List<object> result = new List<object>();
+        try
+        {
+            Type selectionType = SxDm.FindType("Eplan.EplApi.HEServices.SelectionSet", "Eplan.EplApi.HEServicesu");
+            object selection = Activator.CreateInstance(selectionType);
+            PropertyInfo unlock = selectionType.GetProperty("LockSelectionByDefault");
+            if (unlock != null && unlock.CanWrite)
+            {
+                unlock.SetValue(selection, false, null);
+            }
+            List<object> pages = SxDm.GetList(selection, "OpenedPages");
+            if (pages.Count > 0)
+            {
+                result.Add(pages[0]);
+            }
+        }
+        catch (Exception)
+        {
+            // No open page, or the service is not available: the caller shows a message.
+        }
+        return result;
     }
 
     // One block of the report: a heading, then one line per property that has a value.

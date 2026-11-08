@@ -48,9 +48,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Yes (changed one page description on a copy, confirmed by reading it back) |
+| 2026.0.3 | Yes | Yes (replace text and set description, on one and on three pages of a copy, confirmed by reading back) |
 
-Checked in Eplan 2026 on a copy of a demo project, with one page: the preview showed the old and new description side by side, the 'working on a copy' box had to be ticked, the confirmation said 1 page would change, and afterwards the page list (example 09) showed that page, and only that page, with the new description. Only 'Replace text in the description' on a single page was tried. The first draft's data-model helpers needed two fixes found while testing examples 09 and 10 (see the data model guide).
+Checked in Eplan 2026 on a copy of a demo project, with one page: the preview showed the old and new description side by side, the 'working on a copy' box had to be ticked, the confirmation said 1 page would change, and afterwards the page list (example 09) showed that page, and only that page, with the new description. A later run (2026-11-07) tried 'Set the description to' on three pages at once (the pages whose name contains STK.ROT&BOM): all three were ticked, Eplan said '3 page(s) changed', and reading them back with example 09 showed the new description on those three pages, while three similar pages (STK.GRP&BOM) kept theirs. 'Replace text in the description' was then run on the same three pages (find 'Bulk edit test', replace with 'Replaced text'): all three changed, and the page list showed the new text. Two things seen in the runs: every page that would change starts ticked, so check the ticks before you apply, and the list showed all 129 pages even though two pages were selected in the navigator. The first draft's data-model helpers needed two fixes found while testing examples 09 and 10 (see the data model guide).
 
 ## Ideas to extend
 

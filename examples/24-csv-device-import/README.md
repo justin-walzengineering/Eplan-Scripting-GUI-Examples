@@ -1,6 +1,6 @@
 # 24 - CSV preview and device list import
 
-**Level:** Advanced  **File:** [CsvDeviceImport.cs](CsvDeviceImport.cs)  **Status:** Run in Eplan 2026 (preview checked; import not confirmed with real data)
+**Level:** Advanced  **File:** [CsvDeviceImport.cs](CsvDeviceImport.cs)  **Status:** Run in Eplan 2026
 
 > **The import changes your project.** Try it on a copy first.
 
@@ -48,9 +48,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Partly (preview and checks work; import action ran, effect not confirmed) |
+| 2026.0.3 | Yes | Yes (preview, checks and import; rows reached the device list) |
 
-Checked in Eplan 2026: the preview window read a semicolon CSV, showed it in a grid, reported the number of rows and columns, warned about a row with too few columns, and kept the Import button disabled until the file was consistent. The import asked for confirmation (and says to try a copy first) and the device list import action finished without an error. Not confirmed: that the rows really reach the device list. A test file with made-up column names changed nothing (a device list export afterwards still said count=0), most likely because Eplan expects its own column layout; the demo project's device list was also empty, so there was no real export to copy the layout from. Please try it with a file exported from a project that has device list data.
+Checked in Eplan 2026: the preview window read a semicolon CSV, showed it in a grid, reported the number of rows and columns, warned about a row with too few columns, and kept the Import button disabled until the file was consistent. The import asked for confirmation (and says to try a copy first) and the device list import action finished without an error. A later run (2026-11-07) used a copy of a demo project whose device list had one entry. The device list was exported with example 18, and a CSV in that same layout (a first line of column names, a second line of property identifiers, then rows) was built with three rows. The preview showed it, the import asked for confirmation, and Eplan said the import finished; Eplan's device list then showed four entries instead of one, and a second export listed them: the entry that was already there, a second row with the same part number as that entry, and the two new part numbers. So the import adds the rows it is given and does not merge rows with the same part number. The earlier test file with made-up column names had changed nothing, so the layout matters: use a file exported by example 18 as the starting point.
 
 The CSV parsing and the checks were tested outside Eplan, including quotes, delimiters and uneven rows. The import itself needs a run in Eplan.
 

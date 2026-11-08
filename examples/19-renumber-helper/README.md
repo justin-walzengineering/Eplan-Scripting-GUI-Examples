@@ -41,9 +41,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Yes (renumbered three selected pages on a copy) |
+| 2026.0.3 | Yes | Yes (pages and cables changed as expected; devices, terminals and connections ran but showed no change) |
 
-Checked in Eplan 2026 on a copy of a demo project: the button stayed disabled until the 'working on a copy' box was ticked, the confirmation described exactly what would happen (pages, only the selected ones, start 100, step 10), and after Yes the three selected pages were renumbered /100, /110 and /120 while the other pages kept their numbers. Only the Pages type with 'only the objects I have selected' was tried; devices, terminals, cables and connections have not been run.
+Checked in Eplan 2026 on a copy of a demo project: the button stayed disabled until the 'working on a copy' box was ticked, the confirmation described exactly what would happen (pages, only the selected ones, start 100, step 10), and after Yes the three selected pages were renumbered /100, /110 and /120 while the other pages kept their numbers. A later run (2026-11-07) tried the other types on the same copy, each with 'only the objects I have selected' and one object selected in its navigator, and the confirmation described each one correctly. Cables: cable CBL1 became CBL50 (start 50, step 5) and the other cables kept their names. Devices (one device, all tags, start 200), terminals (one terminal, start 20) and connections (one connection, start 700): Eplan reported 'The renumber action finished' with no error, but the name shown in the navigator did not change, so an effect was not confirmed for these three. Those are one-object tests; whether they change anything depends on the project's numbering scheme, and 'only tags that still contain a ?' for devices was not tried because the demo has no such tags.
 
 ## Ideas to extend
 

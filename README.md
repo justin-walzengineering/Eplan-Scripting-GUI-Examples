@@ -40,17 +40,17 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 15 | [Hand a value between scripts](examples/15-hand-off-value/) | Pass a short-lived value from one script to another | Advanced | Available |
 | 16 | [Modern folder picker](examples/16-modern-folder-picker/) | The Explorer-style "choose a folder" window | Advanced | Available |
 | 17 | [Export launcher](examples/17-export-launcher/) | PDF export with a file name pattern | Intermediate | Available |
-| 18 | [Device list export](examples/18-device-list-export/) | CSV, XML or text, opened in Excel | Intermediate | Available, partly tested |
+| 18 | [Device list export](examples/18-device-list-export/) | CSV, XML or text, opened in Excel | Intermediate | Available |
 | 19 | [Renumber helper](examples/19-renumber-helper/) | A safe front end for the renumber action | Intermediate | Available |
 | 20 | [Timestamped backup](examples/20-timestamped-backup/) | A backup with the date and time in its name | Intermediate | Available |
 | 21 | [Favorites launcher](examples/21-favorites-launcher/) | A searchable list of your scripts and actions | Intermediate | Available |
 | 22 | [Results window](examples/22-results-window/) | One report window instead of many message boxes | Intermediate | Available |
 | 23 | [Bulk edit pages](examples/23-bulk-edit/) | Preview, then change many pages at once | Advanced | Available |
-| 24 | [CSV preview and import](examples/24-csv-device-import/) | Check a CSV file before importing it | Advanced | Available, partly tested |
+| 24 | [CSV preview and import](examples/24-csv-device-import/) | Check a CSV file before importing it | Advanced | Available |
 | 25 | [Settings finder](examples/25-settings-finder/) | Search Eplan's settings (read-only) | Intermediate | Available |
 | 26 | [Back up first, then run](examples/26-backup-then-run/) | A safety net in front of risky work | Intermediate | Available |
 
-Every example has been run in Eplan 2026 (Update 5), and examples 06 to 26 on a copy of a demo project; each example's README says exactly what was checked. Examples 14, 18 and 24 are only partly confirmed (see their READMEs), and some options inside the other examples have not been tried yet; [docs/test-status.md](docs/test-status.md) lists them all. Try them on a copy of a project and tell us what you find. More ideas are in [IDEAS.md](IDEAS.md). Request one by opening an issue.
+Every example has been run in Eplan 2026 (Update 5), and examples 06 to 26 on a copy of a demo project; each example's README says exactly what was checked. Example 14 is only partly confirmed (see its README), and some options inside the other examples have not been tried yet; [docs/test-status.md](docs/test-status.md) lists them all. Try them on a copy of a project and tell us what you find. More ideas are in [IDEAS.md](IDEAS.md). Request one by opening an issue.
 
 ## Quick start
 

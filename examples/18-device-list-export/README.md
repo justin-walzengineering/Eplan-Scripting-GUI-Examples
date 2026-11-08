@@ -1,6 +1,6 @@
 # 18 - Device list export (CSV, XML or text)
 
-**Level:** Intermediate  **File:** [DeviceListExport.cs](DeviceListExport.cs)  **Status:** Run in Eplan 2026 (no device list data to check)
+**Level:** Intermediate  **File:** [DeviceListExport.cs](DeviceListExport.cs)  **Status:** Run in Eplan 2026
 
 ![The device list export window](screenshot.png)
 
@@ -37,9 +37,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Partly (action runs, files written; the demo project had no device list entries) |
+| 2026.0.3 | Yes | Yes (CSV, with real device list entries) |
 
-Checked in Eplan 2026 on a copy of a demo project: the action ran without an error and wrote files for CSV and XML. That project's device list was empty, so the CSV file was empty (0 bytes) and the XML said 'deviceList count=0'. The columns and contents of a real device list have therefore not been checked yet; please try it on a project that has device list data and tell us what you see.
+Checked in Eplan 2026 on copies of demo projects. On a project whose device list was empty, the action ran without an error and wrote an empty CSV file (0 bytes) and an XML file that said 'deviceList count=0'. A later run (2026-11-07) used a copy of another demo project to which four device list entries had been added: a CSV export then wrote a file with a first line of column names, a second line of Eplan's property identifiers, and one line per entry, separated by semicolons (18 columns, including part number, number allowed, total number allowed, used unit quantity, spare quantity, manufacturer and macro). The values matched the entries in Eplan's device list. XML and text were not run with real entries, and 'Open the file afterwards' was not used in that run.
 
 ## Ideas to extend
 

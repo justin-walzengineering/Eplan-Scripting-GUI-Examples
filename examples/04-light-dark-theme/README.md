@@ -65,7 +65,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (dark, light and automatic) |
 
-Tick and untick change every color as expected, and the script read all three of Eplan 2026's color scheme values correctly. Not yet tried: automatic with Windows set to dark mode.
+Tick and untick change every color as expected, and the script read all three of Eplan 2026's color scheme values correctly. A later run (2026-11-07) repeated automatic with Windows set to light mode: the window opened light and said "Eplan is using: light (Eplan setting: automatic, so Windows decides)". Still not tried: automatic with Windows set to dark mode.
 
 On screen, text can show faint orange and blue edges in a screenshot. That is normal Windows text smoothing (ClearType), not a wrong color.
 

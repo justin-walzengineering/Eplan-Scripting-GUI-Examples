@@ -1,6 +1,6 @@
 # 14 - Selection explorer
 
-**Level:** Intermediate  **File:** [SelectionExplorer.cs](SelectionExplorer.cs)  **Status:** Run in Eplan 2026 (pages selected in the page navigator)
+**Level:** Intermediate  **File:** [SelectionExplorer.cs](SelectionExplorer.cs)  **Status:** Run in Eplan 2026 (pages selected in a navigator; the open page as a fallback)
 
 *Read-only: this example never changes your project.*
 
@@ -19,9 +19,9 @@ Use it to learn what an object holds, to find the number of a property you want 
 
 ## How to run it
 
-1. Open a project in Eplan. **Select** something first: a page in the page navigator, or a device in the drawing.
+1. Open a project in Eplan. **Select** something first: one or more pages in the page navigator. If nothing comes back as selected, the script offers to use the page that is open in the editor.
 2. Copy `SelectionExplorer.cs` to a folder on your computer.
-3. Go to File > Extras > Interfaces, choose **Run** (under Scripts), and select the file. It works best from a ribbon button or the Quick Access toolbar, so the selection is kept.
+3. Go to File > Extras > Interfaces, choose **Run** (under Scripts), and select the file. A Quick Access button (see the running scripts guide) works too.
 4. Choose where to save the text file.
 
 New to scripts? See [How to run a script](../../docs/running-scripts.md).
@@ -30,7 +30,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 - Properties without a value are left out, to keep the report short.
 - A report is limited to 100 objects.
-- If you see "Nothing is selected" even though something is, try running from a ribbon button or the Quick Access toolbar instead of the File menu, so the drawing page keeps focus.
+- Objects selected on an open drawing page did not reach the script in the tests, whether it was started from the File menu or from a Quick Access button. When nothing is found, the script asks whether to write the page that is open in the editor instead.
 - This example uses reflection and is **likely to need a small adjustment** after the first run. Please report any error message exactly.
 
 ## Compatibility
@@ -39,7 +39,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Partly (three selected pages written to a text file) |
 
-Checked in Eplan 2026: with three pages selected in the page navigator, the script wrote one block per page to a text file and opened it. Not working yet from a drawing selection: after selecting everything on an open page with Ctrl+A, the script reported that nothing was selected, both when started from File > Extras > Interfaces and from the command search box, so for now select pages (or other items) in a navigator before running it. A second run (2026-11-07) clicked one text object on the open page, which enabled Cut, Copy and Delete in the ribbon, and started the script from File > Extras > Interfaces: it again reported that nothing was selected. Running it from a Quick Access toolbar button, as suggested above, has not been tried. The file lists project data such as the last editor's name and e-mail, so there is no screenshot here; check a file before you share it.
+Checked in Eplan 2026: with three pages selected in the page navigator, the script wrote one block per page to a text file and opened it. Not working from a drawing selection: after selecting everything on an open page with Ctrl+A, and later after clicking one text object (Cut and Copy were enabled in the ribbon), the script reported that nothing was selected when started from File > Extras > Interfaces, from the command search box, and from a Quick Access toolbar button (the Run script button). A change was then made so that, when nothing is selected, the script asks 'Write the properties of the page that is open in the editor instead?'. Run from the Quick Access button with the answer Yes, it wrote a report with one block for the open page. That path was tried once, with one page. The file lists project data such as the last editor's name and e-mail, so there is no screenshot here; check a file before you share it.
 
 The member names used were checked against the installed 2026 assemblies. The reflection helper was tested outside Eplan against stand-in objects.
 
