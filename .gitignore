@@ -29,3 +29,6 @@ scratch/
 Thumbs.db
 .DS_Store
 __pycache__/
+
+# Blog lives in a separate PRIVATE repo (cloned here for local work); never commit it publicly
+blog/
