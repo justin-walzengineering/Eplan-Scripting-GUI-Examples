@@ -38,7 +38,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 - The summary turns red when there is at least one error.
 - The window is resizable. The text is in a fixed-width font so columns line up.
-- Other examples in this repository (such as the export and backup ones) can use this window to report what they did.
+- Other examples in this repository (such as the export and backup ones) can reuse this window to report their results.
 
 ## Compatibility
 

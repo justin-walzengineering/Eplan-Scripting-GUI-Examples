@@ -11,7 +11,7 @@ Shows four controls that look right on both a dark and a light background, with 
 
 | Control | Why the standard one is a problem |
 |---------|-----------------------------------|
-| `SafeCheckBox` | The flat check box is almost invisible in dark mode |
+| `SafeCheckBox` | The flat check box can be hard to see in dark mode |
 | `SafeDateField` | The standard date picker cannot be colored and stays white |
 | `SafeComboBox` | The list items and the selected text stay light (the small arrow box is still drawn by Windows and may stay light) |
 | Progress bar | Takes its colors once the system look is switched off with `SetWindowTheme` |

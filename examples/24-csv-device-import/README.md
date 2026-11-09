@@ -8,7 +8,7 @@
 
 ## What it does
 
-Open a CSV file and see it in a grid **before** anything touches your project. The window detects the delimiter (`;`, `,` or tab), shows the first 200 rows, and **checks the file** for rows with a different number of cells than the header. Only when the file looks consistent does the **Import into device list...** button come alive. It then asks to confirm and runs Eplan's `devicelist` action with `TYPE=IMPORT`.
+Open a CSV file and see it in a grid **before** anything touches your project. The window detects the delimiter (`;`, `,` or tab), shows the first 200 rows, and **checks the file** for rows with a different number of cells than the header. The **Import into device list...** button stays disabled until the file looks consistent. It then asks to confirm and runs Eplan's `devicelist` action with `TYPE=IMPORT`.
 
 A typical use: people often bring device data in from another tool through an Excel list. This is a safer way to look at that list first.
 
@@ -48,11 +48,11 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Yes (preview, checks and import; rows reached the device list) |
+| 2026.0.3 | Yes | Yes (preview, checks and import; rows were imported into the device list) |
 
 Checked in Eplan 2026: the preview window read a semicolon CSV, showed it in a grid, reported the number of rows and columns, warned about a row with too few columns, and kept the Import button disabled until the file was consistent. The import asked for confirmation (and says to try a copy first) and the device list import action finished without an error. A later run (2026-11-07) used a copy of a demo project whose device list had one entry. The device list was exported with example 18, and a CSV in that same layout (a first line of column names, a second line of property identifiers, then rows) was built with three rows. The preview showed it, the import asked for confirmation, and Eplan said the import finished; Eplan's device list then showed four entries instead of one, and a second export listed them: the entry that was already there, a second row with the same part number as that entry, and the two new part numbers. So the import adds the rows it is given and does not merge rows with the same part number. The earlier test file with made-up column names had changed nothing, so the layout matters: use a file exported by example 18 as the starting point.
 
-The CSV parsing and the checks were tested outside Eplan, including quotes, delimiters and uneven rows. The import itself needs a run in Eplan.
+The CSV parsing and the checks were tested outside Eplan, including quotes, delimiters and uneven rows.
 
 ## Ideas to extend
 

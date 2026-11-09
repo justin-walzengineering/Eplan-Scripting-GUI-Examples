@@ -46,7 +46,7 @@ public class WindowPlacementDemo
             form.Controls.Add(label);
             form.Controls.Add(closeButton);
 
-            // This one line does the work. It is explained in part 2 below.
+            // This one line does the work. Part 2 below explains how it works.
             EplanWindowHelper.ShowDialogCentered(form);
         }
     }
@@ -61,7 +61,7 @@ public static class EplanWindowHelper
     // --- Windows functions we borrow -----------------------------------------------------
     // The .NET toolbox cannot tell us where ANOTHER program's window is, but Windows itself can.
     // [DllImport] lets our code call a function inside a Windows file (user32.dll).
-    // This is called "P/Invoke". You only need to copy these lines, not understand them fully.
+    // This is called "P/Invoke". You don't need to understand every detail to use these lines.
     [DllImport("user32.dll")]
     private static extern bool GetWindowRect(IntPtr hWnd, out RECT rect);
 
@@ -80,7 +80,7 @@ public static class EplanWindowHelper
 
     // --- Finding the Eplan window --------------------------------------------------------
     // The script runs INSIDE Eplan, so "the current process" is Eplan.
-    // A "handle" is just a number Windows uses to identify a window. Zero means "none".
+    // A "handle" is a value Windows uses to identify a window. Zero means "none".
     public static IntPtr GetEplanHandle()
     {
         try
@@ -114,7 +114,7 @@ public static class EplanWindowHelper
         return true;
     }
 
-    // --- The placement maths ---------------------------------------------------------------
+    // --- The placement math ---------------------------------------------------------------
     // Works out where the top-left corner of a window of size "formSize" should go.
     public static Point GetCenteredLocation(Size formSize, IntPtr ownerHandle)
     {
@@ -138,7 +138,7 @@ public static class EplanWindowHelper
         int x = owner.Left + (owner.Width - formSize.Width) / 2;
         int y = owner.Top + (owner.Height - formSize.Height) / 2;
 
-        // Keep the whole window on screen. If Eplan is half off a monitor, our window must not be.
+        // Keep the whole window on screen. If Eplan is partly off a monitor, our window should still stay fully visible.
         x = Math.Max(workArea.Left, Math.Min(x, workArea.Right - formSize.Width));
         y = Math.Max(workArea.Top, Math.Min(y, workArea.Bottom - formSize.Height));
 
@@ -146,7 +146,7 @@ public static class EplanWindowHelper
     }
 
     // --- Showing the window ----------------------------------------------------------------
-    // Shows "form" as a dialog (the user must close it before returning to Eplan) and returns the result.
+    // Shows "form" as a dialog (the user must close it before returning to Eplan) and returns the dialog result.
     public static DialogResult ShowDialogCentered(Form form)
     {
         IntPtr handle = GetEplanHandle();
@@ -167,7 +167,7 @@ public static class EplanWindowHelper
             return form.ShowDialog();                      // no owner found: still show it
         }
 
-        // Giving the window an OWNER keeps it in front of Eplan and makes it behave as part of Eplan.
+        // Giving the window an OWNER keeps it in front of Eplan and makes it behave like part of Eplan.
         return form.ShowDialog(new WindowOwner(handle));
     }
 
@@ -189,7 +189,7 @@ public static class EplanWindowHelper
     }
 }
 
-// ShowDialog needs an "owner" in the form of IWin32Window. This tiny class wraps a handle so we can supply one.
+// ShowDialog needs an "owner" in the form of IWin32Window. This tiny class wraps a handle so we can pass it to ShowDialog.
 public class WindowOwner : IWin32Window
 {
     private readonly IntPtr handle;

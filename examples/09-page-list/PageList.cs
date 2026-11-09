@@ -195,7 +195,7 @@ public class PageListForm : Form
 
     private void OnColumnClick(object sender, ColumnClickEventArgs e)
     {
-        sortAscending = (e.Column == sortColumn) ? !sortAscending : true;   // click again to reverse
+        sortAscending = (e.Column == sortColumn) ? !sortAscending : true;   // click the same column again to reverse the sort order
         sortColumn = e.Column;
         SortShown();
         Redraw();
@@ -243,7 +243,7 @@ public class PageListForm : Form
 // ---------------------------------------------------------------
 public static class PgDm
 {
-    // Finds a type from its full name. Looks in the assemblies already loaded, then loads the DLL if needed.
+    // Finds a type by its full name. Looks in the assemblies already loaded, then loads the DLL if needed.
     public static Type FindType(string fullName, string assemblyName)
     {
         foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())

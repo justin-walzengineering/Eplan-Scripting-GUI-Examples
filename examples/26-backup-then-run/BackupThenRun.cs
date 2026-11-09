@@ -50,7 +50,7 @@ public class BackupThenRunDemo
             return;
         }
 
-        // Step 2: only now do the real work.
+        // Step 2: run the script or action you chose.
         try
         {
             CommandLineInterpreter cli = new CommandLineInterpreter();

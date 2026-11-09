@@ -15,7 +15,7 @@ Adds your own **tab** to Eplan's ribbon. The tab has one **group**, and the grou
 
 Run `RibbonSetup.cs` once and the tab appears. Run it again and it asks before replacing the tab, so you never end up with two. `RibbonRemove.cs` removes the tab, so you can undo the example cleanly.
 
-A ribbon is built in three levels, and the code follows them in order:
+A ribbon is built in three levels, and this example follows the same order:
 
 ```
 Tab            "Demo Tools"
@@ -53,7 +53,7 @@ icons\
     time.svg
 ```
 
-The buttons need the full path of the scripts, so the setup has to know where you saved them. Eplan does not tell a running script where it is saved, so the setup tries a few ways to work it out. If none works, **it opens the normal Windows "Open" window and asks you to select `ButtonHello.cs`**; the folder that file is in is then used. (That is what happened in Eplan 2026 when this example was first tested.) The finished message tells you which method worked.
+The buttons need the full path of the scripts, so the setup has to know where you saved them. Eplan does not tell a running script where it is saved, so the setup tries a few ways to find it. If none of them works, **it opens the normal Windows "Open" window and asks you to select `ButtonHello.cs`**; the folder that file is in is then used. (That is what happened in Eplan 2026 when this example was first tested.) The finished message tells you which method worked.
 
 To skip the question, type your folder into the `ScriptFolder` option at the top of `RibbonSetup.cs`, for example `@"C:\EplanScripts\Ribbon"`.
 
@@ -68,10 +68,10 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 
 ## About the icons
 
-Ribbon icons are **SVG** pictures. An SVG file is a small text file that describes a shape, so it stays sharp at any size and works on both light and dark backgrounds. The setup script reads the file as text and gives that text to Eplan.
+Ribbon icons are **SVG** pictures. An SVG file is a text file that describes a shape, so it stays sharp at any size and works on both light and dark backgrounds. The setup script reads the file as text and gives that text to Eplan.
 
 - Eplan's ribbon icons are given to the script as SVG text (or as the number of an icon Eplan already has). A PNG file cannot be passed in the same way.
-- The two icons here are simple shapes drawn from scratch. Open them in a text editor to see how short they are, and change a color or shape to make your own.
+- The two icons here are simple shapes drawn from scratch. Open them in a text editor to see how they're built, and change a color or shape to make your own.
 - Free tools such as Inkscape can draw SVG icons. If you do not have an icon, the button still works; it just appears without a picture.
 
 ## Good to know
@@ -87,11 +87,11 @@ Ribbon icons are **SVG** pictures. An SVG file is a small text file that describ
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (setup, both buttons and remove) |
 
-In Eplan 2026 the setup could not find its own folder automatically, so it asked for `ButtonHello.cs` (the finished message said "found by: you chose it"). After that the tab was created, both buttons started their scripts, and `RibbonRemove.cs` removed the tab.
+When this example was tested in Eplan 2026.0.3, the setup could not find its own folder automatically, so it asked for `ButtonHello.cs` (the finished message said "found by: you chose it"). After that the tab was created, both buttons started their scripts, and `RibbonRemove.cs` removed the tab.
 
 ## Ideas to extend
 
 - Add a second group, or a third button.
 - Put a button next to Eplan's own commands by adding it to an existing tab.
-- Point a button at one of your own scripts from the other examples (for example example 04).
+- Point a button at one of your own scripts from another example (for example, example 04).
 - Add more icons, and try a different color for light and dark ribbons.

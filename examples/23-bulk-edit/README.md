@@ -15,14 +15,14 @@ Changes **one property on many pages at once**, safely:
 3. **Look at the preview.** Every matching page is listed with its description now and its description after. Pages that would change are highlighted.
 4. **Tick** the pages you want, tick "I am working on a copy, or I have a backup", press **Apply to ticked pages...**, and confirm.
 
-After applying, the script **reads each value back** to check that Eplan really took the change, and lists any page that did not change.
+After applying, the script **reads each value back** to confirm that Eplan accepted the change, and lists any page that did not change.
 
 This version edits the **page description** (property 11011). The same pattern works for other properties once you have found their numbers (see examples 10 and 14).
 
 ## What you will learn
 
 - A **preview-then-confirm** design for anything that changes data
-- A `DataGridView` with a **tick box column**, and making a tick count immediately
+- A `DataGridView` with a **tick box column**, and updating a tick count immediately
 - Find-and-replace logic with a live preview
 - Changing data through the data model with reflection: locking, building a property id, and setting a value
 - **Reading back** after writing, to catch silent failures
@@ -42,7 +42,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 - Nothing is written until you press Apply and confirm.
 - Descriptions are multi-language in Eplan. This version reads the English text (or the first available), and sets the new text through Eplan's text setter. Check the result on a page with several languages.
 - If a page cannot be changed (for example it is write-protected), it appears in the "Not changed" list with the reason.
-- This is the **riskiest example in the collection**, because it writes through reflection. Please test on a copy and report what you see.
+- This is the **riskiest example in the collection**, because it writes through reflection. Please test on a copy first and report any issues you find.
 
 ## Compatibility
 

@@ -9,13 +9,13 @@
 Opens a small demo window that is:
 
 - **Centered on the Eplan main window**, not just the middle of a screen
-- **Owned by Eplan**, so it stays in front of Eplan and behaves as part of it
+- **Owned by Eplan**, so it stays in front of Eplan and behaves like part of it
 - **Hidden from the taskbar**, so users don't get an extra button
 - **Always fully visible**, even if Eplan is half off a monitor or on a second screen
 
 The demo window also tells you where Eplan is and which screen it is on, so you can see the logic working.
 
-The reusable part is the `EplanWindowHelper` class. Copy it into your own scripts, and one line shows any window the right way:
+The reusable part is the `EplanWindowHelper` class. Copy it into your own scripts, and one line opens any dialog with the same behavior:
 
 ```csharp
 EplanWindowHelper.ShowDialogCentered(myForm);
@@ -29,7 +29,7 @@ EplanWindowHelper.ShowDialogCentered(myForm);
 - How to read another window's position and size
 - Working with **multiple monitors** and the "working area" (the screen minus the taskbar)
 - Why you set the position in the form's `Load` event
-- A first look at **P/Invoke**: calling a Windows function from C#. You only need to copy those lines
+- A first look at **P/Invoke**: calling a Windows function from C#. You can use it without understanding every detail
 
 ## How to load it
 
@@ -52,7 +52,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes |
 
-The placement maths was also tested outside Eplan with stand-in windows: a normal window, one half off the edge of the screen, a minimized one, and none at all. In every case the new window landed fully on screen.
+The placement math was also tested outside Eplan with stand-in windows: a normal window, one half off the edge of the screen, a minimized one, and none at all. In every case the new window landed fully on screen.
 
 ## Ideas to extend
 

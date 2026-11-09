@@ -32,7 +32,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 - The note lives only as long as Eplan is running. It is not saved to disk.
 - Both scripts must use the same key text. Make it unique so it cannot clash with another tool.
-- Do not pass secrets this way. Any script in the same Eplan session can read the note.
+- Do not use this approach for passwords, tokens, or other secrets. Any script in the same Eplan session can read the note.
 - Whether scripts really share one AppDomain in your Eplan version is the thing this example tests, so please report what you see.
 
 ## Compatibility
@@ -41,9 +41,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (value passed between two scripts, empty case) |
 
-Checked in Eplan 2026: the sender's value reached the receiver script ('Hello from the sender' with the time it was made), so two scripts run in the same Eplan session can share short-lived values this way. Running the receiver again straight afterwards found nothing waiting, because the value is taken once, and it reported that clearly.
+Checked in Eplan 2026: the sender's value reached the receiver script ('Hello from the sender' with the time it was made), so two scripts run in the same Eplan session can share short-lived values this way. Running the receiver again straight afterwards found nothing waiting, because the value is cleared after it is read, and it reported that clearly.
 
-The receiver's freshness and parsing logic was tested outside Eplan.
+The receiver's freshness and parsing logic was also tested outside Eplan.
 
 ## Ideas to extend
 

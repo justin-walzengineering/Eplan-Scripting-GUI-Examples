@@ -94,7 +94,7 @@ public static class FavoritesStore
         {
         }
 
-        // First run (or damaged file): start with one harmless sample so the window is not empty.
+        // First run (or damaged file): start with one harmless sample so the list is not empty.
         List<FavoriteItem> sample = new List<FavoriteItem>();
         sample.Add(new FavoriteItem { Name = "Redraw the screen", Kind = "Action", Target = "XGedRedrawAction" });
         return sample;

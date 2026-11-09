@@ -6,9 +6,9 @@
 
 ## What it does
 
-Opens a resizable demo window. Move it, resize it, maximize it, then close it. The next time you run the script, it opens exactly where you left it. A **Forget saved position** button clears the memory.
+Opens a resizable demo window. Move it, resize it, maximize it, then close it. The next time you run the script, it reopens where you left it. A **Forget saved position** button clears the saved position.
 
-It is also safe: if the saved position is no longer on any screen (for example you unplugged a monitor), the window opens in the centre of the screen instead of out of reach.
+It is also safe: if the saved position is no longer on any screen (for example you unplugged a monitor), the window opens in the center of the screen instead of out of reach.
 
 The reusable part is the `WindowMemory` class. Copy it into your own scripts, then add one line after you set a form up:
 
@@ -22,7 +22,7 @@ WindowMemory.Attach(myForm, "MyWindowName");
 - Reacting to the form's **FormClosed** event
 - Why a maximized window must save `RestoreBounds`, not `Bounds`
 - Checking the saved spot against all the **screens** that exist now
-- Writing code that fails quietly, because remembering a position is only a convenience
+- Writing code that fails gracefully, because remembering a position is only a convenience
 
 ## How to run it
 
@@ -36,7 +36,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 - Values are stored under `HKEY_CURRENT_USER\Software\EplanScriptExamples\Windows\<key>`. Give each of your windows its own key.
 - The window is saved when it closes normally. A window that is closed by a crash saves nothing.
-- Example 03 shows how to centre a window on Eplan the first time, before anything is saved.
+- Example 03 shows how to center a window on Eplan the first time, before anything is saved.
 
 ## Compatibility
 

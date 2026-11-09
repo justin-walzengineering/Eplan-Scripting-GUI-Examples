@@ -29,7 +29,7 @@ public class HandOffSender
         // 1. Make up a value to pass on. In a real script this could be a page name, a mode, or a file path.
         string value = "Hello from the sender, made at " + DateTime.Now.ToString("T");
 
-        // 2. Leave it where the other script can find it. AppDomain.CurrentDomain is shared by all scripts
+        // 2. Store it where the other script can find it. AppDomain.CurrentDomain is shared by all scripts
         //    running inside the same Eplan, so it works like a short-term shared note.
         //    We add the time (in "ticks") so the receiver can tell whether the note is fresh.
         AppDomain.CurrentDomain.SetData(Key, value + "|" + DateTime.UtcNow.Ticks);

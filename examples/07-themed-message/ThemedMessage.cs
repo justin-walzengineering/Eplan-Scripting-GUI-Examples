@@ -1,6 +1,6 @@
 // ============================================================
 // Example   : 07 - Themed message and confirm window
-// Purpose   : Show messages and Yes/No questions in a window that follows Eplan's light or dark scheme, instead of a standard message box.
+// Purpose   : Show messages and Yes/No questions in a window that follows Eplan's light or dark color scheme, instead of a standard message box.
 // You learn : Why MessageBox ignores dark mode, building your own small dialog, returning true/false, reading Eplan's color scheme
 // Level     : Beginner
 // Tested in : Eplan Electric P8 2026.0.3 (run in Eplan with the dark color scheme)
@@ -65,7 +65,7 @@ public class NoticeWindow : Form
     {
         dark = IsEplanDark();
 
-        // Colors for each scheme. Back = window, Text = normal text, Field = button background.
+        // Colors for each scheme. Back = window background, Text = normal text, Field = button background.
         Color back = dark ? Color.FromArgb(32, 32, 32) : Color.FromArgb(243, 243, 243);
         Color fore = dark ? Color.FromArgb(240, 240, 240) : Color.FromArgb(26, 26, 26);
         Color head = dark ? Color.FromArgb(98, 169, 235) : Color.FromArgb(15, 108, 189);
@@ -116,7 +116,7 @@ public class NoticeWindow : Form
             Controls.Add(okButton);
         }
 
-        // The title bar belongs to Windows, so we ask Windows to color it. Failures are ignored.
+        // The title bar is controlled by Windows, so we ask Windows to color it. Failures are ignored.
         HandleCreated += delegate { ColorTitleBar(back, fore); };
     }
 

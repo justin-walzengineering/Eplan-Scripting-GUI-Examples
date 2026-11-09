@@ -30,7 +30,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 - Properties without a value are left out, to keep the report short.
 - A report is limited to 100 objects.
-- Objects selected on an open drawing page did not reach the script in the tests, whether it was started from the File menu or from a Quick Access button. When nothing is found, the script asks whether to write the page that is open in the editor instead.
+- Objects selected directly on an open drawing page were not returned to the script during testing, whether it was started from the File menu or from a Quick Access button. When nothing is found, the script asks whether to write the page that is open in the editor instead.
 - This example uses reflection and is **likely to need a small adjustment** after the first run. Please report any error message exactly.
 
 ## Compatibility

@@ -210,7 +210,7 @@ public static class SxDm
         return null;
     }
 
-    // The project that is open in Eplan right now. Throws a friendly error if there is none.
+    // The project that is open in Eplan right now. Throws a clear error if no project is open.
     public static object CurrentProject()
     {
         Type selectionType = FindType("Eplan.EplApi.HEServices.SelectionSet", "Eplan.EplApi.HEServicesu");

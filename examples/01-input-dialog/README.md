@@ -38,11 +38,11 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes |
 
-The dialog logic (OK, Cancel, default text) was also exercised outside Eplan against the compiled script. It has also been run in Eplan 2026.
+The dialog logic (OK, Cancel, and default text handling) was also exercised outside Eplan against the compiled script. It has also been run in Eplan 2026.
 
 ## Ideas to extend
 
 - Add a second text box (for example "Report number").
 - Change the `Confirm` default button, or add Yes/No/Cancel.
-- Validate the input (letters and numbers only, maximum length).
+- Validate the input (for example, letters and numbers only, or a maximum length).
 - Use `Prompt` to ask for a project property value, then write it to the project (see later examples).

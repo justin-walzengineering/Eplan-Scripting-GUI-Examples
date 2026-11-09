@@ -1,6 +1,6 @@
 // ============================================================
 // Example   : 02 - Progress bar around a long action
-// Purpose   : Show Eplan's own progress window while a script works through a list, with a working Cancel button.
+// Purpose   : Show Eplan's own progress window while a script works through a list, and let the user cancel it.
 // You learn : The Progress object, splitting a job into parts, steps, cancelling, try/catch/finally
 // Level     : Beginner
 // Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (run in Eplan 2026.0.3: see README)
@@ -20,28 +20,28 @@ public class ProgressBarDemo
     [Start]
     public void Run()
     {
-        // We create the progress window object. "SimpleProgress" is the plain style.
+        // Create the progress window object. "SimpleProgress" is the basic style.
         // (There is also "EnhancedProgress".)
         Progress progress = new Progress("SimpleProgress");
 
-        // These flags remember what happened, so we can tell the user AFTER the progress window has closed.
+        // These variables remember what happened, so we can tell the user AFTER the progress window has closed.
         bool completed = false;
         string errorText = null;
 
         // try / catch / finally:
         //   try     - the work we want to do
         //   catch   - what to do if something goes wrong (instead of crashing)
-        //   finally - cleanup that must ALWAYS happen, even after an error or a Cancel
+        //   finally - cleanup that must ALWAYS happen, even after an error or Cancel
         try
         {
             progress.SetTitle("Progress bar demo");
             progress.SetAllowCancel(true);       // show a Cancel button
             progress.ShowImmediately();          // show the window now, not after a short delay
 
-            // The whole bar is 100%. We split it into two "parts" that add up to 100%:
+            // The whole bar represents 100%. We split it into two "parts" that add up to 100%:
             //   Part 1 = 30% of the bar, 5 items
             //   Part 2 = 70% of the bar, 15 items
-            // "&&" means "and": only start part 2 if part 1 finished without a Cancel.
+            // "&&" means "and": only start part 2 if part 1 finished without being cancelled.
             completed = RunPart(progress, 30.0, "Preparing", 5, "Preparing item")
                      && RunPart(progress, 70.0, "Processing", 15, "Processing item");
         }
@@ -74,7 +74,7 @@ public class ProgressBarDemo
 
     // A helper method that runs one "part" of the bar.
     //   percent   - how much of the whole bar this part uses (all parts together should be 100)
-    //   partName  - the name of this part
+    //   partName  - the label shown for this part
     //   itemCount - how many items to work through
     //   text      - the message shown above the bar, followed by "3 of 15" and so on
     // It returns true if every item was done, or false if the user pressed Cancel.
@@ -82,7 +82,7 @@ public class ProgressBarDemo
     {
         progress.BeginPart(percent, partName);
 
-        // Tell Eplan how many steps make up this part. Call this AFTER BeginPart, not before.
+        // Tell Eplan how many steps are in this part. Call this AFTER BeginPart, not before.
         progress.SetNeededSteps(itemCount);
 
         bool finishedAll = true;

@@ -15,7 +15,7 @@ using Microsoft.Win32;                 // Registry: where Windows keeps small pe
 using Eplan.EplApi.Scripting;          // The [Start] attribute
 
 // ---------------------------------------------------------------
-// Part 1: the script Eplan runs. It shows a resizable demo window.
+// Part 1: the script Eplan runs. It opens a resizable demo window.
 // ---------------------------------------------------------------
 public class RememberWindowDemo
 {
@@ -50,7 +50,7 @@ public class RememberWindowDemo
             resetButton.Click += delegate
             {
                 WindowMemory.Forget("RememberWindowDemo");
-                MessageBox.Show("Done. The next run opens in the centre of the screen.", "Remember window demo");
+                MessageBox.Show("Done. The next run opens in the center of the screen.", "Remember window demo");
             };
 
             closeButton.Text = "Close";
@@ -76,7 +76,7 @@ public class RememberWindowDemo
 }
 
 // ---------------------------------------------------------------
-// Part 2: a helper you can copy into your own scripts.
+// Part 2: a helper class you can copy into your own scripts.
 // ---------------------------------------------------------------
 public static class WindowMemory
 {

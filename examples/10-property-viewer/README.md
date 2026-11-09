@@ -32,7 +32,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 - If nothing is selected, you can still look at the project's own properties.
 - Only the first 50 selected objects are offered.
-- Property names are shown in your Eplan's language.
+- Property names are shown in the language your Eplan is set to.
 - This example uses reflection (see example 09) and is **likely to need a small adjustment** after the first run. Please report any error message exactly.
 
 ## Compatibility

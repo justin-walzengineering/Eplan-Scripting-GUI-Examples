@@ -15,7 +15,7 @@ using Eplan.EplApi.Scripting;
 
 public class RibbonRemoveDemo
 {
-    // Must match TabName in RibbonSetup.cs.
+    // Must match the TabName value in RibbonSetup.cs.
     private const string TabName = "Demo Tools";
 
     [Start]
