@@ -8,9 +8,9 @@
 
 ## What it does
 
-A friendly window in front of Eplan's own `renumber` action. Choose what to renumber (devices, pages, terminals, cables or connections), whether to renumber only the objects you have selected, and the start value and step. For devices you can limit it to tags that still contain a `?`.
+A simple window in front of Eplan's own `renumber` action. Choose what to renumber (devices, pages, terminals, cables or connections), whether to renumber only the objects you have selected, and the start value and step. For devices you can limit it to tags that still contain a `?`.
 
-Two safety steps protect you: the **Renumber...** button stays disabled until you tick "I am working on a copy, or I have a backup", and a final **Yes/No** question repeats in plain words what is about to happen.
+Two safety steps protect you: the **Renumber...** button stays disabled until you tick "I am working on a copy, or I have a backup", and a final **Yes/No** question shows exactly what is about to happen.
 
 ## What you will learn
 

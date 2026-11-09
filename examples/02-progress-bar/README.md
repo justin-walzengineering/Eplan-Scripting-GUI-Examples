@@ -11,7 +11,7 @@ Shows Eplan's own progress window while a script works through a list of items. 
 1. **Preparing**: 5 items, the first 30% of the bar
 2. **Processing**: 15 items, the remaining 70%
 
-The user can press **Cancel** at any time. When the progress window closes, a message says whether everything finished, you cancelled, or an error happened.
+The user can press **Cancel** at any time. When the progress window closes, a message says whether everything finished, the work was cancelled, or an error happened.
 
 ![Message shown when all items were processed](screenshot-done.png)
 
@@ -19,14 +19,14 @@ If the user presses Cancel, the work stops and this message appears instead:
 
 ![Message shown after pressing Cancel](screenshot-cancelled.png)
 
-Notice that Eplan draws its own progress window in the current theme (dark here), while a standard message box stays light. Making your own windows match is the subject of the theme examples later in this collection.
+Notice that Eplan draws its own progress window in the current theme (dark here), while a standard message box stays light. Making your own windows match Eplan's theme is covered in later examples.
 
 The work in the example is only a short pause per item. Replace the `Thread.Sleep(150)` line with your real work.
 
 ## What you will learn
 
 - How to create and show Eplan's `Progress` window
-- Splitting a long job into **parts**, and why the parts add up to 100%
+- Splitting a long job into **parts**, and why the percentages add up to 100%
 - Counting **steps** so the bar moves smoothly
 - Letting the user **cancel**, and checking for it in your loop
 - `try` / `catch` / `finally`: why the progress must always be ended, even after an error
@@ -46,7 +46,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 - Call `SetNeededSteps` **after** `BeginPart`. Before it, the steps are ignored.
 - Show your own message boxes only **after** the progress window has closed, or they can end up hidden behind it.
 - If your work calls other Eplan actions that show their own progress, don't count steps yourself for that part, because the two can clash.
-- The window only moves while your script returns control between steps, so keep each item short.
+- The progress bar only updates between steps, so keep each item reasonably short.
 
 ## Compatibility
 
@@ -54,11 +54,11 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (progress window, final message and Cancel confirmed) |
 
-The `Progress` members used here are identical in both versions. Pressing Cancel stops the work and shows "Cancelled. Nothing more was processed."
+Pressing Cancel stops the remaining work and shows "Cancelled. Nothing more was processed."
 
 ## Ideas to extend
 
-- Use real work: loop over pages or files instead of the fake delay.
+- Replace the fake delay with real work, such as looping over pages or files.
 - Add a third part, and change the percentages (they should still add up to 100).
 - Show a different message per part with `SetOverallActionText`.
 - Turn off the "are you sure?" prompt on Cancel with `SetAskOnCancel(false)`.

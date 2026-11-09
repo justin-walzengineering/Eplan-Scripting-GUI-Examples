@@ -17,7 +17,7 @@ public class HandOffReceiver
     // Must match the key in HandOffSender.cs.
     private const string Key = "EplanExamples.HandOff";
 
-    // How old a note may be before we ignore it, in seconds.
+    // Maximum age of the note before it is ignored, in seconds.
     private const int MaxAgeSeconds = 60;
 
     [Start]

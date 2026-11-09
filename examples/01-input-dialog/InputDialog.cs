@@ -1,9 +1,9 @@
 // ============================================================
 // Example   : 01 - Reusable input dialog
-// Purpose   : Ask the user for text, confirm an action, and show a message, using small helpers you can reuse.
+// Purpose   : Ask the user for text, confirm an action, and show a message using small helpers you can reuse.
 // You learn : Windows Forms basics, returning a value from a window, handling Cancel and empty input
 // Level     : Beginner
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (run in Eplan 2026.0.3: see README)
+// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (also run in Eplan 2026.0.3; see README)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
@@ -22,7 +22,7 @@ public class InputDialogDemo
     [Start]
     public void Run()
     {
-        // 1. Ask for text. Prompt returns the typed text, or null if the user pressed Cancel.
+        // 1. Ask for text. Prompt returns the text the user typed, or null if they pressed Cancel.
         string reportName = DialogHelper.Prompt(
             "New report",                       // window title
             "What should the report be called?", // question shown above the text box
@@ -35,7 +35,7 @@ public class InputDialogDemo
             return;                              // "return" leaves the method early
         }
 
-        // 3. Handle empty input. Trim() removes spaces at both ends; Length is how many characters remain.
+        // 3. Handle empty input. Trim() removes spaces at the beginning and end; Length is the number of characters left.
         if (reportName.Trim().Length == 0)
         {
             DialogHelper.Info("Missing name", "Please enter a name and try again.");
@@ -55,7 +55,7 @@ public class InputDialogDemo
 }
 
 // A "static class" is a toolbox of helpers. You call them without creating an object first,
-// for example DialogHelper.Prompt(...). Copy this class into your own scripts to reuse it.
+// for example DialogHelper.Prompt(...). You can copy this class into your own scripts and reuse it.
 public static class DialogHelper
 {
     // Shows a window with a question and a text box.

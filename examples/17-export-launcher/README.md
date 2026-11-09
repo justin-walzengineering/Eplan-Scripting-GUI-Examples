@@ -13,7 +13,7 @@ A small window that exports the **current project** to one PDF file with a name 
 - Optional **language** and **export scheme**
 - Optionally shows the new file in Explorer afterwards
 
-It remembers your last choices. It asks before replacing a file that already exists. It uses Eplan's own `export` action, so you get the same PDF as the normal export, just with less clicking and a consistent name.
+It remembers your last choices. It asks before replacing a file that already exists. It uses Eplan's own `export` action, so you get the same PDF as the normal export, just with fewer clicks and a consistent file name.
 
 ## What you will learn
 
@@ -47,7 +47,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 Checked in Eplan 2026 on a copy of a demo project: the preview showed the project name correctly, the export action wrote one PDF of all 129 pages (about 8 MB, roughly 30 seconds), and the 'file already exists' question appeared with No as the default. Eplan 2026 ignored the file name that was passed to the export action and named the PDF itself (project name, date and time), so the script finds the file the action just made and renames it to the name from your pattern.
 
-The file name pattern and the saved options were tested outside Eplan. The export itself needs a run in Eplan.
+The file name pattern and the saved options were tested outside Eplan.
 
 ## Ideas to extend
 

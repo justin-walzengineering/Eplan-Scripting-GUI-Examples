@@ -94,7 +94,7 @@ public class PleaseWaitWindow
             PleaseWaitForm f = form;
             if (f != null && f.IsHandleCreated)
             {
-                // A window may only be changed by its own thread, so we ask it to close itself.
+                // A window may only be changed from its own thread, so we ask it to close itself.
                 f.BeginInvoke(new MethodInvoker(delegate { f.Close(); }));
             }
             if (thread != null)

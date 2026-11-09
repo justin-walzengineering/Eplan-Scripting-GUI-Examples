@@ -39,7 +39,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
-- Use this when you do **one long piece of work** that blocks Eplan. If your work happens in steps you control, Eplan's own progress window (example 02) is simpler.
+- Use this when you do **one long piece of work** that blocks Eplan. If your work happens in steps you control, Eplan's own progress window (example 02) is usually simpler.
 - Always close the window **before** showing a message, or the message can appear behind it.
 - Always close it in `finally`.
 - Do not touch Eplan's data from the window's thread. It is only for showing text and a bar.
@@ -51,7 +51,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (bar keeps moving, window closes by itself) |
 
-The bar kept moving the whole time. The window shows in light colors even with a dark Eplan, because it is a plain window; example 13 shows how to color controls for dark mode.
+The bar kept moving the whole time. The window stays light even if Eplan is using a dark theme, because it is a plain Windows Forms window. Example 13 shows how to match dark mode colors.
 
 The open, close and double-close behavior was also tested outside Eplan.
 

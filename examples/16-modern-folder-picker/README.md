@@ -43,12 +43,12 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (choose a folder, Cancel) |
 
-Checked in Eplan 2026: the Explorer-style window opened, choosing a folder returned its path, and Cancel returned nothing, which the script reported as 'No folder was chosen.'
+Checked in Eplan 2026: the Explorer-style window opened, choosing a folder returned its path, and Cancel returned null, which the script reported as 'No folder was chosen.'
 
 The window was opened and cancelled programmatically outside Eplan to confirm the COM declarations match Windows.
 
 ## Ideas to extend
 
 - Pass an owner window handle to `Show` so the dialog stays in front of Eplan.
-- Add a version that allows several folders (the `FosAllowMultiSelect` flag and `IFileOpenDialog.GetResults`).
+- Add a version that allows multiple folders (the `FosAllowMultiSelect` flag and `IFileOpenDialog.GetResults`).
 - Remember the last folder with the settings file from example 08.

@@ -55,7 +55,7 @@ public class PartsViewerDemo
         }
     }
 
-    // Reads every part and keeps six texts for each: part number, type number, description, manufacturer, order number, product group.
+    // Reads every part and stores six values for each: part number, type number, description, manufacturer, order number, product group.
     private static List<string[]> LoadParts()
     {
         List<string[]> rows = new List<string[]>();
@@ -86,7 +86,7 @@ public class PartsViewerDemo
         return rows;
     }
 
-    // Reading an empty property can throw, so each read is wrapped: a failed read just gives "".
+    // Reading some properties can throw an exception, so each read is wrapped: a failed read just gives "".
     private static string Safe(Func<string> read)
     {
         try

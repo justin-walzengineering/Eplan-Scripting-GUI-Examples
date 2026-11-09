@@ -6,13 +6,13 @@
 |------|-------|-----------------------------|
 | ![Dark theme](screenshot-dark.png) | ![Light theme](screenshot-light.png) | ![Automatic setting](screenshot-automatic.png) |
 
-_All screenshots were taken from the script running in Eplan 2026. The window is a normal Windows window; it just follows the color scheme set in Eplan. The status line at the bottom shows which setting it found._
+_All screenshots were taken from the script running in Eplan 2026. The window is a normal Windows window that follows the color scheme selected in Eplan. The status line at the bottom shows which setting it found._
 
 ## What it does
 
-Opens a demo window with a **Dark mode** check box. Tick it and the whole window restyles live: background, text, text box, drop-down, buttons, check boxes, and even the title bar. Untick it for light.
+Opens a demo window with a **Dark mode** check box. Tick it and the whole window updates immediately: background, text, text box, drop-down, buttons, check boxes, and even the title bar. Untick it for light.
 
-A **Match Eplan** button reads the color scheme chosen in Eplan's own options and sets the check box to match. The window also does this when it opens, so your tools can look right the moment they appear.
+A **Match Eplan** button reads the color scheme chosen in Eplan's own options and sets the check box to match. The window also does this when it opens, so your tools match Eplan from the start.
 
 The reusable parts are `ThemeHelper`, `ThemePalette` and `ThemedCheckBox`. Copy them into your own scripts, then call:
 
@@ -23,12 +23,12 @@ ThemeHelper.Apply(myForm, dark);         // restyle the form and everything on i
 
 ## What you will learn
 
-- A **palette**: keeping all your colors in one place, one set for dark and one for light
+- A **palette**: keeping all your colors in one place, with one set for dark mode and one for light mode
 - Restyling every control on a window with a loop that visits controls inside controls (recursion)
 - Why the standard check box is nearly invisible in dark mode, and how to draw your own (`OnPaint`)
 - Coloring the Windows **title bar** with a few lines of P/Invoke
 - Reading one of **Eplan's own settings** from a script with the `Settings` class
-- Falling back safely: styling is cosmetic and should never stop your script
+- Safe fallbacks: styling is cosmetic and should never stop your script
 
 ## How Eplan's color scheme is read
 
@@ -42,7 +42,7 @@ Eplan keeps the choice from its options in the setting `USER.MF.GuiColorScheme`:
 
 The script reads that setting. For 0 it asks Windows (the `AppsUseLightTheme` registry value). If anything fails, it uses dark, which is Eplan's default. This is more reliable than guessing from pixels on the screen.
 
-The meaning of the values comes from Eplan's own configuration files, and all three were confirmed in Eplan 2026: set to dark the script reports "Eplan setting: dark", set to light "Eplan setting: light", and set to automatic "Eplan setting: automatic, so Windows decides" (the third screenshot, with Windows in light mode). If you change the scheme in Eplan, Eplan may need a restart before it shows it, and the setting is what the script reads.
+The meaning of the values comes from Eplan's configuration files, and all three were confirmed in Eplan 2026: set to dark the script reports "Eplan setting: dark", set to light "Eplan setting: light", and set to automatic "Eplan setting: automatic, so Windows decides" (the third screenshot, with Windows in light mode). If you change the scheme in Eplan, Eplan may need a restart before it shows it, and the setting is what the script reads.
 
 ## How to load it
 

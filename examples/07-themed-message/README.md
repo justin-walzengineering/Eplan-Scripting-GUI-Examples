@@ -18,7 +18,7 @@ bool yes = NoticeWindow.Ask("Title", "Continue?", "Choose Yes or No.");
 
 ## What you will learn
 
-- Why a standard message box ignores your color scheme
+- Why a standard message box ignores Eplan's color scheme
 - Building your own small dialog and returning `true` or `false`
 - Making **Esc** act as **No**, and **Enter** as the default button
 - Reading Eplan's color scheme from its setting (the same technique as example 04)
@@ -34,8 +34,8 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
-- Long text is cut off at about four lines. For longer reports, use a window with a scroll bar (see the results window example).
-- If Eplan's setting cannot be read, the window uses dark, which is Eplan's default.
+- Long text is cut off after about four lines. For longer reports, use a window with a scroll bar (see the results window example).
+- If Eplan's setting cannot be read, the window falls back to dark mode, which is Eplan's default.
 - Example 04 explains the colors, the title bar and the setting in more detail.
 
 ## Compatibility

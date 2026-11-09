@@ -135,7 +135,7 @@ public class SafeDemoForm : Form
 // Part 2: the reusable controls. Copy the ones you need.
 // ---------------------------------------------------------------
 
-// A check box we draw ourselves, because the standard one is almost invisible on a dark background.
+// A check box we draw ourselves, because the standard one can be hard to see on a dark background.
 public class SafeCheckBox : CheckBox
 {
     private SafePalette palette = SafePalette.Dark;
@@ -178,7 +178,7 @@ public class SafeCheckBox : CheckBox
     }
 }
 
-// A date field. The standard date picker cannot be colored, so this one draws itself and opens a calendar when clicked.
+// A date field. The standard date picker cannot be recolored, so this one draws itself and opens a calendar when clicked.
 public class SafeDateField : Control
 {
     private SafePalette palette = SafePalette.Dark;
@@ -240,7 +240,7 @@ public class SafeDateField : Control
     {
         base.OnClick(e);
 
-        // A drop-down panel that holds a MonthCalendar. AutoClose makes it vanish when the user clicks elsewhere.
+        // A drop-down panel that holds a MonthCalendar. AutoClose closes it when the user clicks elsewhere.
         MonthCalendar calendar = new MonthCalendar();
         calendar.SetDate(value);
         calendar.MaxSelectionCount = 1;
@@ -262,7 +262,7 @@ public class SafeDateField : Control
     }
 }
 
-// A drop-down list we draw ourselves, so the arrow and the list follow the colors.
+// A drop-down list we draw ourselves, so the list items follow the colors (the small arrow box is still drawn by Windows).
 public class SafeComboBox : ComboBox
 {
     private SafePalette palette = SafePalette.Dark;

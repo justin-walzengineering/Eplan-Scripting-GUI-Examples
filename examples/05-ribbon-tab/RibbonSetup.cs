@@ -1,6 +1,6 @@
 // ============================================================
 // Example   : 05 - Ribbon tab, group and buttons with icons (setup script)
-// Purpose   : Create your own tab on Eplan's ribbon, with a group and two buttons that run scripts, each with an icon from an .svg file.
+// Purpose   : Create your own tab on Eplan's ribbon, with a group and two buttons that run scripts, each with an icon from an SVG file.
 // You learn : RibbonBar, RibbonTab, RibbonCommandGroup, RibbonCommandInfo, RibbonIcon, ExecuteScript, safe re-running
 // Level     : Beginner
 // Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (run in Eplan 2026.0.3: see README)

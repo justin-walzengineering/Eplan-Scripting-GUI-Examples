@@ -80,7 +80,7 @@ public class ExportLauncherDemo
             return;
         }
 
-        // In Eplan 2026 the action chooses its own file name (the project name plus the date and time) and ignores the
+        // In Eplan 2026, the action chooses its own file name (the project name plus the date and time) and ignores the
         // name we asked for, so we find the file it just made and give it the name from the pattern.
         if (!File.Exists(target + ".pdf"))
         {

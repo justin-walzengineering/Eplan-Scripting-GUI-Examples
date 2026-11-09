@@ -6,7 +6,7 @@
 
 ## What it does
 
-A small window that backs up the **current project** with Eplan's own `backup` action, using a file name with the date and time (for example `MyProject_2026-11-07_141530`) so every backup is a new file and none is overwritten. Choose the folder, add a comment, and decide whether to include external documents and images. When it finishes, Explorer opens with the backup file selected.
+A small window that backs up the **current project** with Eplan's own `backup` action, using a file name that includes the date and time (for example `MyProject_2026-11-07_141530`) so every backup is a new file and existing backups are not overwritten. Choose the folder, add a comment, and decide whether to include external documents and images. When it finishes, Explorer opens with the backup file selected.
 
 Losing work to a crash or a power cut is one of the most common stories in the Eplan community. A one-click backup with a clear name makes "back up before I try something" a habit.
 
@@ -14,7 +14,7 @@ Losing work to a crash or a power cut is one of the most common stories in the E
 
 - Running the `backup` action with `TYPE`, `ARCHIVENAME`, `DESTINATIONPATH`, `COMMENT`, `INCLEXTDOCS` and `INCLIMAGES`
 - Building a **unique, safe file name** from a pattern
-- Following a naming rule of the action (an archive name may not end in a dot and three digits)
+- Following one of the backup action's naming rules (an archive name may not end in a dot and three digits)
 - Finding a file when you do not know its extension (`Directory.GetFiles` with `*`)
 
 ## How to run it
@@ -41,7 +41,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 Checked in Eplan 2026 on a copy of a demo project: the backup action wrote a single archive named from the pattern with the date and time (about 23 MB for this project, with external documents and images included, in roughly 15 seconds) Explorer opened on the folder afterwards, as described, and no error was shown.
 
-The name pattern and saved options were tested outside Eplan. The backup itself needs a run in Eplan.
+The name pattern and saved options were tested outside Eplan.
 
 ## Ideas to extend
 

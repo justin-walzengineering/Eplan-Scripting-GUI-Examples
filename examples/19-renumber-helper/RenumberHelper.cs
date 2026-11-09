@@ -1,7 +1,7 @@
 // ============================================================
 // Example   : 19 - Renumber helper
-// Purpose   : A friendly window in front of Eplan's renumber action: choose what to renumber, set the start and step, and confirm before it runs.
-// You learn : Running the renumber action, enabling a button only when a safety box is ticked, enabling options by choice, confirming a change
+// Purpose   : A simple window in front of Eplan's renumber action: choose what to renumber, set the start and step, and confirm before it runs.
+// You learn : Running the renumber action, enabling a button only when a safety box is ticked, enabling controls based on the user's choices, confirming a change
 // Level     : Intermediate
 // Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
@@ -31,7 +31,7 @@ public class RenumberHelperDemo
             choice = form.Choice;
         }
 
-        // One more chance to back out, in plain words, before anything changes.
+        // One more chance to cancel before anything changes.
         string summary = "Renumber " + choice.TypeText.ToLowerInvariant() +
                          (choice.OnlySelected ? " (only the selected ones)" : " (all of them)") +
                          ", starting at " + choice.Start + " in steps of " + choice.Step + "." +

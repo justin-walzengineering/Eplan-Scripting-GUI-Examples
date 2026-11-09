@@ -8,7 +8,7 @@
 
 ## What it does
 
-Loads the parts database into a table (part number, type number, description, manufacturer, order number and product group) and lets you **narrow it down as you type**. Every word you type must appear somewhere in the row, so `siemens relay 24` finds what you expect. **Copy part number** puts the selected part number on the clipboard.
+Loads the parts database into a table (part number, type number, description, manufacturer, order number and product group) and lets you **narrow it down as you type**. Every word you type must appear somewhere in the row, so `siemens relay 24` finds what you expect. **Copy part number** copies the selected part number to the clipboard.
 
 It asks before loading, because a big parts database can hold hundreds of thousands of parts. The window shows the first 2000 matches, and the status line says how many parts match in total.
 

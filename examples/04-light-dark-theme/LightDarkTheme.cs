@@ -137,7 +137,7 @@ public class ThemeDemoForm : Form
 }
 
 // ---------------------------------------------------------------
-// Part 3: the reusable theme code. Copy this class into your own scripts.
+// Part 3: the reusable theme code. Copy these classes into your own scripts.
 // ---------------------------------------------------------------
 
 // A palette is just a named set of colors. We keep one for dark and one for light.
@@ -198,14 +198,14 @@ public static class ThemeHelper
             if (scheme == 1) { LastReason = "Eplan setting: dark"; return true; }
             if (scheme == 2) { LastReason = "Eplan setting: light"; return false; }
 
-            // 0 = automatic, so Eplan follows Windows. Ask Windows.
+            // 0 = automatic, so Eplan follows Windows. Check the Windows setting.
             bool windowsDark = WindowsAppsUseDarkTheme();
             LastReason = "Eplan setting: automatic, so Windows decides";
             return windowsDark;
         }
         catch (Exception)
         {
-            // The setting could not be read (for example, the script is run outside Eplan).
+            // The setting could not be read (for example, if the script is run outside Eplan).
             // Eplan's own default is dark, so we use that. Cosmetic code must never stop the script.
             LastReason = "setting not available, using Eplan's default";
             return true;
@@ -242,7 +242,7 @@ public static class ThemeHelper
         }
     }
 
-    // Walks through a control and all the controls inside it (this is called "recursion").
+    // Walks through a control and all the controls inside it (a technique called recursion).
     private static void ApplyToControl(Control control, ThemePalette p)
     {
         control.ForeColor = p.Text;
@@ -325,7 +325,7 @@ public static class ThemeHelper
     }
 }
 
-// The standard check box is almost invisible in dark mode, so we draw our own.
+// The standard check box can be hard to see in dark mode, so we draw our own.
 // "OnPaint" is the method Windows Forms calls whenever a control needs to be drawn.
 public class ThemedCheckBox : CheckBox
 {

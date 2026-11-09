@@ -3,7 +3,7 @@
 // Purpose   : Export the current project's device list in the format you pick, with a file name from a pattern, and open it (for example in Excel).
 // You learn : The devicelist action, a format drop-down, opening a file with its default program, reusing the naming pattern idea
 // Level     : Intermediate
-// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026 (no device list data to check))
+// Tested in : Eplan Electric P8 2026.0.3 (run in Eplan 2026; no device list data to check)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
@@ -34,7 +34,7 @@ public class DeviceListExportDemo
         }
         options.Save();
 
-        // Each choice in the drop-down is a pair: the text the user sees, the exporter name Eplan expects, and the file extension.
+        // Each choice in the drop-down holds three values: the text the user sees, the exporter name Eplan expects, and the file extension.
         DeviceListFormat format = DeviceListFormat.All[options.FormatIndex];
         string fileName = DeviceListNaming.Apply(options.Pattern, DeviceListNaming.CurrentProjectName()) + format.Extension;
         string target = Path.Combine(options.Folder, fileName);
@@ -70,7 +70,7 @@ public class DeviceListExportDemo
 
         if (options.OpenFile)
         {
-            // UseShellExecute lets Windows open the file with whatever program is set for it (Excel for .csv, and so on).
+            // UseShellExecute lets Windows open the file with its default program (for example Excel for .csv files).
             ProcessStartInfo start = new ProcessStartInfo(target);
             start.UseShellExecute = true;
             Process.Start(start);

@@ -89,7 +89,7 @@ public static class BackupNaming
     }
 
     // Eplan does not allow archive names that end in a dot and three digits (it uses that form for split backups).
-    // Because Apply removes every dot, this can never happen, but the check documents the rule.
+    // Because Apply removes all dots, this can never happen. The check is kept to document the rule.
     public static bool EndsWithThreeDigitExtension(string name)
     {
         return Regex.IsMatch(name, @"\.\d{3}$");

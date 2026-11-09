@@ -42,7 +42,7 @@ public class SettingsDialogDemo
 }
 
 // ---------------------------------------------------------------
-// Part 2: the settings themselves. Each public property below becomes one entry in the file.
+// Part 2: the settings themselves. Each public field below becomes one entry in the file.
 // ---------------------------------------------------------------
 public class ScriptSettings
 {
@@ -79,7 +79,7 @@ public class ScriptSettings
         }
         catch (Exception)
         {
-            // A damaged file: fall through to the defaults.
+            // If the file cannot be read, fall back to the defaults.
         }
         return new ScriptSettings();
     }

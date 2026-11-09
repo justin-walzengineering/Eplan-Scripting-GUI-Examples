@@ -1,7 +1,7 @@
 // ============================================================
 // Example   : 05 - Ribbon tab (button script: Say hello)
 // Purpose   : The script that runs when the "Say hello" ribbon button is clicked.
-// You learn : A ribbon button is just a way to start an ordinary script
+// You learn : A ribbon button is just a way to run a script
 // Level     : Beginner
 // Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (run in Eplan 2026.0.3: see README)
 // Author    : Justin Walz

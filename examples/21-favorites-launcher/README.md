@@ -28,7 +28,7 @@ The list is a small readable file:
 
 1. Copy `FavoritesLauncher.cs` to a folder on your computer.
 2. In Eplan, go to File > Extras > Interfaces, choose **Run** (under Scripts), and select the file.
-3. Click **Add...**, choose **Script**, browse to one of your scripts (for example one of the examples in this repository), and press OK. Run it from the list.
+3. Click **Add...**, choose **Script**, browse to one of your scripts (for example one of the examples in this repository), and press OK. Double-click it, or select it and click Run.
 
 New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
@@ -36,7 +36,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 - The first time, the list holds one harmless sample (redraw the screen).
 - For an action with parameters, write it like Eplan's command line: the action name followed by `/PARAMETER:value` pairs.
-- Even better, put this launcher on a ribbon button (example 05) or on the Quick Access toolbar.
+- You can also put this launcher on a ribbon button (example 05) or on the Quick Access toolbar.
 - The list belongs to the Windows user. Copy `favorites.json` to share a list with a colleague.
 
 ## Compatibility

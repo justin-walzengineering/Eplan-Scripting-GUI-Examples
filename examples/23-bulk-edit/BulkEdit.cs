@@ -134,7 +134,7 @@ public class BulkEditForm : Form
         grid.CellContentClick += delegate { UpdateSummary(); };
         grid.CurrentCellDirtyStateChanged += delegate
         {
-            if (grid.IsCurrentCellDirty) { grid.CommitEdit(DataGridViewDataErrorContexts.Commit); }   // makes a tick count at once
+            if (grid.IsCurrentCellDirty) { grid.CommitEdit(DataGridViewDataErrorContexts.Commit); }   // updates the tick count immediately
             UpdateSummary();
         };
         grid.DataError += delegate(object s, DataGridViewDataErrorEventArgs e) { e.ThrowException = false; };
@@ -392,7 +392,7 @@ public class BulkEditForm : Form
 // ---------------------------------------------------------------
 // Reaching Eplan's data model WITHOUT a compile-time reference.
 // Eplan's script compiler does not reference the data model, so a script cannot write "Project" or "Page" as a
-// type name. The data model is still loaded inside Eplan, so we look it up by text and use "reflection": asking
+// type name. The data model is still loaded inside Eplan, so we look it up by name and use "reflection": asking
 // .NET to find a member by its name while the script runs. Every call here is wrapped by the caller in try/catch.
 // ---------------------------------------------------------------
 public static class BeDm
