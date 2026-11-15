@@ -26,7 +26,7 @@ By contributing you agree your work is released under the [MIT license](LICENSE)
 ## Example guidelines
 
 - One idea per example. Small and readable beats clever.
-- Use the header format and folder layout described in [CLAUDE.md](CLAUDE.md).
+- Follow the folder layout (`examples/NN-short-name/`, with the script and a README) and start each `.cs` file with the same header comment (Example, Purpose, You learn, Level, Tested in, Author, License) as the existing examples.
 - Explain the basic C# for beginner examples.
 - Use made-up sample data.
 - Test in Eplan 2026 if you can, and say which version you tested.
