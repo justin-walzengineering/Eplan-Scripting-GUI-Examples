@@ -3,7 +3,7 @@
 // Purpose   : Show messages and Yes/No questions in a window that follows Eplan's light or dark color scheme, instead of a standard message box.
 // You learn : Why MessageBox ignores dark mode, building your own small dialog, returning true/false, reading Eplan's color scheme
 // Level     : Beginner
-// Tested in : Eplan Electric P8 2026.0.3 (run in Eplan with the dark color scheme)
+// Tested in : Eplan Electric P8 2026.0.3 and 2027.0.3 (run in Eplan with the dark color scheme)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================

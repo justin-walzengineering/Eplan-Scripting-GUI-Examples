@@ -1,6 +1,6 @@
 # 20 - Timestamped backup
 
-**Level:** Intermediate  **File:** [TimestampedBackup.cs](TimestampedBackup.cs)  **Status:** Run in Eplan 2026
+**Level:** Intermediate  **File:** [TimestampedBackup.cs](TimestampedBackup.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![The timestamped backup window](screenshot.png)
 
@@ -28,6 +28,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `BackupSkin` class at the end of the script; example 04 explains the idea.
 - Put the backup folder on a drive that is itself backed up, and not on the same disk as your projects.
 - The project name comes from Eplan's path variable `$(PROJECTNAME)`. If it is not supplied, the name shows `Project`.
 - All dots are removed from the name on purpose. Eplan does not allow an archive name ending in a dot and three digits, because it uses that form for split backups.

@@ -1,6 +1,6 @@
 # 09 - Page list with search, sort and CSV export
 
-**Level:** Advanced  **File:** [PageList.cs](PageList.cs)  **Status:** Run in Eplan 2026
+**Level:** Advanced  **File:** [PageList.cs](PageList.cs)  **Status:** Run in Eplan 2026 and 2027
 
 *Read-only: this example never changes your project.*
 
@@ -32,6 +32,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `PageListSkin` class at the end of the script; example 04 explains the idea.
 - Page names and descriptions are read through the data model. A page with an empty description shows an empty cell.
 - A project with thousands of pages can take a few seconds to load.
 - This is the example **most likely to need a small adjustment** after the first run in Eplan, because it depends on member names found by reflection. If you see an error, please report the exact message.
@@ -41,6 +42,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (129 pages listed, search, CSV saved, column sorting) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: 128 pages listed, search; dark color scheme followed) |
 
 Checked in Eplan 2026 on a copy of a demo project: all 129 pages were listed with name, description and page type, searching narrowed the list, and Save as CSV wrote the shown rows to a file. Sorting was also run in Eplan 2026 on the same copy: clicking the Page, Description and Type headings reordered the 129 rows each time, and clicking a heading a second time reversed the order. The count stayed at 129. Only the order of the rows was looked at; the CSV was not saved again after sorting. During testing, two issues were found and fixed: Eplan failed to lock the project until the selection service's LockSelectionByDefault was set to false, and reading the page description by name hit an 'ambiguous match' because Eplan declares that property more than once, so the helper now scans the property list itself. The CSV uses semicolons between columns.
 

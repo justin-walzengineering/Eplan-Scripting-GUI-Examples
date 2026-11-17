@@ -1,6 +1,6 @@
 # 08 - Settings dialog that saves preferences
 
-**Level:** Beginner  **File:** [SettingsDialog.cs](SettingsDialog.cs)  **Status:** Run in Eplan 2026
+**Level:** Beginner  **File:** [SettingsDialog.cs](SettingsDialog.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![The settings window reopened with the saved values](screenshot-restored.png)
 
@@ -32,6 +32,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `SettingsSkin` class at the end of the script; example 04 explains the idea.
 - To add an option, add one field to `ScriptSettings`, one control to the window, and two lines to copy the value in and out. Old files without the new option simply use its default.
 - Settings are per Windows user. For team-wide settings, point the file path at a shared folder.
 - Never store passwords in a settings file like this.

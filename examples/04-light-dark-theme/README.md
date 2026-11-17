@@ -10,7 +10,7 @@ _All screenshots were taken from the script running in Eplan 2026. The window is
 
 ## What it does
 
-Opens a demo window with a **Dark mode** check box. Tick it and the whole window updates immediately: background, text, text box, drop-down, buttons, check boxes, and even the title bar. Untick it for light.
+Opens a demo window with a **Dark mode** check box. Check it and the whole window updates immediately: background, text, text box, drop-down, buttons, check boxes, and even the title bar. Clear it for light.
 
 A **Match Eplan** button reads the color scheme chosen in Eplan's own options and sets the check box to match. The window also does this when it opens, so your tools match Eplan from the start.
 
@@ -48,7 +48,7 @@ The meaning of the values comes from Eplan's configuration files, and all three 
 
 1. Copy `LightDarkTheme.cs` to a folder on your computer.
 2. In Eplan, go to File > Extras > Interfaces, choose **Run** (under Scripts), and select the file.
-3. Tick and untick **Dark mode**. Click **Match Eplan**. Compare the window with Eplan itself.
+3. Check and clear **Dark mode**. Click **Match Eplan**. Compare the window with Eplan itself.
 
 New to scripts? See [How to run a script](../../docs/running-scripts.md) for the menu path and a Quick Access shortcut, and [Getting started](../../docs/getting-started.md).
 
@@ -65,7 +65,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (dark, light and automatic) |
 
-Tick and untick change every color as expected, and the script read all three of Eplan 2026's color scheme values correctly. A later run (2026-11-07) repeated automatic with Windows set to light mode: the window opened light and said "Eplan is using: light (Eplan setting: automatic, so Windows decides)". Still not tried: automatic with Windows set to dark mode.
+Checking and clearing the box changed every color as expected, and the script read all three of Eplan 2026's color scheme values correctly. A later run (2026-11-07) repeated automatic with Windows set to light mode: the window opened light and said "Eplan is using: light (Eplan setting: automatic, so Windows decides)". Still not tried: automatic with Windows set to dark mode.
 
 On screen, text can show faint orange and blue edges in a screenshot. That is normal Windows text smoothing (ClearType), not a wrong color.
 

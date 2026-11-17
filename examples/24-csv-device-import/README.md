@@ -1,6 +1,6 @@
 # 24 - CSV preview and device list import
 
-**Level:** Advanced  **File:** [CsvDeviceImport.cs](CsvDeviceImport.cs)  **Status:** Run in Eplan 2026
+**Level:** Advanced  **File:** [CsvDeviceImport.cs](CsvDeviceImport.cs)  **Status:** Run in Eplan 2026 and 2027
 
 > **The import changes your project.** Try it on a copy first.
 
@@ -40,6 +40,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `CsvImportSkin` class at the end of the script; example 04 explains the idea.
 - Eplan's CSV files are usually in the Windows ANSI encoding. If special characters look wrong in the preview, the file may be in another encoding.
 - Only the first 200 rows are shown, but the import uses the whole file.
 - The CSV reader part has no Eplan code in it. You can copy `CsvReader` into any script.
@@ -49,6 +50,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (preview, checks and import; rows were imported into the device list) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: preview with a warning for an uneven row, Import button disabled; the import itself was not run; dark color scheme followed) |
 
 Checked in Eplan 2026: the preview window read a semicolon CSV, showed it in a grid, reported the number of rows and columns, warned about a row with too few columns, and kept the Import button disabled until the file was consistent. The import asked for confirmation (and says to try a copy first) and the device list import action finished without an error. A later run (2026-11-07) used a copy of a demo project whose device list had one entry. The device list was exported with example 18, and a CSV in that same layout (a first line of column names, a second line of property identifiers, then rows) was built with three rows. The preview showed it, the import asked for confirmation, and Eplan said the import finished; Eplan's device list then showed four entries instead of one, and a second export listed them: the entry that was already there, a second row with the same part number as that entry, and the two new part numbers. So the import adds the rows it is given and does not merge rows with the same part number. The earlier test file with made-up column names had changed nothing, so the layout matters: use a file exported by example 18 as the starting point.
 

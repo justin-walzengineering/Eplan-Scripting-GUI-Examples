@@ -45,3 +45,13 @@ A local project that references the Eplan DLLs gives you IntelliSense and a quic
 
 - Test on a copy of a project.
 - Scripts run with your permissions inside Eplan and can change project data. Only run scripts you've read and trust.
+
+## Eplan 2027 (2027.0.3)
+
+Checked in Eplan 2027.0.3 (Update 1) by running small test scripts and all the examples in this repository:
+
+- Every example compiles and runs the same way as in 2026. The File > Extras > Interfaces > Scripts > **Run** command is in the same place.
+- The 2027 script compiler is **newer**. A script using string interpolation (`$"..."`), the null-conditional `?.` and `nameof` ran, and so did a script using `out var`, an expression-bodied member, an auto-property initializer and a type pattern (`is string s`).
+- The examples still use **C# 5 only**, so that the same file also runs in Eplan 2026. Use newer syntax only in scripts that you will run in 2027 or later.
+- The setting `USER.MF.GuiColorScheme` has the default value 1 (dark) in 2027. The meaning of the values did not change: 0 = automatic, 1 = dark, 2 = light.
+- A ribbon tab added by a script (example 29) shows after Eplan is restarted.

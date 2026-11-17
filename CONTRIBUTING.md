@@ -29,7 +29,7 @@ By contributing you agree your work is released under the [MIT license](LICENSE)
 - Follow the folder layout (`examples/NN-short-name/`, with the script and a README) and start each `.cs` file with the same header comment (Example, Purpose, You learn, Level, Tested in, Author, License) as the existing examples.
 - Explain the basic C# for beginner examples.
 - Use made-up sample data.
-- Test in Eplan 2026 if you can, and say which version you tested.
+- Test in Eplan 2026 or 2027 if you can, and say which version you tested. Write C# 5 so the script works in both.
 - Be kind. Everyone here started somewhere.
 
 The maintainer reviews every pull request and may ask for changes.

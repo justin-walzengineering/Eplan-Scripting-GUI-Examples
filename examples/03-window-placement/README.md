@@ -41,6 +41,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `PlacementSkin` class at the end of the script; example 04 explains the idea.
 - If Eplan is minimized, or its window can't be found, the demo window is centered on the main screen instead. It still opens.
 - The position is set in the `Load` event, right before the window appears. By then Windows has applied any display scaling, so the window's size is final and the centering is accurate.
 - Placement is cosmetic, so the helper never throws an error that would stop your script.
@@ -51,6 +52,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: window centered on Eplan, on the primary screen) |
 
 The placement math was also tested outside Eplan with stand-in windows: a normal window, one half off the edge of the screen, a minimized one, and none at all. In every case the new window landed fully on screen.
 

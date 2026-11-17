@@ -1,6 +1,6 @@
 # 25 - Settings finder (read-only)
 
-**Level:** Intermediate  **File:** [SettingsFinder.cs](SettingsFinder.cs)  **Status:** Run in Eplan 2026
+**Level:** Intermediate  **File:** [SettingsFinder.cs](SettingsFinder.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![Finding one setting and its current value](screenshot.png)
 
@@ -30,6 +30,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `FinderSkin` class at the end of the script; example 04 explains the idea.
 - The script reads the XML files in the `Cfg` folder next to Eplan's `Bin` folder. It only reads them and does not copy their text anywhere.
 - It reads several hundred files and tens of thousands of settings. That took about half a second in a test, but give it a moment.
 - Some settings have no value in your current session, and the window says so. A setting without a description in the file simply shows no description.
@@ -40,6 +41,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (search, current value, Copy path) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: search, current value of USER.MF.GuiColorScheme; dark color scheme followed) |
 
 Checked in Eplan 2026 with Eplan in dark mode: the window loaded Eplan's settings, searching for GuiColorScheme found USER.MF.GuiColorScheme, its current value (1, which is dark) matched Eplan's scheme, and Copy path put the setting path on the clipboard.
 

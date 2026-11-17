@@ -1,6 +1,6 @@
 # 26 - Back up first, then run
 
-**Level:** Intermediate  **File:** [BackupThenRun.cs](BackupThenRun.cs)  **Status:** Run in Eplan 2026
+**Level:** Intermediate  **File:** [BackupThenRun.cs](BackupThenRun.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![Back up first, then run](screenshot.png)
 
@@ -28,6 +28,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `BackupFirstSkin` class at the end of the script; example 04 explains the idea.
 - Put the backup folder on a drive that is itself backed up.
 - The project name comes from Eplan's path variable `$(PROJECTNAME)`. If it is not supplied, the name shows `Project`.
 - If you choose an action, write it like Eplan's command line: the name, then optional `/PARAMETER:value` pairs.
@@ -38,6 +39,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (backup then run, and nothing runs if the backup fails) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: backup, then the next script ran (example 27); dark color scheme followed) |
 
 Checked in Eplan 2026 on a copy of a demo project: with a valid folder, the script made a backup first (named with 'before_run' and the date and time) and then started the chosen script; with a folder that does not exist the backup failed, the window said so, and the chosen script was not started. Leaving the target empty was refused with a short message.
 

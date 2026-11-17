@@ -1,6 +1,6 @@
 # 28 - Unit check
 
-**Level:** Intermediate  **File:** [UnitCheck.cs](UnitCheck.cs)  **Status:** Run in Eplan 2026
+**Level:** Intermediate  **File:** [UnitCheck.cs](UnitCheck.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![The Unit check window](screenshot.png)
 
@@ -24,11 +24,16 @@ You type the width you measured in Eplan (the number as it is shown) and the wid
 
 New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
+## Good to know
+
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `UnitSkin` class at the end of the script; example 04 explains the idea.
+
 ## Compatibility
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (inches, millimetres, no match, bad input) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: inches case; dark color scheme followed) |
 
 Checked in Eplan 2026: 19.8 with 502.9 said inches, 502,9 (comma) with 502.9 said millimetres, 300 with 502.9 said no match, and text instead of a number gave the hint about plain numbers.
 

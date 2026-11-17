@@ -3,7 +3,7 @@
 // Purpose   : Replacements for the standard controls that stay white or hard to see in dark mode: a date field, a drop-down list, a check box and a progress bar.
 // You learn : Custom painting with OnPaint, ToolStripDropDown, owner-drawn lists, SetWindowTheme, passing colors to controls
 // Level     : Intermediate
-// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
+// Tested in : Eplan Electric P8 2026.0.3 and 2027.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================

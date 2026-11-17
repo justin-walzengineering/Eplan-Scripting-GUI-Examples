@@ -39,7 +39,7 @@ The File menu is a few clicks deep. If you run scripts often, add **Run script**
 
    ![Customize window: Run script is moved from the left list to the right list](images/quick-access-customize.png)
 
-Now one click on the toolbar button opens the same file chooser. While you are there, you can add **Load script** and **Unload script** the same way, and use the up and down arrows on the right to change their order. Tick **Show below the ribbon** if you prefer the toolbar under the ribbon.
+Now one click on the toolbar button opens the same file chooser. While you are there, you can add **Load script** and **Unload script** the same way, and use the up and down arrows on the right to change their order. Check **Show below the ribbon** if you prefer the toolbar under the ribbon.
 
 ## If something goes wrong
 

@@ -1,6 +1,6 @@
 # 14 - Selection explorer
 
-**Level:** Intermediate  **File:** [SelectionExplorer.cs](SelectionExplorer.cs)  **Status:** Run in Eplan 2026 (pages selected in a navigator; the open page as a fallback)
+**Level:** Intermediate  **File:** [SelectionExplorer.cs](SelectionExplorer.cs)  **Status:** Run in Eplan 2026 and 2027 (pages selected in a navigator; the open page as a fallback)
 
 *Read-only: this example never changes your project.*
 
@@ -38,6 +38,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Partly (three selected pages written to a text file) |
+| 2027.0.3 | Yes | Partly (run 2026-11-17 on a copy of a demo project: a mounting panel selected in a 3D layout was written to a text file; objects selected on a schematic page were not tried) |
 
 Checked in Eplan 2026: with three pages selected in the page navigator, the script wrote one block per page to a text file and opened it. Not working from a drawing selection: after selecting everything on an open page with Ctrl+A, and later after clicking one text object (Cut and Copy were enabled in the ribbon), the script reported that nothing was selected when started from File > Extras > Interfaces, from the command search box, and from a Quick Access toolbar button (the Run script button). A change was then made so that, when nothing is selected, the script asks 'Write the properties of the page that is open in the editor instead?'. Run from the Quick Access button with the answer Yes, it wrote a report with one block for the open page. That path was tried once, with one page. The file lists project data such as the last editor's name and e-mail, so there is no screenshot here; check a file before you share it.
 

@@ -3,7 +3,7 @@
 // Purpose   : Show Eplan's own progress window while a script works through a list, and let the user cancel it.
 // You learn : The Progress object, splitting a job into parts, steps, cancelling, try/catch/finally
 // Level     : Beginner
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (run in Eplan 2026.0.3: see README)
+// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 and 2027.0.3 (run in Eplan 2026.0.3: see README)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================

@@ -3,7 +3,7 @@
 // Purpose   : The script that runs when the "Say hello" ribbon button is clicked.
 // You learn : A ribbon button is just a way to run a script
 // Level     : Beginner
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (run in Eplan 2026.0.3: see README)
+// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 and 2027.0.3 (run in Eplan 2026.0.3: see README)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================

@@ -1,11 +1,11 @@
 <#
   Compile-checks every example against each installed Eplan version.
-  Usage:  pwsh tools/check-all.ps1            (checks Eplan 2026.0.3)
+  Usage:  pwsh tools/check-all.ps1            (checks Eplan 2026.0.3 and 2027.0.3)
           pwsh tools/check-all.ps1 -Versions 2026.0.3
   Local only. Reads the Eplan install by path; copies nothing.
 #>
 param(
-    [string[]]$Versions = @('2026.0.3'),
+    [string[]]$Versions = @('2026.0.3','2027.0.3'),
     [string]$PlatformRoot = 'C:\Program Files\EPLAN\Platform'
 )
 

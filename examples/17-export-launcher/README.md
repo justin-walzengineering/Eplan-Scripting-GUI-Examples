@@ -1,6 +1,6 @@
 # 17 - Export launcher (PDF)
 
-**Level:** Intermediate  **File:** [ExportLauncher.cs](ExportLauncher.cs)  **Status:** Run in Eplan 2026
+**Level:** Intermediate  **File:** [ExportLauncher.cs](ExportLauncher.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![The export launcher window](screenshot.png)
 
@@ -34,6 +34,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `ExportSkin` class at the end of the script; example 04 explains the idea.
 - The project name comes from Eplan's path variable `$(PROJECTNAME)`. If your Eplan does not supply it, the name shows as `Project`. Please report what you see.
 - Eplan adds the `.pdf` extension. Do not type it in the pattern.
 - Leave **Export scheme** empty to use the scheme you used last in Eplan. The language code is case-sensitive.

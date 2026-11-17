@@ -1,6 +1,6 @@
 # 06 - Remember window size and position
 
-**Level:** Intermediate  **File:** [RememberWindow.cs](RememberWindow.cs)  **Status:** Run in Eplan 2026
+**Level:** Intermediate  **File:** [RememberWindow.cs](RememberWindow.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![The remembering demo window](screenshot-window.png)
 
@@ -34,6 +34,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `RememberSkin` class at the end of the script; example 04 explains the idea.
 - Values are stored under `HKEY_CURRENT_USER\Software\EplanScriptExamples\Windows\<key>`. Give each of your windows its own key.
 - The window is saved when it closes normally. A window that is closed by a crash saves nothing.
 - Example 03 shows how to center a window on Eplan the first time, before anything is saved.

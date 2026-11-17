@@ -1,6 +1,6 @@
 # 11 - Parts viewer with filter box
 
-**Level:** Intermediate  **File:** [PartsViewer.cs](PartsViewer.cs)  **Status:** Run in Eplan 2026
+**Level:** Intermediate  **File:** [PartsViewer.cs](PartsViewer.cs)  **Status:** Run in Eplan 2026 and 2027
 
 *Read-only: this example never changes the parts database.*
 
@@ -30,6 +30,8 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `PartsSkin` class at the end of the script; example 04 explains the idea.
+- Eplan can store a text in several languages at once (it looks like `en_US@Relay;de_DE@Relais`). The class `PartsText` picks English, or the first language, so the table stays readable.
 - It reads the parts database that is currently set up in Eplan.
 - Loading is the slow part. Filtering after that is instant.
 - Some parts have empty fields. They show as blank cells.
@@ -40,6 +42,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (935 parts loaded, search, copy part number) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: 2369 parts loaded, search, descriptions shown in one language; dark color scheme followed) |
 
 Checked in Eplan 2026 with the parts database of the demo project's setup: the MasterData parts classes worked directly from a script (no reflection needed). Loading 935 parts took about 5 seconds, the empty search showed all of them ('935 of 935 parts'), searching for Contactor narrowed it to 6, and Copy part number put the selected part number on the clipboard.
 

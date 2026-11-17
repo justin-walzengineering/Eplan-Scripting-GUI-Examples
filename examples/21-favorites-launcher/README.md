@@ -1,6 +1,6 @@
 # 21 - Favorites launcher
 
-**Level:** Intermediate  **File:** [FavoritesLauncher.cs](FavoritesLauncher.cs)  **Status:** Run in Eplan 2026
+**Level:** Intermediate  **File:** [FavoritesLauncher.cs](FavoritesLauncher.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![The favorites window](screenshot.png)
 
@@ -34,6 +34,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `FavoritesSkin` class at the end of the script; example 04 explains the idea.
 - The first time, the list holds one harmless sample (redraw the screen).
 - For an action with parameters, write it like Eplan's command line: the action name followed by `/PARAMETER:value` pairs.
 - You can also put this launcher on a ribbon button (example 05) or on the Quick Access toolbar.
@@ -44,6 +45,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (add, search, run script, run action, remove) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: search, run an action; dark color scheme followed) |
 
 Checked in Eplan 2026: a script and the built-in 'Redraw the screen' action were both started from the list (the window closes first, then the item runs), searching filtered the list as typed, Add checked that a name and a target were entered, the list was still there after reopening, and Remove asked before deleting.
 

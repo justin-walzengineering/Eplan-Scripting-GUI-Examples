@@ -1,6 +1,6 @@
 # 16 - Modern folder picker
 
-**Level:** Advanced  **File:** [ModernFolderPicker.cs](ModernFolderPicker.cs)  **Status:** Run in Eplan 2026
+**Level:** Advanced  **File:** [ModernFolderPicker.cs](ModernFolderPicker.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![The Explorer-style folder window](screenshot-picker.png)
 
@@ -42,6 +42,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (choose a folder, Cancel) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: choose a folder, Cancel) |
 
 Checked in Eplan 2026: the Explorer-style window opened, choosing a folder returned its path, and Cancel returned null, which the script reported as 'No folder was chosen.'
 

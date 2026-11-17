@@ -32,11 +32,16 @@ The script also contains a small `DialogHelper` class with three reusable helper
 
 New to scripts? See [How to run a script](../../docs/running-scripts.md) for the menu path and a Quick Access shortcut, and [Getting started](../../docs/getting-started.md).
 
+## Good to know
+
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `InputSkin` class at the end of the script; example 04 explains the idea.
+
 ## Compatibility
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: input, confirm and message windows; dark color scheme followed) |
 
 The dialog logic (OK, Cancel, and default text handling) was also exercised outside Eplan against the compiled script. It has also been run in Eplan 2026.
 

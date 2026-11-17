@@ -1,6 +1,6 @@
 # 10 - Property viewer
 
-**Level:** Advanced  **File:** [PropertyViewer.cs](PropertyViewer.cs)  **Status:** Run in Eplan 2026
+**Level:** Advanced  **File:** [PropertyViewer.cs](PropertyViewer.cs)  **Status:** Run in Eplan 2026 and 2027
 
 *Read-only: this example never changes your project.*
 
@@ -30,6 +30,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `PropertySkin` class at the end of the script; example 04 explains the idea.
 - If nothing is selected, you can still look at the project's own properties.
 - Only the first 50 selected objects are offered.
 - Property names are shown in the language your Eplan is set to.
@@ -40,6 +41,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (project and page properties, search, copy) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: 717 project properties, search; dark color scheme followed) |
 
 Checked in Eplan 2026: the project's 711 properties were listed with their ID, name and value, searching narrowed them, and after a page was selected in the page tree the Show list offered that page too, listing its 381 properties. Copy shown rows put the rows on the clipboard. Tip: the project list includes things like the last editor's name and e-mail, so check a window before you share a screenshot of it.
 

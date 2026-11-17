@@ -1,6 +1,6 @@
 # 18 - Device list export (CSV, XML or text)
 
-**Level:** Intermediate  **File:** [DeviceListExport.cs](DeviceListExport.cs)  **Status:** Run in Eplan 2026
+**Level:** Intermediate  **File:** [DeviceListExport.cs](DeviceListExport.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![The device list export window](screenshot.png)
 
@@ -28,6 +28,8 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `DeviceListSkin` class at the end of the script; example 04 explains the idea.
+- If the project's device list is empty, Eplan writes an empty file. The script checks for that and says so instead of announcing a successful export.
 - The three format names are the ones Eplan documents for this action. Your Eplan may also have a custom format; you can add it to the `DeviceListFormat.All` table.
 - The project name comes from Eplan's path variable `$(PROJECTNAME)`. If it is not supplied, the name shows `Project`.
 - Example 24 imports an edited CSV back into the device list.
@@ -38,6 +40,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (CSV, with real device list entries) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: XML export ran; the demo project's device list is empty, and the window now says so; dark color scheme followed) |
 
 Checked in Eplan 2026 on copies of demo projects. On a project whose device list was empty, the action ran without an error and wrote an empty CSV file (0 bytes) and an XML file that said 'deviceList count=0'. A later run (2026-11-07) used a copy of another demo project to which four device list entries had been added: a CSV export then wrote a file with a first line of column names, a second line of Eplan's property identifiers, and one line per entry, separated by semicolons (18 columns, including part number, number allowed, total number allowed, used unit quantity, spare quantity, manufacturer and macro). The values matched the entries in Eplan's device list. XML and text were not run with real entries, and 'Open the file afterwards' was not used in that run.
 

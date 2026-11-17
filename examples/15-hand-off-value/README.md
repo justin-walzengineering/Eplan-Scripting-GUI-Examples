@@ -1,6 +1,6 @@
 # 15 - Hand a value from one script to another
 
-**Level:** Advanced  **Files:** [HandOffSender.cs](HandOffSender.cs), [HandOffReceiver.cs](HandOffReceiver.cs)  **Status:** Run in Eplan 2026
+**Level:** Advanced  **Files:** [HandOffSender.cs](HandOffSender.cs), [HandOffReceiver.cs](HandOffReceiver.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![The receiver showing the value it was handed](screenshot-received.png)
 
@@ -40,6 +40,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (value passed between two scripts, empty case) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: value passed between two scripts) |
 
 Checked in Eplan 2026: the sender's value reached the receiver script ('Hello from the sender' with the time it was made), so two scripts run in the same Eplan session can share short-lived values this way. Running the receiver again straight afterwards found nothing waiting, because the value is cleared after it is read, and it reported that clearly.
 

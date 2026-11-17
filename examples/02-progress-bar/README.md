@@ -53,6 +53,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md) for the
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (progress window, final message and Cancel confirmed) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: progress window with Cancel button and the final message) |
 
 Pressing Cancel stops the remaining work and shows "Cancelled. Nothing more was processed."
 

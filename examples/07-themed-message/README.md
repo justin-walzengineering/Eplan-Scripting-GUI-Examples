@@ -1,6 +1,6 @@
 # 07 - Themed message and confirm window
 
-**Level:** Beginner  **File:** [ThemedMessage.cs](ThemedMessage.cs)  **Status:** Run in Eplan 2026 (dark, light and automatic with Windows in light mode)
+**Level:** Beginner  **File:** [ThemedMessage.cs](ThemedMessage.cs)  **Status:** Run in Eplan 2026 and 2027 (dark, light and automatic with Windows in light mode)
 
 ![A themed message in a dark Eplan](screenshot-message.png)
 ![A themed Yes/No question](screenshot-question.png)
@@ -43,6 +43,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (dark, light, and automatic with Windows light: message, Yes/No question, answer window; dark also Esc as No) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: dark: message, Yes/No question, answer window) |
 
 A later run (2026-11-07) used Eplan set to light and then to automatic with Windows in light mode: the message, the Yes/No question (answered Yes with light, No with automatic) and the answer window all opened with light colors. Not tried: automatic with Windows set to dark mode. The color technique is the same as in example 04.
 

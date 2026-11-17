@@ -45,7 +45,7 @@ The examples that need the data model (09, 10, 14 and 23) each carry a short hel
 
 - **Wrap every read in `try`/`catch`.** Reading an empty property can throw, and one odd object should not stop a whole list.
 - **Read only, first.** Reading is safe. Start with read-only tools (examples 09, 10 and 14) before writing anything.
-- **Writing needs care.** Example 23 shows the safer pattern for changes: preview, tick boxes, a safety check box, a confirmation, a locking step, and reading each value back afterwards.
+- **Writing needs care.** Example 23 shows the safer pattern for changes: preview, check boxes, a safety check box, a confirmation, a locking step, and reading each value back afterwards.
 - **Unlock the selection.** The selection service returns an empty selection to a script unless `LockSelectionByDefault` is switched off first.
 - **Run from a ribbon button or the Quick Access toolbar** when you rely on the selection, so the drawing page keeps focus.
 - **Names are specific to a version.** Member names found by reflection can change between Eplan versions, so test after each update.

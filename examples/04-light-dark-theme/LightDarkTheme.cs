@@ -3,7 +3,7 @@
 // Purpose   : Restyle your own window live with a "Dark mode" check box, and match Eplan's own color scheme automatically.
 // You learn : Color palettes, restyling controls in a loop, custom-painted check box, dark title bar, reading an Eplan setting
 // Level     : Intermediate
-// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 (run in Eplan 2026.0.3: see README)
+// Tested in : Compile-checked against Eplan Electric P8 2026.0.3 and 2027.0.3 (run in Eplan 2026.0.3: see README)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
@@ -71,7 +71,7 @@ public class ThemeDemoForm : Form
         heading.AutoSize = true;
         heading.Location = new Point(16, 14);
 
-        info.Text = "Tick \"Dark mode\" to restyle this whole window live. \"Match Eplan\" copies the color scheme chosen in Eplan's own options.";
+        info.Text = "Check \"Dark mode\" to switch this window between dark and light. \"Match Eplan\" copies the color scheme of Eplan itself.";
         info.Location = new Point(16, 40);
         info.Size = new Size(388, 44);
 
@@ -116,7 +116,7 @@ public class ThemeDemoForm : Form
         ApplyEplanScheme();
     }
 
-    // The user ticked or unticked "Dark mode": restyle everything straight away.
+    // The user checked or cleared "Dark mode": restyle everything straight away.
     private void OnDarkCheckChanged(object sender, EventArgs e)
     {
         ThemeHelper.Apply(this, darkCheck.Checked);

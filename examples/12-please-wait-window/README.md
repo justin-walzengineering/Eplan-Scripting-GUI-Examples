@@ -1,6 +1,6 @@
 # 12 - "Please wait" window on its own thread
 
-**Level:** Advanced  **File:** [PleaseWait.cs](PleaseWait.cs)  **Status:** Run in Eplan 2026
+**Level:** Advanced  **File:** [PleaseWait.cs](PleaseWait.cs)  **Status:** Run in Eplan 2026 and 2027
 
 ![The please-wait window](screenshot-working.png)
 ![The message shown when the work is done](screenshot-finished.png)
@@ -39,6 +39,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 ## Good to know
 
+- **Dark mode:** the window follows Eplan's color scheme. In a dark Eplan it turns dark, and in a light one it keeps the normal Windows look. The code for this is the `PleaseWaitSkin` class at the end of the script; example 04 explains the idea.
 - Use this when you do **one long piece of work** that blocks Eplan. If your work happens in steps you control, Eplan's own progress window (example 02) is usually simpler.
 - Always close the window **before** showing a message, or the message can appear behind it.
 - Always close it in `finally`.
@@ -50,6 +51,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (bar keeps moving, window closes by itself) |
+| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: bar keeps moving, window closes by itself; dark color scheme followed) |
 
 The bar kept moving the whole time. The window stays light even if Eplan is using a dark theme, because it is a plain Windows Forms window. Example 13 shows how to match dark mode colors.
 

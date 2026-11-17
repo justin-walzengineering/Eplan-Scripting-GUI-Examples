@@ -3,7 +3,7 @@
 // Purpose   : A small starting point for any script that writes a log line as its very first action, so a missing log tells you the script did not run.
 // You learn : Why a script that does not compile shows no message, writing a log file, the usual causes of compile problems, keeping the log outside the project
 // Level     : Beginner
-// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
+// Tested in : Eplan Electric P8 2026.0.3 and 2027.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================
