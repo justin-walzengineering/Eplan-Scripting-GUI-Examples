@@ -1,6 +1,8 @@
 # 28 - Unit check
 
-**Level:** Intermediate  **File:** [UnitCheck.cs](UnitCheck.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Intermediate  **File:** [UnitCheck.cs](UnitCheck.cs)  **Status:** Run in Eplan 2026
+
+![The Unit check window](screenshot.png)
 
 ## What it does
 
@@ -26,7 +28,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes (compile-checked) | Pending |
+| 2026.0.3 | Yes | Yes (inches, millimetres, no match, bad input) |
+
+Checked in Eplan 2026: 19.8 with 502.9 said inches, 502,9 (comma) with 502.9 said millimetres, 300 with 502.9 said no match, and text instead of a number gave the hint about plain numbers.
 
 ## Ideas to extend
 

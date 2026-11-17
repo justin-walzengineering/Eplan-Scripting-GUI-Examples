@@ -3,7 +3,7 @@
 // Purpose   : Compare a width you measured in Eplan with a known dimension from a data sheet, and say whether it matches in millimetres or in inches.
 // You learn : A small form with number fields, parsing numbers safely, comparing with a tolerance, millimetres versus inches, separating the logic from the window
 // Level     : Intermediate
-// Tested in : Eplan Electric P8 2026.0.3 (compile-checked only, DRAFT: not yet run in Eplan)
+// Tested in : Eplan Electric P8 2026.0.3 (Run in Eplan 2026)
 // Author    : Justin Walz
 // License   : MIT (see LICENSE in the repo root)
 // ============================================================

@@ -49,10 +49,10 @@ Beginner examples explain the basic C# they use. Later examples cover data grids
 | 24 | [CSV preview and import](examples/24-csv-device-import/) | Check a CSV file before importing it | Advanced | Available |
 | 25 | [Settings finder](examples/25-settings-finder/) | Search Eplan's settings (read-only) | Intermediate | Available |
 | 26 | [Back up first, then run](examples/26-backup-then-run/) | A safety net in front of risky work | Intermediate | Available |
-| 27 | [Compile canary](examples/27-compile-canary/) | A log line first, so a script that did not compile is easy to spot | Beginner | Draft |
-| 28 | [Unit check](examples/28-unit-check/) | Tell whether a measured width is in millimetres or inches | Intermediate | Draft |
+| 27 | [Compile canary](examples/27-compile-canary/) | A log line first, so a script that did not compile is easy to spot | Beginner | Available |
+| 28 | [Unit check](examples/28-unit-check/) | Tell whether a measured width is in millimetres or inches | Intermediate | Available |
 
-Every example has been run in Eplan 2026 (Update 5), and examples 06 to 26 on a copy of a demo project; each example's README says exactly what was checked. Example 14 is only partly confirmed (see its README), and some options inside the other examples have not been tried yet; [docs/test-status.md](docs/test-status.md) lists them all. Try them on a copy of a project and tell us what you find. Request one by opening an issue.
+Every example has been run in Eplan 2026 (Update 5), and examples 06 to 26 on a copy of a demo project (27 and 28 are small and were run in a scratch project); each example's README says exactly what was checked. Example 14 is only partly confirmed (see its README), and some options inside the other examples have not been tried yet; [docs/test-status.md](docs/test-status.md) lists them all. Try them on a copy of a project and tell us what you find. Request one by opening an issue.
 
 ## Quick start
 

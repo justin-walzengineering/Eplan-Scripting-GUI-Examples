@@ -1,6 +1,6 @@
 # 27 - Compile canary
 
-**Level:** Beginner  **File:** [CompileCanary.cs](CompileCanary.cs)  **Status:** DRAFT, not yet run in Eplan
+**Level:** Beginner  **File:** [CompileCanary.cs](CompileCanary.cs)  **Status:** Run in Eplan 2026
 
 ## What it does
 
@@ -34,7 +34,9 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes (compile-checked) | Pending |
+| 2026.0.3 | Yes | Yes (log written, message shown; broken copy: no message and the log did not change) |
+
+Checked in Eplan 2026: the script wrote the log and showed the message. A copy with the `int broken = ;` line active ran silently: no message, and the log kept its old time. The same script from the same folder, without the broken line, ran normally right afterwards.
 
 ## Ideas to extend
 
