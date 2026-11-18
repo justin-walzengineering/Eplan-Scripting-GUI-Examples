@@ -7,6 +7,8 @@ Every example in this repository is a plain `.cs` file. You run it from inside E
 1. Save the `.cs` file (and any other files that come with the example) in a folder on your computer, for example `C:\EplanScripts\`.
 2. Open Eplan. Open a throwaway demo project if the example works with project data. Never practice on live customer data.
 
+**Do I need a special license?** Eplan's own help says you can run scripts without having licensed the Eplan API. The one feature it ties to the "Eplan API Extension" license is referencing additional assemblies, which these examples do not do. Checked in the Eplan Platform API help (2025 edition, [Scripts page](https://eplan.help/en-us/Infoportal/Content/api/2025/Scripts.html)) on 2026-11-17. If your company's license terms differ, your Eplan contact can confirm.
+
 ## Run a script
 
 1. In Eplan, open the **File** menu and choose **Extras**, then **Interfaces**.
