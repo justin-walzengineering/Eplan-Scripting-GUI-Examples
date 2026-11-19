@@ -30,7 +30,7 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 - Properties without a value are left out, to keep the report short.
 - A report is limited to 100 objects.
-- Objects selected directly on an open drawing page were not returned to the script during testing, whether it was started from the File menu or from a Quick Access button. When nothing is found, the script asks whether to write the page that is open in the editor instead.
+- Objects selected directly on an open drawing page: in the latest test (Eplan 2026) a selected line on a panel layout page was returned and written to the report. In earlier tests, selections made with Ctrl+A or by clicking one text object were not returned, so this may depend on how the object was selected. When nothing is found, the script asks whether to write the page that is open in the editor instead.
 - This example uses reflection and is **likely to need a small adjustment** after the first run. Please report any error message exactly.
 
 ## Compatibility
@@ -41,6 +41,8 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 | 2027.0.3 | Yes | Partly (run 2026-11-17 on a copy of a demo project: a mounting panel selected in a 3D layout was written to a text file; objects selected on a schematic page were not tried) |
 
 Checked in Eplan 2026: with three pages selected in the page navigator, the script wrote one block per page to a text file and opened it. Not working from a drawing selection: after selecting everything on an open page with Ctrl+A, and later after clicking one text object (Cut and Copy were enabled in the ribbon), the script reported that nothing was selected when started from File > Extras > Interfaces, from the command search box, and from a Quick Access toolbar button (the Run script button). A change was then made so that, when nothing is selected, the script asks 'Write the properties of the page that is open in the editor instead?'. Run from the Quick Access button with the answer Yes, it wrote a report with one block for the open page. That path was tried once, with one page. The file lists project data such as the last editor's name and e-mail, so there is no screenshot here; check a file before you share it.
+
+A later run in Eplan 2026 (2026-11-18): a line was drawn on an empty panel layout page and left selected, and the script was started from File > Extras > Interfaces > Run. It did not ask the "nothing selected" question; it went straight to the Save dialog, and the report held one block for the Line (object ID, start and end coordinates, page, layer). Not tried yet: a symbol or device on a schematic page, or several objects at once.
 
 The member names used were checked against the installed 2026 assemblies. The reflection helper was tested outside Eplan against stand-in objects.
 
