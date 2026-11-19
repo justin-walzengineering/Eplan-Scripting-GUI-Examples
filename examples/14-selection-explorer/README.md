@@ -38,14 +38,14 @@ New to scripts? See [How to run a script](../../docs/running-scripts.md).
 
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
-| 2026.0.3 | Yes | Partly (three selected pages written to a text file) |
+| 2026.0.3 | Yes | Yes (three selected pages in the navigator, 2026-11-07; a line on a panel layout page and a symbol with its group opened on a single-line diagram page, 2026-11-18) |
 | 2027.0.3 | Yes | Yes (a mounting panel selected in a 3D layout, 2026-11-17; a symbol selected on a schematic page, with its group opened, 2026-11-18) |
 
 Checked in Eplan 2026: with three pages selected in the page navigator, the script wrote one block per page to a text file and opened it. Not working from a drawing selection: after selecting everything on an open page with Ctrl+A, and later after clicking one text object (Cut and Copy were enabled in the ribbon), the script reported that nothing was selected when started from File > Extras > Interfaces, from the command search box, and from a Quick Access toolbar button (the Run script button). A change was then made so that, when nothing is selected, the script asks 'Write the properties of the page that is open in the editor instead?'. Run from the Quick Access button with the answer Yes, it wrote a report with one block for the open page. That path was tried once, with one page. The file lists project data such as the last editor's name and e-mail, so there is no screenshot here; check a file before you share it.
 
 A later run in Eplan 2026 (2026-11-18): a line was drawn on an empty panel layout page and left selected, and the script was started from File > Extras > Interfaces > Run. It did not ask the "nothing selected" question; it went straight to the Save dialog, and the report held one block for the Line (object ID, start and end coordinates, page, layer). Not tried yet: several objects at once.
 
-On a schematic page (Eplan 2027.0.3, 2026-11-18, an Eplan sample project, one click on a transformer symbol) the first version of the script wrote only one block, a `Group` with just the object ID and change protection. After the script was changed to read the group's `SubPlacements`, the same click gave 66 blocks: the group, 33 `Arc` and 23 `Line` objects (the drawing), and 9 `Function` objects (the transformer and its connection points, each with its device tag). This was run in Eplan 2027 only; the change compiles for 2026, but the group case was not run there.
+On a schematic page (Eplan 2027.0.3, 2026-11-18, an Eplan sample project, one click on a transformer symbol) the first version of the script wrote only one block, a `Group` with just the object ID and change protection. After the script was changed to read the group's `SubPlacements`, the same click gave 66 blocks: the group, 33 `Arc` and 23 `Line` objects (the drawing), and 9 `Function` objects (the transformer and its connection points, each with its device tag). The same change was then run in Eplan 2026.0.3 (2026-11-18, a copy of Eplan's energy template, one click on a symbol on a single-line diagram page): 6 blocks, two groups (one inside the other), 2 `Line`, 1 `Rectangle` and 1 `Function` with the device tag.
 
 The member names used were checked against the installed 2026 assemblies. The reflection helper was tested outside Eplan against stand-in objects.
 
