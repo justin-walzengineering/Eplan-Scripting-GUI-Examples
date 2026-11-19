@@ -69,8 +69,7 @@ public class SelectionExplorerDemo
                     report.AppendLine("... only the first " + MaxObjects + " objects are shown.");
                     break;
                 }
-                count++;
-                AppendObject(report, obj, count);
+                AppendWithMembers(report, obj, ref count, 0);
             }
         }
         catch (Exception ex)
@@ -140,12 +139,42 @@ public class SelectionExplorerDemo
         return result;
     }
 
-    // One block of the report: a heading, then one line per property that has a value.
-    private static void AppendObject(StringBuilder report, object obj, int number)
+    // Writes one object and, when it is a group, the objects inside it (indented). A single click on a symbol on a
+    // schematic page selects a "Group", and a group holds almost no properties itself: the symbol is one of its
+    // SubPlacements. Reading SubPlacements only reads; it does not ungroup anything.
+    private static void AppendWithMembers(StringBuilder report, object obj, ref int count, int depth)
     {
+        if (count >= MaxObjects)
+        {
+            return;
+        }
+        count++;
+        AppendObject(report, obj, count, depth);
+
+        if (depth >= 3)
+        {
+            return;                                        // a group inside a group inside a group: stop, to be safe
+        }
+        List<object> members = new List<object>();
+        try { members = SxDm.GetList(obj, "SubPlacements"); } catch (Exception) { }   // only groups have this property
+        foreach (object member in members)
+        {
+            if (count >= MaxObjects)
+            {
+                report.AppendLine("... only the first " + MaxObjects + " objects are shown.");
+                return;
+            }
+            AppendWithMembers(report, member, ref count, depth + 1);
+        }
+    }
+
+    // One block of the report: a heading, then one line per property that has a value.
+    private static void AppendObject(StringBuilder report, object obj, int number, int depth)
+    {
+        string indent = new string(' ', depth * 4);
         string name = "";
         try { name = Convert.ToString(SxDm.Get(obj, "Name")); } catch (Exception) { }
-        report.AppendLine("==== " + number + ". " + obj.GetType().Name + (name.Length > 0 ? "   " + name : ""));
+        report.AppendLine(indent + "==== " + number + ". " + obj.GetType().Name + (name.Length > 0 ? "   " + name : "") + (depth > 0 ? "   (inside a group)" : ""));
 
         try
         {
@@ -155,12 +184,12 @@ public class SelectionExplorerDemo
                 {
                     continue;                              // skip properties without a value, to keep the report short
                 }
-                report.AppendLine(row[0].PadRight(8) + row[1].PadRight(44) + row[2].Replace("\r", " ").Replace("\n", " "));
+                report.AppendLine(indent + row[0].PadRight(8) + row[1].PadRight(44) + row[2].Replace("\r", " ").Replace("\n", " "));
             }
         }
         catch (Exception ex)
         {
-            report.AppendLine("   (properties could not be read: " + ex.Message + ")");
+            report.AppendLine(indent + "   (properties could not be read: " + ex.Message + ")");
         }
         report.AppendLine();
     }
