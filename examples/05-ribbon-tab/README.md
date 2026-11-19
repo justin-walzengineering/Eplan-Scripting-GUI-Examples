@@ -86,9 +86,11 @@ Ribbon icons are **SVG** pictures. An SVG file is a text file that describes a s
 | Eplan version | Compiles | Run in Eplan |
 |---------------|----------|--------------|
 | 2026.0.3 | Yes | Yes (setup, both buttons and remove) |
-| 2027.0.3 | Yes | Yes (run 2026-11-17 on a copy of a demo project: the same ribbon calls as example 29, which was run (see that example); this example's own four scripts were not run separately) |
+| 2027.0.3 | Yes | Yes (setup, both buttons from the ribbon, and remove; run 2026-11-18) |
 
 When this example was tested in Eplan 2026.0.3, the setup could not find its own folder automatically, so it asked for `ButtonHello.cs` (the finished message said "found by: you chose it"). After that the tab was created, both buttons started their scripts, and `RibbonRemove.cs` removed the tab.
+
+The same run in Eplan 2027.0.3 (2026-11-18, with an Eplan sample project open) behaved the same way: the setup asked for `ButtonHello.cs`, and then reported that the tab was added. The **Demo Tools** tab was on the ribbon straight away, without restarting Eplan, with the **Examples** group and both buttons and their icons. "Say hello" and "Show time" each opened their message window, and `RibbonRemove.cs` removed the tab, which was gone from the ribbon right away. Whether a restart is ever needed was not tested, so the README still says to restart if the tab does not appear.
 
 ## Ideas to extend
 
