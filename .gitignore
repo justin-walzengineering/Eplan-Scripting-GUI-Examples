@@ -1,0 +1,31 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.vsidx
+*.sqlite
+bin/
+obj/
+*.pdb
+*.cache
+
+# Binaries, archives and project files
+Eplan.EplApi*.dll
+Eplan.EplApi*.xml
+EplanBaseNetu.dll
+*.zip
+*.pdf
+*.ept
+*.elk
+*.zw1
+*.zw9
+
+# Scratch files
+_local/
+scratch/
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+__pycache__/

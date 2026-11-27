@@ -1,0 +1,25 @@
+name: Bug report
+description: Something in an example doesn't work as described
+labels: ["bug"]
+body:
+  - type: input
+    id: eplan
+    attributes:
+      label: Eplan version
+      placeholder: "e.g. 2026.0.3"
+    validations:
+      required: true
+  - type: input
+    id: example
+    attributes:
+      label: Which example?
+      placeholder: "e.g. 01-input-dialog"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      description: Include the exact error text if there is one. Please remove any customer or project data first.
+    validations:
+      required: true

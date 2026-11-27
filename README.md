@@ -1,0 +1,98 @@
+# Eplan Scripting GUI Examples
+
+Learn how to build custom windows and tools inside Eplan Electric P8 with practical, commented C# scripting examples. Whether you want a quick input form, a progress window, a data grid, or a ribbon button for your own project utilities, each example is small enough to read in one sitting and ready to copy and adapt.
+
+> **Contributions, ideas, and example requests are welcome.** If there is a GUI pattern you would like to see, [open an issue](../../issues/new/choose) and describe what you need.
+
+> ⚠️ **Unofficial community project.** This repository is not affiliated with, endorsed by, or supported by EPLAN. "EPLAN" is a trademark of its owner. All code here is original and uses the scripting API that ships with Eplan.
+
+## Why this exists
+
+Eplan is a powerful platform, and scripting is one more way to shape it around how you work. Many people can automate a repetitive task with a script, and then wonder how to give it a window of its own. These examples show common GUI patterns in small, focused pieces. Each one is designed to be copied, modified, and used as a starting point for your own tools.
+
+## Who this is for
+
+- Eplan engineers and designers learning scripting
+- Electrical designers automating repetitive tasks
+- Application engineers building internal productivity tools
+- Teams moving from simple scripts to scripts with their own windows
+
+Beginner examples explain the basic C# they use. Later examples cover data grids, saved settings, and ribbon buttons.
+
+## Examples
+
+| # | Example | What you can do with it | Level | Status |
+|---|---------|-------------------------|-------|--------|
+| 01 | [Reusable input dialog](examples/01-input-dialog/) | Ask the user for text, confirm an action, show a message | Beginner | Available |
+| 02 | [Progress bar](examples/02-progress-bar/) | Show progress during a long task, with Cancel | Beginner | Available |
+| 03 | [Window placement](examples/03-window-placement/) | Open dialogs centered on Eplan, on a visible monitor | Intermediate | Available |
+| 04 | [Light and dark theme](examples/04-light-dark-theme/) | A "Dark mode" check box that restyles your window, plus matching Eplan's own color scheme | Intermediate | Available |
+| 05 | [Ribbon tab, group and buttons](examples/05-ribbon-tab/) | Add your own tab, group and buttons (with icons) that run your scripts | Beginner | Available |
+| 06 | [Remember size and position](examples/06-remember-window/) | Reopen windows where the user left them | Intermediate | Available |
+| 07 | [Themed message window](examples/07-themed-message/) | Messages and questions that fit dark mode | Beginner | Available |
+| 08 | [Settings dialog](examples/08-settings-dialog/) | Save and restore user preferences | Beginner | Available |
+| 09 | [Page list](examples/09-page-list/) | Search, sort and export pages to CSV | Advanced | Available |
+| 10 | [Property viewer](examples/10-property-viewer/) | See every property of the project or your selection | Advanced | Available |
+| 11 | [Parts viewer](examples/11-parts-viewer/) | Search the parts database as you type | Intermediate | Available |
+| 12 | [Please-wait window](examples/12-please-wait-window/) | Keep a moving window up while Eplan is busy | Advanced | Available |
+| 13 | [Dark-mode-safe controls](examples/13-dark-safe-controls/) | Date field, drop-down, check box and progress bar for dark mode | Intermediate | Available |
+| 14 | [Selection explorer](examples/14-selection-explorer/) | Write the properties of your selection to a text file | Intermediate | Available, partly tested |
+| 15 | [Hand a value between scripts](examples/15-hand-off-value/) | Pass a short-lived value from one script to another | Advanced | Available |
+| 16 | [Modern folder picker](examples/16-modern-folder-picker/) | The Explorer-style "choose a folder" window | Advanced | Available |
+| 17 | [Export launcher](examples/17-export-launcher/) | PDF export with a file name pattern | Intermediate | Available |
+| 18 | [Device list export](examples/18-device-list-export/) | CSV, XML or text, opened in Excel | Intermediate | Available |
+| 19 | [Renumber helper](examples/19-renumber-helper/) | A safe front end for the renumber action | Intermediate | Available |
+| 20 | [Timestamped backup](examples/20-timestamped-backup/) | A backup with the date and time in its name | Intermediate | Available |
+| 21 | [Favorites launcher](examples/21-favorites-launcher/) | A searchable list of your scripts and actions | Intermediate | Available |
+| 22 | [Results window](examples/22-results-window/) | One report window instead of many message boxes | Intermediate | Available |
+| 23 | [Bulk edit pages](examples/23-bulk-edit/) | Preview, then change many pages at once | Advanced | Available |
+| 24 | [CSV preview and import](examples/24-csv-device-import/) | Check a CSV file before importing it | Advanced | Available |
+| 25 | [Settings finder](examples/25-settings-finder/) | Search Eplan's settings (read-only) | Intermediate | Available |
+| 26 | [Back up first, then run](examples/26-backup-then-run/) | A safety net in front of risky work | Intermediate | Available |
+| 27 | [Compile canary](examples/27-compile-canary/) | A log line first, so a script that did not compile is easy to spot | Beginner | Available |
+| 28 | [Unit check](examples/28-unit-check/) | Tell whether a measured width is in millimetres or inches | Intermediate | Available |
+| 29 | [Showcase ribbon](examples/29-showcase-ribbon/) | One ribbon tab with a button for every example, each with its own icon | Intermediate | Available (run in 2027) |
+
+Every example has been run in Eplan 2026 (Update 5) and in Eplan 2027 (2027.0.3), on a copy of a demo project; each example's README says exactly what was checked and where. The dark-mode styling of the windows was added after the 2026 runs, and was checked in 2027 and compile-checked for 2026. Example 14 is only partly confirmed (see its README), and some options inside the other examples have not been tried yet; [docs/test-status.md](docs/test-status.md) lists them all. Try them on a copy of a project and tell us what you find by [opening an issue](../../issues/new/choose). You can also request an example the same way.
+
+## Quick start
+
+1. Read [docs/getting-started.md](docs/getting-started.md).
+2. Open an example folder under [examples/](examples/).
+3. In Eplan, choose File > Extras > Interfaces > **Run** and select the `.cs` file. See [How to run a script](docs/running-scripts.md).
+
+## Tested with
+
+Compile-checked against Eplan Electric P8 **2026** (2026.0.3) and **2027** (2027.0.3). Each example's README states where it has been run inside Eplan. The windows follow Eplan's color scheme (dark or light).
+
+![The Script Examples ribbon tab in Eplan 2027](docs/images/eplan-2027-script-examples.png)
+
+Example 29 adds the **Script Examples** tab shown above, so every example is one click away.
+
+## Using these examples
+
+- The code is [MIT licensed](LICENSE): use it, change it, and share it, including in your own work.
+- Try each script on a copy of a project first. Scripts run inside Eplan and can change project data.
+- The code is provided as is, without warranty. Read a script before you run it.
+
+## Documentation
+
+- [Getting started](docs/getting-started.md)
+- [How to run a script](docs/running-scripts.md) (with a Quick Access toolbar tip)
+- [Reaching Eplan's data model](docs/reaching-the-data-model.md) (for examples that read project data)
+- [C# basics used in these examples](docs/csharp-basics.md)
+- [How Eplan loads scripts](docs/how-eplan-loads-scripts.md)
+- [Troubleshooting](docs/troubleshooting.md)
+- [Test status](docs/test-status.md) (what has been run in Eplan, and what is still open)
+
+## Contributing
+
+Questions and ideas go in [Discussions](../../discussions) and Issues. Pull requests are welcome too, with one rule: only submit your own original work. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+[MIT](LICENSE).
+
+---
+
+Maintained by Justin Walz, [Walz Engineering](https://www.walzengineering.com). Need a custom Eplan interface built for your team? [Get in touch](https://www.walzengineering.com).
